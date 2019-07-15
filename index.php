@@ -4,4 +4,5 @@
 	$dotenv -> load ();
 		
 	echo (getenv('PRUEBA'));
+	print("Prueba con htaccess");
 ?>
