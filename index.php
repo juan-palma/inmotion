@@ -1,11 +1,7 @@
 <?php
-/*
 	require('vendor/autoload.php');
-	$dotenv = new Dotenv\Dotenv('../');
-	$dotenv->load();
-*/
-	
-	echo($_ENV["PRUEBA"]);
+	$dotenv  =  Dotenv\Dotenv::create(dirname(__DIR__));
+	$dotenv -> load ();
+		
 	echo (getenv('PRUEBA'));
-	//echo (getenv('HOME'));
 ?>
