@@ -6,7 +6,7 @@
 | Cargaremos las variables de entorno para que se encuentren accesibles para todas las secciones. 
 */
 require('application/vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::create(dirname(__DIR__, 1));
+$dotenv = Dotenv\Dotenv::create(dirname(__DIR__));
 $dotenv -> load();
 
 

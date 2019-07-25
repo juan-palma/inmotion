@@ -15,7 +15,8 @@ class Inicio extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$fondos = @get_filenames(FCPATH.'assets/admin/img/loginBackground/');
-			$data['fondo'] = ( (isset($fondos) && count($fondos) > 0) ) ? $this->security->sanitize_filename($fondos[random_int(0, (count($fondos)-1))]) : '';
+			//$data['fondo'] = ( (isset($fondos) && count($fondos) > 0) ) ? $this->security->sanitize_filename($fondos[random_int(0, (count($fondos)-1))]) : '';
+			$data['fondo'] = ( (isset($fondos) && count($fondos) > 0) ) ? $this->security->sanitize_filename($fondos[rand(0, (count($fondos)-1))]) : '';
 			$data['titulo'] = "Login";
 			$data['varFlash'] = $this->varFlash;
 			$this->load->view('admin/head', $data);
