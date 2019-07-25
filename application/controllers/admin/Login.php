@@ -12,6 +12,7 @@ class Login extends CI_Controller {
 	public $error = [];
 	
 	public function index(){
+/*
 		$this->encryption->initialize(
 	        array(
                 'driver' => 'openssl',
@@ -19,6 +20,7 @@ class Login extends CI_Controller {
                 'mode' => 'ctr'
 	        )
 		);
+*/
 		
 		if ($this->form_validation->run() == FALSE)
 		{
