@@ -45,6 +45,7 @@ class Ida_protect {
 				$ivlen = openssl_cipher_iv_length(getenv('CIPHER'));
 			    $iv = openssl_random_pseudo_bytes($ivlen);
 				$lista = explode('::-:,-;;', base64_decode($textEncrypt));
+				echo($lista);
 	    		$desencriptado = openssl_decrypt($lista[0], getenv('CIPHER'), getenv('KEY_ENCRIPT'), $options=0, $lista[1], $lista[2]);
 	    		return $desencriptado;
 	    		
