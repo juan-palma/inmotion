@@ -32,12 +32,9 @@ class Login extends CI_Controller {
 			if( $post['username'] !== '' && $post['password'] !== '' ){
 				$result = $this->admin_modal->loginValid($post['username'], $post['password']);
 				if(isset($result) && count($result) > 0){					
-<<<<<<< 051ec2df2fcc3e4a556f1e759fe251e3af0905dc
-=======
 					print_r($result);
 					echo('<br />');
 					echo($this->ida_protect->decrypt($result[0]->user_pass));
->>>>>>> prueba
 					if($post['username'] === $result[0]->user_user && $post['password'] === $this->ida_protect->decrypt($result[0]->user_pass)){
 						$userData = array(
 							'userID' => $result[0]->id_user,
@@ -76,7 +73,7 @@ class Login extends CI_Controller {
 			
 			$this->session->set_flashdata($this->varFlash.'Success', $this->success);
 			$this->session->set_flashdata($this->varFlash.'Error', $this->error);
-			redirect($redir);
+			//redirect($redir);
 		}
 		
 		
