@@ -29,15 +29,12 @@ class Login extends CI_Controller {
 			$redir = '';
 			$post = $this->input->post(NULL,FALSE);
 			
-			$encrypted_txt = $this->ida_protect->encrypt_decrypt('encrypt', 'nada');
-			echo($encrypted_txt);
-			echo('<br />');
-			echo($this->ida_protect->encrypt_decrypt('decrypt', $encrypted_txt));
 			
 			if( $post['username'] !== '' && $post['password'] !== '' ){
 				$result = $this->admin_modal->loginValid($post['username'], $post['password']);
 				if(isset($result) && count($result) > 0){					
-					if($post['username'] === $result[0]->user_user && $post['password'] === $this->ida_protect->decrypt($result[0]->user_pass)){
+					//if($post['username'] === $result[0]->user_user && $post['password'] === $this->ida_protect->decrypt($result[0]->user_pass)){
+					if($post['username'] === $result[0]->user_user && $post['password'] === $this->ida_protect->encrypt_decrypt('decrypt', $result[0]->user_pass)){
 						$userData = array(
 							'userID' => $result[0]->id_user,
 							'nombre' => $result[0]->user_nombre,
@@ -75,7 +72,7 @@ class Login extends CI_Controller {
 			
 			$this->session->set_flashdata($this->varFlash.'Success', $this->success);
 			$this->session->set_flashdata($this->varFlash.'Error', $this->error);
-			//redirect($redir);
+			redirect($redir);
 		}
 		
 		
