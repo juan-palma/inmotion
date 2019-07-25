@@ -33,6 +33,7 @@ class Login extends CI_Controller {
 				$result = $this->admin_modal->loginValid($post['username'], $post['password']);
 				if(isset($result) && count($result) > 0){					
 					print_r($result);
+					echo('<br />');
 					echo($this->ida_protect->decrypt($result[0]->user_pass));
 					if($post['username'] === $result[0]->user_user && $post['password'] === $this->ida_protect->decrypt($result[0]->user_pass)){
 						$userData = array(
