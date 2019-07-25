@@ -23,6 +23,7 @@
 		<meta name="dcterms.audience" content="Global" />
 		<meta name="rating" content="General" />
 		
+		<link href="https://fonts.googleapis.com/css?family=Abel|Anton|Fjalla+One&display=swap" rel="stylesheet">
 		
 		<link href="<?php echo(base_url('assets/admin/css/boostrap.css')) ?>" rel="stylesheet" type="text/css">
 		<link href="<?php echo(base_url('assets/admin/css/animate.css')) ?>" rel="stylesheet" type="text/css">
@@ -34,7 +35,7 @@
 		<link href="<?php echo(base_url('assets/admin/css/main.css')) ?>" rel="stylesheet" type="text/css">
 		
 		<?php
-		$this->load->view('admin/head-c');
+		//$this->load->view('admin/head-c');
 		?>
 		
 		<!-- Meta Data de verificacion de sitios web. -->
