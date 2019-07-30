@@ -8,9 +8,14 @@
         'class' => 'ev',
         'role' => 'form'
 	);
+	
+	$hidden = [];
+    $hidden['pagina'] = $actual;
+    $hidden['userID'] = $_SESSION['userID'];
+	
     //echo form_open(current_url(), $data);
-    echo form_open_multipart(current_url().'/send', $data);
-    echo form_hidden( 'pagina' ,  $actual ); 
+    echo form_open_multipart(current_url().'/do_upload', $data, $hidden);
+    //echo form_hidden( 'pagina' ,  $actual ); 
 ?>
 
 <div id="nav_save_control">

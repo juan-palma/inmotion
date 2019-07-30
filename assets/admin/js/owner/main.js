@@ -25,7 +25,7 @@ function db_conectE(url, datos, f, e){
 	new Request.JSON({
 		method:'post',
 		url:url,
-		secure:true,
+		secure:false,
 		onError:function(er){
 			if(typeOf(e) === 'function'){ e(er); }
 			console.warn(er);
@@ -461,10 +461,10 @@ function home_inicio(){
 			var enlace = s.getElement('.servicio_enlace').getElement('input');
 			
 			header.set('text', i+1);
-			foto.name = "servicio["+i+"][icono]";
-			titulo.name = "servicio["+i+"][titulo]";
-			texto.name = "servicio["+i+"][texto]";
-			enlace.name = "servicio["+i+"][enlace]";
+			foto.name = "servicios[servicio]["+i+"][icono]";
+			titulo.name = "servicios[servicio]["+i+"][titulo]";
+			texto.name = "servicios[servicio]["+i+"][texto]";
+			enlace.name = "servicios[servicio]["+i+"][enlace]";
 		});
 	}
 	
@@ -489,7 +489,7 @@ function home_inicio(){
 		reconteo();
 	}
 	
-	activar(base);
+	//activar(base);
 	
 	
 	
@@ -499,7 +499,57 @@ function home_inicio(){
 	//validar
 	
 	function validar(){
-		document.id('formulario').send();
+/*
+		var files = document.id('fotofile').files;
+		console.info(files);
+		
+		var file = files[0];
+		console.info(file);
+*/
+		
+		var datos = new FormData(document.id('formulario'));
+		//console.info(datos);
+		
+		//datos.append('userfile', file, file.name);
+		//datos.append('userfile', file, file.name);
+/*
+		for (var key of datos.entries()) {
+			console.log(key[0] + ', ' + key[1]);
+			console.info(key[1]);
+		}
+*/
+		
+		function limpiar(j){
+			console.info(j);
+		}
+		
+		function error(j){
+			//console.info(j);
+		}
+		
+		
+		// Set up the request.
+		var xhr = new XMLHttpRequest();
+		
+		// Open the connection.
+		xhr.open('POST', window.location.pathname+'/do_upload', true);
+		
+		// Set up a handler for when the request finishes.
+		xhr.onload = function () {
+			if (xhr.status === 200) {
+				// File(s) uploaded.
+				//uploadButton.innerHTML = 'Upload';
+				console.info('se envio');
+			} else {
+				alert('An error occurred!');
+			}
+		};
+		
+		// Send the Data.
+		xhr.send(datos);
+		
+		//db_conectE(window.location.pathname+'/do_upload', datos, limpiar, error );
+		//document.id('formulario').send();
 /*
 		var datos = {};
 		

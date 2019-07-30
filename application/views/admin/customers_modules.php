@@ -75,5 +75,9 @@ $customModuleIcon['validate'] = (object)[];
 $customModuleIcon['validate']->label = "Validar Documentos";
 $customModuleIcon['validate']->icono = "nc-check-2";
 
+$customModuleIcon['home'] = (object)[];
+$customModuleIcon['home']->label = "Home";
+$customModuleIcon['home']->icono = "fa fa-home";
+
 
 ?>

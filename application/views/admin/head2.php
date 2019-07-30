@@ -122,7 +122,7 @@
 						                }
 						                
 										$label = str_replace('_', ' ', $m->permiso_modulo);
-										$icono = 'nc-grid-45';
+										$icono = 'nc-icon nc-grid-45';
 										
 										if(isset($customModuleIcon[$m->permiso_modulo])){
 											if($customModuleIcon[$m->permiso_modulo] !== ''){
@@ -143,7 +143,7 @@
 							                ?>
 							                <li class="nav-item ">
 						                        <a class="nav-link" href="<?php echo(base_url('admin/'.$m->permiso_modulo)); ?>">
-						                            <i class="nc-icon <?php echo($icono); ?>"></i>
+						                            <i class="<?php echo($icono); ?>"></i>
 						                            <p><?php echo($label); ?></p>
 						                        </a>
 						                    </li>
