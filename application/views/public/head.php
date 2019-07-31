@@ -12,8 +12,8 @@
 		<meta http-equiv="Content-Encoding" content="gzip" />
 		<meta http-equiv="Accept-Encoding" content="gzip, deflate" />
 				
-<!-- 		<link rel="shortcut icon" href="favicon.ico?v1" /> -->
-<!-- 		<link rel="icon" href="favicon.ico?v1" /> -->
+		<link rel="shortcut icon" href="favicon.ico?v1" />
+		<link rel="icon" href="favicon.ico?v1" />
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 				
 		<title><?php echo($titulo); ?> | INMOTION</title>
@@ -29,12 +29,9 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		
 <!-- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
-<!-- 		<link href="<?php echo(base_url('assets/admin/css/footerRigths.css')) ?>" rel="stylesheet" type="text/css"> -->
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-<!-- 		<link href="<?php echo(base_url('assets/common/css/bootstrap.min.css')) ?>" rel="stylesheet" /> -->
 	    <link href="<?php echo(base_url('assets/admin/css/light-bootstrap-dashboard.css?v=2.0.1')) ?>" rel="stylesheet" />
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
-	    <!-- CSS Just for demo purpose, don't include it in your project -->
 		<link href="<?php echo(base_url('assets/public/css/main.css')) ?>" rel="stylesheet" type="text/css">
 				
 		
@@ -42,16 +39,6 @@
 		<meta name="msvalidate.01" content="ED387E3F99B5758EB607324E9928F951" />
 		<meta name="p:domain_verify" content="92115dc4d60becb13618274218b951f2"/>
 		
-		<!-- direct info -->
-<!--
-		<style type="text/css">
-			<?php if(isset($fondo) && $fondo !== ''){  ?>
-			.theme-sistem{
-			    background-image: url(<?php echo(base_url('assets/admin/img/loginBackground/'.$fondo)); ?>);
-			}
-			<?php } ?>
-		</style>
--->
 		
 		<?php if(isset($actual) && $actual !== ''){
 			?>
@@ -60,10 +47,109 @@
 			var baseDir = '<?php echo(base_url()); ?>';
 		</script>
 			<?php
-		} ?>
+		}
+		?>
+		
+		
+<?php
+$headerDB = new stdClass();
+$headerDB->titulo_general = 'CONTÁCTANOS';
+$headerDB->direccion = 'Monte Elbruz 132,<br />Lomas de Chapultepec, Miguel Hidalgo, CDMX, México';
+$headerDB->mail_destino = 'CONTÁCTANOS';
+$headerDB->team = [];
+
+$valor = new stdClass();
+$valor->red = 'facebook';
+$valor->nombre = 'Mi Pagina';
+$valor->liga = 'https://facebook.com';
+$valor->icono = 'redes_facebook_blanco.svg';
+$headerDB->redes[] = $valor;
+
+$valor = new stdClass();
+$valor->red = 'behance';
+$valor->nombre = 'Mi Portafolio';
+$valor->liga = 'https://behance.com';
+$valor->icono = 'redes_behance_blanco.svg';
+$headerDB->redes[] = $valor;
+
+$valor = new stdClass();
+$valor->red = 'instagram';
+$valor->nombre = 'Mi Galeria';
+$valor->liga = 'https://instagram.com';
+$valor->icono = 'redes_instagram_blanco.svg';
+$headerDB->redes[] = $valor;
+
+$valor = new stdClass();
+$valor->red = 'linkedIn';
+$valor->nombre = 'Mi Curriculum';
+$valor->liga = 'https://facebook.com';
+$valor->icono = 'redes_linkedin_blanco.svg';
+$headerDB->redes[] = $valor;
+
+?>
 						
 	</head>
 	<body id="<?php echo($actual); ?>"  itemscope="itemscope" itemtype="http://schema.org/WebPage" class="">
-		
+		<div id="menuItems" class="dnone">
+			<div id="menuItemClose"><i class="fas fa-times"></i></div>
+			
+			<div class="redes">
+				<?php
+					foreach ($headerDB->redes as $i=>$v) {
+					?>
+						<div class="red">
+							<a href="<?php echo($v->liga); ?>">
+<!-- 									<object type="image/svg+xml" data="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>">SVG</object> -->
+								<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
+							</a>
+						</div>
+					<?php
+					}
+				?>
+			</div>
+				
+			<div class="boxCentro">
+				<div class="boxCentrado">
+					<div class="menuHi">SERVICIOS</div>
+					<div class="menuLow">EVENTOS Y PROMOCIÓNES</div>
+					<div class="menuLow">CREATIVIDAD E INNOVACIÓN</div>
+					<div class="menuLow">EXPERIENCIA DIGITAL</div>
+					<div class="menuLow">CONSTRUCCIÓN Y LOGÍSTICA</div>
+					<div class="menuLow">PRODUCCIÓN Y CONTENIDO</div>
+					<div id="menuPortafolio" class="menuHi">PORTAFOLIO</div>
+				</div>
+			</div>
+		</div>
 		<!-- Add your site or application content here -->
         <main id="primaryContainer">
+	        
+			<div id="logo" class="mboxI">
+				<a href="<?php echo(base_url()); ?>"><img src="<?php echo(base_url('assets/public/img/logo_inmotion.jpg')); ?>" /></a>
+			</div>
+			<div id="menu" class="mboxD">
+				<div id="btnMenu"><i class="fas fa-bars"></i></div>
+				<div class="redes">
+					<?php
+						foreach ($headerDB->redes as $i=>$v) {
+						?>
+							<div class="red">
+								<a href="<?php echo($v->liga); ?>">
+<!-- 									<object type="image/svg+xml" data="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>">SVG</object> -->
+									<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
+								</a>
+							</div>
+						<?php
+						}
+					?>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+

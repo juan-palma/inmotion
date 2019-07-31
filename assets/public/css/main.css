@@ -293,7 +293,7 @@ div, span, img, ul, footer, nav{
 	display: block;
 	position: relative;
 /* 	min-height: calc(100vh); */
-    background: url(../img/body_fondo.jpg) no-repeat center center;
+/*     background: url(../img/body_fondo.jpg) no-repeat center center; */
     background-size: cover;
     overflow-x: hidden;
 }
@@ -363,6 +363,7 @@ div, span, img, ul, footer, nav{
 	.btnSlideBack img, .btnSlideNext img{
 		width: 100%;
 		height: auto;
+		cursor: pointer;
 	}
 
 input[type="button"]{
@@ -387,10 +388,197 @@ input[type="button"]:hover{
 
 
 
+
+
+
+
+/* --- Header NAV - Menu. y Logo -- */
+#menuItems{
+	width: 100%;
+	height: calc(100vh);
+	position: fixed;
+	z-index: 999;
+	background: #ff6600;
+	top: 0px;
+	left: 0px;
+	color: #fff;
+	opacity: 0;
+	transform: scale(1.8);
+	
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+#menuItems.activo{
+	opacity: 0.94;
+	transform: scale(1);
+}
+.dnone{
+	display: none;
+}
+	#menuItemClose{
+		width: 90px;
+	    height: auto;
+	    display: inline-block;
+	    position: absolute;
+	    right: 18px;
+	    top: 22px;
+	    font-size: 284%;
+	    cursor: pointer;
+	    text-align: center;
+	    
+	    -webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		-ms-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	}
+	#menuItemClose:hover{
+		transform: scale(1.3);
+	}
+	#menuItems .redes{
+		width: 90px;
+	    position: absolute;
+	    right: 0px;
+	    top: 100px;
+	    text-align: center;
+	    right: 18px;
+	}
+		#menuItems .redes .red{
+			width: 45%;
+			margin: 0 auto 15px;
+			
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+		}
+		#menuItems .redes .red:hover{
+			transform: scale(1.3);
+		}
+	#menuItems .boxCentro{
+		width: 100%;
+	    height: calc(100vh);
+	    display: grid;
+	    align-items: center;
+	    text-align: center;
+	}
+		#menuItems .boxCentro .boxCentrado{
+			display: inline-block;
+		    width: 57%;
+		    margin: 0 auto;
+		    text-align: right;
+		    letter-spacing: 8px;
+		}
+			#menuItems .boxCentro .boxCentrado .menuHi{
+				font-family: 'Bw Modelica Black';
+				font-size: 200%;
+				cursor: pointer;
+				
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-ms-transition: all 0.1s ease-in-out;
+				transition: all 0.1s ease-in-out;
+			}
+			#menuItems .boxCentro .boxCentrado .menuHi:hover{
+				transform: scale(1.3);
+			}
+			#menuItems .boxCentro .boxCentrado .menuLow{
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 120%;
+				line-height: 1.7em;
+				cursor: pointer;
+				
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-ms-transition: all 0.1s ease-in-out;
+				transition: all 0.1s ease-in-out;
+			}
+			#menuItems .boxCentro .boxCentrado .menuLow:hover{
+				transform: scale(1.3);
+			}
+			#menuItems .boxCentro .boxCentrado #menuPortafolio.menuHi{
+				margin-top: 12px;
+			}
+
+#logo{
+	position: fixed;
+	padding-top: 52px;
+	z-index: 994;
+}
+	#logo img{
+		width: 100%;
+		height: auto;
+	}
+
+#menu{
+	position: fixed;
+	padding-top: 52px;
+	z-index: 994;
+}
+	#menu #btnMenu{
+		width: 90px;
+	    height: 90px;
+	    vertical-align: middle;
+	    display: table-cell;
+	    background-color: white;
+		text-align: center;
+	    color: #ff6600;
+	    font-size: 210%;
+	    cursor: pointer;
+	    
+	    -webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		-ms-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	}
+	#menu #btnMenu:hover{
+		color: #fff;
+		background-color: #ff6600;
+	}
+	#menu .redes{
+		margin-top: 28px;
+	}
+		#menu .red{
+			text-align: center;
+			margin-bottom: 12px;
+		}
+			#menu .red a{
+				display: block;
+				text-align: center;
+				
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-ms-transition: all 0.1s ease-in-out;
+				transition: all 0.1s ease-in-out;
+			}
+			#menu .red a:hover{
+				transform: scale(1.2);
+			}
+				#menu .red a img{
+					width: 48%;
+					margin: 0 auto;
+				}
+		
+
+
+
+
+
+
+
 /* --- HOME -- */
 body#home{
 	background: url(../img/body_fondo.jpg) repeat-y center top;
-	background-size: 100% auto;
+	background-size: cover;
+	background-attachment: fixed;
 }
 	body#home #header .mboxC{
 		padding-bottom: 24rem;
@@ -429,11 +617,29 @@ body#home{
 				font-size: 1.2em;
 				letter-spacing: 2px;
 				font-family: 'Bw Modelica Bold', 'Monserrat', Arial, sans-serif;
+				
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-ms-transition: all 0.1s ease-in-out;
+				transition: all 0.1s ease-in-out;
+			}
+			#direccion span.tel, #direccion span.tel a:hover{
+				font-size: 1.3em;
 			}
 			#direccion span.mail, #direccion span.mail a{
 				font-family: 'Bw Modelica Regular', 'Monserrat', Arial, sans-serif;
 				font-size: 98%;
 				letter-spacing: 2px;
+				
+				-webkit-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-ms-transition: all 0.1s ease-in-out;
+				transition: all 0.1s ease-in-out;
+			}
+			#direccion span.mail, #direccion span.mail a:hover{
+				font-size: 102%;
 			}
 
 
@@ -442,9 +648,9 @@ body#home{
 /* --- HOME - Servicios -- */
 body#home #servicios main{
 	position: relative;
-	background: white url(../img/home_serv_fondo.jpg) no-repeat center center;
 	background-size: cover;
 	padding: 2em 0px;
+	background-color: rgb(256,256,256,0.9);
 }
 	body#home #servicios main article{
 		padding: 0px 14px 48px;
@@ -533,10 +739,30 @@ body#home #portafolios .mboxC{
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-attachment: fixed;
 	}
 	body#home #portafolios .mboxC article .titulo{
 		font-family: 'Bw Modelica Black';
 	}
+		body#home #btnMasPortafolios{
+			width: 100%;
+			padding: 1rem 5rem;
+			background-color: #ff6600;
+			color: white;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 16px;
+			cursor: pointer;
+			
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+		}
+		body#home #btnMasPortafolios:hover{
+			background-color: #b32e00;
+		}
 
 
 

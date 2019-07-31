@@ -17,7 +17,8 @@ class Ajax extends CI_Controller {
 		$json['status'] = 'ok';
 		$json['valores'] = array();
 		$json['errores']  = array();
-				
+		
+		
 		
 		echo( json_encode($json) );
 	}

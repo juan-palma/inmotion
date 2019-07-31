@@ -126,6 +126,35 @@ function descargar_vcard(){
 
 
 //::::::::::::::::::::::::
+// ***** header *****//
+idagl.menu = 'off';
+function header_run(){
+	var btnMenu = document.id('btnMenu');
+	var btnMenuClose = document.id('menuItemClose');
+	var menu = document.id('menuItems');
+	
+	function menuActive(){
+		if(idagl.menu === 'off'){
+			idagl.menu = 'on';
+			menu.removeClass('dnone').addClass('activo');
+		} else{
+			idagl.menu = 'off';
+			menu.removeClass('activo');
+			(function(){
+				menu.addClass('dnone');
+			}).delay(100);
+		}
+	}
+	
+	btnMenu.addEvent('click', menuActive);
+	btnMenuClose.addEvent('click', menuActive);
+}
+
+
+
+
+
+//::::::::::::::::::::::::
 // ***** Footer *****//
 function footer_run(){
 	//Funcion que se ejecuta antes de enviar los datos.
@@ -308,6 +337,7 @@ window.addEvent('domready', function(){
 		}
 	}
 	
+	header_run();
 	footer_run();
 });
 

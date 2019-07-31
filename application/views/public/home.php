@@ -8,9 +8,6 @@
 			<span class="tel">T: <a href="tel:5553938627">(55) 5393 8627</a></span>
 			<span class="mail">M: <a href="mailto:info@inmotion.com.mx">info@inmotion.com.mx</a></span>
 		</div>
-		
-		<div class="mboxI_in"></div>
-		<div class="mboxD_in"></div>
 	</div>
 	<div class="mboxI"></div>
 	<div class="mboxD"></div>
@@ -142,6 +139,8 @@ $portafolioDB->portafolios[] = $valor;
 				<?php
 			}
 			?>
+			<input id="btnMasPortafolios" type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/')); ?>'" value="ver más"></input>
+<!-- 			<div id="btnMasPortafolios">ver más</div> -->
 		</main>
 	</div>
 	<div class="mboxI"></div>
@@ -186,6 +185,14 @@ $valor->nombre = 'Mujer';
 $valor->apellido = 'Dos';
 $valor->cargo = 'Puesto';
 $nosotrosDB->team[] = $valor;
+
+$valor = new stdClass();
+$valor->foto = 'hombre3.jpg';
+$valor->color = '#b6d0b3';
+$valor->nombre = 'Hombre';
+$valor->apellido = 'Tres';
+$valor->cargo = 'Puesto';
+$nosotrosDB->team[] = $valor;
 ?>
 <section id="nosotros" class="mboxG">
 	<div class="mboxC">
@@ -210,10 +217,10 @@ $nosotrosDB->team[] = $valor;
 				</div>
 				<div class="mboxD_in">
 					<div class="btnSlideBack">
-						<img src="<?php echo( base_url('assets/public/img/btnSlideBlancoBack.jpg') ); ?>" />
+						<img src="<?php echo( base_url('assets/public/img/btnSlideNaranjaBack.jpg') ); ?>" />
 					</div>
 					<div class="btnSlideNext">
-						<img src="<?php echo( base_url('assets/public/img/btnSlideBlancoNext.jpg') ); ?>" />
+						<img src="<?php echo( base_url('assets/public/img/btnSlideNaranjaNext.jpg') ); ?>" />
 					</div>
 				</div>
 			</div>
