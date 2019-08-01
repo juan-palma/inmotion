@@ -29,7 +29,7 @@ class Ajax extends CI_Controller {
 		$info['tel'] = $_POST['telefono'];
 		$info['mensaje'] = $_POST['mensaje'];
 		$info['logo'] = base_url('assets/public/img/logo_inmotion.jpg');
-		$info['emrpesa'] = 'INMOTION';
+		$info['empresa'] = 'INMOTION';
 		$info['sitio'] = base_url();
 		
 		$respMail = ida_sendMail($template, $info, $idaMail_data);
