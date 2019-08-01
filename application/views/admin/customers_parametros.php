@@ -10,12 +10,12 @@
 	$idaMail_data['bcc'] = array();
 	$idaMail_data['bcc'][] = 'soporte@idalibre.com';
 	
-	$idaMail_data['origen_nombre'] = 'Contacto - INMOTION';
-	$idaMail_data['origen_mail'] = 'info@inmotion.com';
-	$idaMail_data['reply_nombre'] = 'Sistema - INMOTION';
+	$idaMail_data['origen_nombre'] = 'Gracias - American Express';
+	$idaMail_data['origen_mail'] = 'informes@idalibre.com';
+	$idaMail_data['reply_nombre'] = 'Soporte - American Express';
 	$idaMail_data['reply_mail'] = 'informes@idalibre.com';
-	$idaMail_data['organizacion'] = 'INMOTION';
-	$idaMail_data['asunto'] = 'Se han puesto en contacto contigo desde el formulario de tu sitio web.';
+	$idaMail_data['organizacion'] = 'American Express';
+	$idaMail_data['asunto'] = 'Gracias por interesarte en nuestros servicios American Express';
 	
 	$idaMail_data['priority'] = 3;
 	$idaMail_data['encoding'] = 'quoted-printable';
@@ -29,9 +29,9 @@
 	
 	
 	$idaMail_data['texto_plano'] = '
-		INMOTION:
+		American Express:
 		
-		Datos de contacto de formulario.
+		Invite de Nuevo Registro.
 				
 		* * * * * *
 
