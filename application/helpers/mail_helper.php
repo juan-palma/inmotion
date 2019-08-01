@@ -39,7 +39,6 @@ function idaf_sendMail($template, $info, $idaMail_data){
 	$mail->addReplyTo($idaMail_data['reply_mail'], $idaMail_data['reply_nombre']);
 	
 	
-/*
 	if($idaMail_data['Username'] !== ''){
 		$mail->Host = $idaMail_data['Host'];
 		$mail->Port = $idaMail_data['Port'];
@@ -49,7 +48,6 @@ function idaf_sendMail($template, $info, $idaMail_data){
 		$mail->Username = $idaMail_data['Username'];
 		$mail->Password = $idaMail_data['Password'];
 	}
-*/
 	
 	$mail->IsHTML(true);
 	$mail->Body = $ida_mail_templateHTML;
@@ -91,7 +89,6 @@ function idaf_sendMail_ical($info){
 	$mail = new PHPMailer();
 	$mail->SMTPDebug = 0;
 	
-/*
 	if($idaMail_data['Username'] !== ''){
 		$mail->Host = $idaMail_data['Host'];
 		$mail->Port = $idaMail_data['Port'];
@@ -101,7 +98,6 @@ function idaf_sendMail_ical($info){
 		$mail->Username = $idaMail_data['Username'];
 		$mail->Password = $idaMail_data['Password'];
 	}
-*/
 	
 	$mail->IsHTML(true);
 	$mail->setFrom($idaMail_data['origen_mail'], $idaMail_data['origen_nombre']);
@@ -178,7 +174,6 @@ function ida_sendMail($template, $info, $idaMail_data){
 	    $mail->Priority = $idaMail_data['priority'];
 		$mail->Encoding = $idaMail_data['encoding'];
 	    
-/*
 	    if($idaMail_data['username'] !== ''){
 		    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
 		    $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -189,7 +184,6 @@ function ida_sendMail($template, $info, $idaMail_data){
 		    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 		    $mail->Port = $idaMail_data['port'];                                    // TCP port to connect to
 	    }
-*/
 	
 	    //Recipients
 	    $mail->setFrom($idaMail_data['origen_mail'], $idaMail_data['origen_nombre']);
@@ -222,6 +216,8 @@ function ida_sendMail($template, $info, $idaMail_data){
 	    return 'No se pudo enviar el Mail. Mail Error: ' . $mail->ErrorInfo;
 	}
 }
+
+
 
 
 
@@ -258,6 +254,7 @@ function ida_sendMail2($template, $info, $idaMail_data){
 	    return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 	}
 }
+
 
 
 
