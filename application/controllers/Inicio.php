@@ -23,7 +23,7 @@ class Inicio extends CI_Controller {
 		$data['serviciosDB'] = $valoresDB;
 		$data['titulo'] = "Home";
 		$data['actual'] = "home";
-		$data['desc'] = "Descripción HOME Inmotion";
+		$data['desc'] = "Descripción HOME INMOTION";
 		
 		$this->load->view('public/head', $data);
 		$this->load->view('public/home', $data);

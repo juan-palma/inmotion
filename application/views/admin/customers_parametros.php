@@ -16,7 +16,7 @@
 	$idaMail_data['reply_nombre'] = 'Sistema - INMOTION';
 	$idaMail_data['reply_mail'] = 'informes@idalibre.com';
 	$idaMail_data['organizacion'] = 'INMOTION';
-	$idaMail_data['asunto'] = 'Se han puesto en contacto contigo desde el formulario de tu sitio web.';
+	$idaMail_data['asunto'] = 'Nuevo contacto desde el formulario de tu sitio web.';
 	
 	$idaMail_data['priority'] = 3;
 	$idaMail_data['encoding'] = 'quoted-printable';

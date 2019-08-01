@@ -21,7 +21,7 @@ class Ajax extends CI_Controller {
 		$this->load->helper('mail');
 		require(VIEWPATH.'admin/customers_parametros.php');
 		
-		$idaMail_data['destino_mail'][0] = /* 'info@inmotion.com' */ 'juan.palma@me.com';
+		$idaMail_data['destino_mail'][] = /* 'info@inmotion.com' */ 'juan.palma@me.com';
 		$template = FCPATH.'assets/public/template/contactoForm.php';
 		$info = array();
 		$info['nombre'] = $_POST['nombre'];
@@ -34,7 +34,7 @@ class Ajax extends CI_Controller {
 		
 		$respMail = ida_sendMail($template, $info, $idaMail_data);
 		if($respMail){
-			$json['valores'][] = 'Se envió de correo de manera correcta.';
+			$json['valores'][] = 'Se envió el correo de manera correcta.';
 		}
 		
 		echo( json_encode($json) );
