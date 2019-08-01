@@ -46,7 +46,7 @@ $ida_mail_templateHTML = '
 					<b>'. $info["mensaje"] .'</b>.<br />
 				</div>
 				
-				<div style="padding: 7rem 0px;"></div>
+				<div style="padding: 6.6rem 0px;"></div>
 			</td>
 		</tr>
 		

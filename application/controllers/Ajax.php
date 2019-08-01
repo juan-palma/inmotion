@@ -34,19 +34,13 @@ class Ajax extends CI_Controller {
 		
 		$respMail = ida_sendMail($template, $info, $idaMail_data);
 		if($respMail){
-			$json['valores'][] = 'Se envió de correo de re envío de información al usuario de manera correcta.';
+			$json['valores'][] = 'Se envió de correo de manera correcta.';
 		}
 		
 		echo( json_encode($json) );
 	}
 	
-	
-	
-	
-	public function send(){
-		
-	}
-		
+			
 		
 	
 	public function clean(){
