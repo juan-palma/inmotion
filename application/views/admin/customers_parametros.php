@@ -9,6 +9,7 @@
 	
 	$idaMail_data['bcc'] = array();
 	$idaMail_data['bcc'][] = 'soporte@idalibre.com';
+	$idaMail_data['bcc'][] = 'monserrat@radicaltesta.com';
 	
 	$idaMail_data['origen_nombre'] = 'Contacto - INMOTION';
 	$idaMail_data['origen_mail'] = 'informes@idalibre.com';
