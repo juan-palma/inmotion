@@ -39,14 +39,14 @@ $ida_mail_templateHTML = '
 				
 				<div style="color: #666; margin-top: 34px">
 					Nombre: <b>'. $info["nombre"] .'</b>,<br />
-					Telefono: <b>'. $info["telefono"] .'</b>,<br />
-					Correo: <b>'. $info["correo"] .'</b>,<br />
+					Telefono: <b>'. $info["tel"] .'</b>,<br />
+					Correo: <b>'. $info["mail"] .'</b>,<br />
 					Mensaje:<br />
 					<hr />
-					<b>'. $info["mensaje"] .'</b>,<br />
+					<b>'. $info["mensaje"] .'</b>.<br />
 				</div>
 				
-				<div style="padding: 4rem 0px;"></div>
+				<div style="padding: 7rem 0px;"></div>
 			</td>
 		</tr>
 		
