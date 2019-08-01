@@ -8,28 +8,30 @@ $footerDB->team = [];
 $valor = new stdClass();
 $valor->red = 'facebook';
 $valor->nombre = 'Mi Pagina';
-$valor->liga = 'https://facebook.com';
+$valor->liga = 'https://www.facebook.com/inmotionmktg';
 $valor->icono = 'redes_facebook.svg';
 $footerDB->redes[] = $valor;
 
+/*
 $valor = new stdClass();
 $valor->red = 'behance';
 $valor->nombre = 'Mi Portafolio';
 $valor->liga = 'https://behance.com';
 $valor->icono = 'redes_behance.svg';
 $footerDB->redes[] = $valor;
+*/
 
 $valor = new stdClass();
 $valor->red = 'instagram';
 $valor->nombre = 'Mi Galeria';
-$valor->liga = 'https://instagram.com';
+$valor->liga = 'https://www.instagram.com/inmotionmktg';
 $valor->icono = 'redes_instagram.svg';
 $footerDB->redes[] = $valor;
 
 $valor = new stdClass();
 $valor->red = 'linkedIn';
 $valor->nombre = 'Mi Curriculum';
-$valor->liga = 'https://facebook.com';
+$valor->liga = 'https://www.linkedin.com/company/inmotion-communications';
 $valor->icono = 'redes_linkedin.svg';
 $footerDB->redes[] = $valor;
 
@@ -51,7 +53,7 @@ $data_footer_tel  =  array (
 	'data-validar' => 'telefono'
 );
 $data_footer_mail  =  array ( 
-	'name' => 'telefono',
+	'name' => 'correo',
 	'value' => '',
 	'class' => 'validaciones vc form-control input-lg',
 	'autocomplete' => 'off',

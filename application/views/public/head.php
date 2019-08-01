@@ -12,9 +12,9 @@
 		<meta http-equiv="Content-Encoding" content="gzip" />
 		<meta http-equiv="Accept-Encoding" content="gzip, deflate" />
 				
-		<link rel="shortcut icon" href="favicon.ico?v1" />
-		<link rel="icon" href="favicon.ico?v1" />
-		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="shortcut icon" href="<?php echo(base_url('assets/public/img/favicon.ico')); ?>?v1" />
+		<link rel="icon" href="<?php echo(base_url('assets/public/img/favicon.ico')); ?>?v1" />
+		<link rel="apple-touch-icon" href="<?php echo(base_url('assets/public/img/apple-touch-icon.png')); ?>" />
 				
 		<title><?php echo($titulo); ?> | INMOTION</title>
 		<meta name="description" content="<?php echo($desc); ?>" />
@@ -61,28 +61,30 @@ $headerDB->team = [];
 $valor = new stdClass();
 $valor->red = 'facebook';
 $valor->nombre = 'Mi Pagina';
-$valor->liga = 'https://facebook.com';
+$valor->liga = 'https://www.facebook.com/inmotionmktg';
 $valor->icono = 'redes_facebook_blanco.svg';
 $headerDB->redes[] = $valor;
 
+/*
 $valor = new stdClass();
 $valor->red = 'behance';
 $valor->nombre = 'Mi Portafolio';
 $valor->liga = 'https://behance.com';
 $valor->icono = 'redes_behance_blanco.svg';
 $headerDB->redes[] = $valor;
+*/
 
 $valor = new stdClass();
 $valor->red = 'instagram';
 $valor->nombre = 'Mi Galeria';
-$valor->liga = 'https://instagram.com';
+$valor->liga = 'https://www.instagram.com/inmotionmktg';
 $valor->icono = 'redes_instagram_blanco.svg';
 $headerDB->redes[] = $valor;
 
 $valor = new stdClass();
 $valor->red = 'linkedIn';
 $valor->nombre = 'Mi Curriculum';
-$valor->liga = 'https://facebook.com';
+$valor->liga = 'https://www.linkedin.com/company/inmotion-communications';
 $valor->icono = 'redes_linkedin_blanco.svg';
 $headerDB->redes[] = $valor;
 

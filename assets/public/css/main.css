@@ -74,7 +74,17 @@
     font-style:normal;font-weight:400;
 }
 
+@-ms-viewport {
+	width: device-width;
+	zoom: 1.0;
+	max-zoom: 1.0;
+}
 
+@viewport {
+	width: device-width;
+	zoom: 1.0;
+	max-zoom: 1.0;
+}
 
 
 
