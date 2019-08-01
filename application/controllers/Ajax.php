@@ -83,7 +83,7 @@ class Ajax extends CI_Controller {
 		    $mail->send();
 		
 		} catch (Exception $e) {
-		    $json['errores'][] "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		    $json['errores'][] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 		}
 		
 		echo( json_encode($json) );
