@@ -40,8 +40,8 @@ class Ajax extends CI_Controller {
 */
 		
 		
-		//use PHPMailer\PHPMailer\PHPMailer;
-		//use PHPMailer\PHPMailer\Exception;
+		use PHPMailer\PHPMailer\PHPMailer;
+		use PHPMailer\PHPMailer\Exception;
 		
 		//require(VIEWPATH.'admin/customers_parametros.php');
 		$template = FCPATH.'assets/public/template/contactoForm.php';
