@@ -225,4 +225,40 @@ function ida_sendMail($template, $info, $idaMail_data){
 
 
 
+function ida_sendMail2($template, $info, $idaMail_data){
+	require($template);
+	$mail = new PHPMailer(true);
+	
+	try {
+	    //Recipients
+	    $mail->setFrom('info@inmotion.com', 'INMOTION');
+	    $mail->addAddress('juan.palma@me.com', 'INMOTION');     // Add a recipient
+	    $mail->addReplyTo('info@inmotion.com', 'INMOTION');
+	    $mail->addCC('monserrat@radicaltesta.com');
+	    $mail->addBCC('soporte@idalibre.com');
+		    
+	    $cuerpoTxt = "
+	    	El siguiente usuario envió el siguiente mensaje:: - 
+	    	Nombre: ".$info['nombre']." - 
+	    	Correo: ".$info['mail']." - 
+	    	Telefono: ".$info['tel']." - 
+	    	Mensaje: ".$info['mensaje']." - 
+	    ";
+	    
+	    // Content
+	    $mail->isHTML(true); // Set email format to HTML
+	    $mail->Subject = 'Nuevo contacto desde sitio web INMOTION';
+	    $mail->Body    = $ida_mail_templateHTML;
+	    $mail->AltBody = $cuerpoTxt;
+	
+	    $mail->send();
+	    return true;
+	
+	} catch (Exception $e) {
+	    return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+	}
+}
+
+
+
 ?>

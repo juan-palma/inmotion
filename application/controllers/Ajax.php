@@ -18,7 +18,6 @@ class Ajax extends CI_Controller {
 		$json['valores'] = array();
 		$json['errores']  = array();
 		
-/*
 		$this->load->helper('mail');
 		require(VIEWPATH.'admin/customers_parametros.php');
 		
@@ -37,9 +36,9 @@ class Ajax extends CI_Controller {
 		if($respMail){
 			$json['valores'][] = 'Se envió el correo de manera correcta.';
 		}
-*/
 		
 		
+/*
 		
 		//require(VIEWPATH.'admin/customers_parametros.php');
 		$this->load->helper('mail');
@@ -84,6 +83,7 @@ class Ajax extends CI_Controller {
 		} catch (Exception $e) {
 		    $json['errores'][] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 		}
+*/
 		
 		echo( json_encode($json) );
 	}
