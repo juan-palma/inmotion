@@ -21,7 +21,7 @@ class Ajax extends CI_Controller {
 		$this->load->helper('mail');
 		require(VIEWPATH.'admin/customers_parametros.php');
 		
-		$idaMail_data['destino_mail'][0] = $_POST['correo'];
+		$idaMail_data['destino_mail'][0] = /* 'info@inmotion.com' */ 'juan.palma@me.com';
 		$template = FCPATH.'assets/public/template/contactoForm.php';
 		$info = array();
 		$info['nombre'] = $_POST['nombre'];
