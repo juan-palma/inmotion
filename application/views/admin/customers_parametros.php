@@ -21,12 +21,10 @@
 	$idaMail_data['priority'] = 3;
 	$idaMail_data['encoding'] = 'quoted-printable';
 	
-/*
 	$idaMail_data['host'] = 'smtp.gmail.com';
 	$idaMail_data['port'] = 587;
 	$idaMail_data['username'] = 'info@inmotion.com';
 	$idaMail_data['password'] = 'pass';
-*/
 	
 	$idaMail_data['username'] = '';
 	
