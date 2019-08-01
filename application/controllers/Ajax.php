@@ -32,7 +32,7 @@ class Ajax extends CI_Controller {
 		$info['emrpesa'] = 'INMOTION';
 		$info['sitio'] = base_url();
 		
-		$respMail = ida_sendMail($template, $info, $idaMail_data);
+		$respMail = ida_sendMail2($template, $info, $idaMail_data);
 		if($respMail){
 			$json['valores'][] = 'Se envió el correo de manera correcta.';
 		}
