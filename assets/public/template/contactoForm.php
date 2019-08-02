@@ -63,7 +63,7 @@ $ida_mail_templateHTML = '
 				<br />
 				<br />Por favor no responda a este correo electrónico.
 				<br />
-				<br />2018 Derechos Reservados &copy; <u>'. $info["empresa"] .'</u>
+				<br />'.echo date("Y");.' Derechos Reservados &copy; <u>'. $info["empresa"] .'</u>
 			</td>
 			<td width="50">&nbsp;</td>
 		</tr>

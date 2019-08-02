@@ -142,13 +142,109 @@ function header_run(){
 			menu.removeClass('activo');
 			(function(){
 				menu.addClass('dnone');
-			}).delay(100);
+			}).delay(300);
 		}
 	}
 	
 	btnMenu.addEvent('click', menuActive);
 	btnMenuClose.addEvent('click', menuActive);
 }
+
+
+
+
+
+
+
+
+
+
+
+//::::::::::::::::::::::::
+// ***** Portafolio *****//
+function portafolio_inicio(){
+	var slider = tns({
+		container: '#portafolios .slideItems',
+		items: 1,
+		controls:false,
+		nav:true,
+		navContainer:'#portafolios .mboxD_in #navSlide .centro'
+	});
+	
+
+	var resizeTimer;
+	window.addEventListener('resize', function () {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function () {
+			slider.refresh();
+		}, 100);
+	});
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//::::::::::::::::::::::::
+// ***** Servicios *****//
+function servicio_inicio(){
+	var vid = document.getElementById("bgvid");
+	var pauseButton = document.querySelector("#servicios .btnPlayPause");
+	
+	if (window.matchMedia('(prefers-reduced-motion)').matches) {
+	    vid.removeAttribute("autoplay");
+	    vid.pause();
+	    pauseButton.innerHTML = "Paused";
+	}
+	
+	function vidFade() {
+	  vid.classList.add("stopfade");
+	}
+	
+	vid.addEventListener('ended', function()
+	{
+	// only functional if "loop" is removed 
+	vid.pause();
+	// to capture IE10
+	vidFade();
+	}); 
+	
+	
+	pauseButton.addEventListener("click", function() {
+	  vid.classList.toggle("stopfade");
+	  if (vid.paused) {
+	    vid.play();
+	    pauseButton.innerHTML = "Pausa";
+	  } else {
+	    vid.pause();
+	    pauseButton.innerHTML = "Pausado";
+	  }
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -332,7 +428,14 @@ window.addEvent('domready', function(){
 				case 'home':
 					home_inicio();
 				break;
-
+				
+				case 'portafolio':
+					portafolio_inicio();
+				break;
+				
+				case 'servicios':
+					servicio_inicio();
+				break;
 			}
 		}
 	}

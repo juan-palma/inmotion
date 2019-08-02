@@ -100,7 +100,7 @@ $headerDB->redes[] = $valor;
 					foreach ($headerDB->redes as $i=>$v) {
 					?>
 						<div class="red">
-							<a href="<?php echo($v->liga); ?>">
+							<a target="_blank" href="<?php echo($v->liga); ?>">
 <!-- 									<object type="image/svg+xml" data="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>">SVG</object> -->
 								<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
 							</a>
@@ -112,13 +112,15 @@ $headerDB->redes[] = $valor;
 				
 			<div class="boxCentro">
 				<div class="boxCentrado">
-					<div class="menuHi">SERVICIOS</div>
-					<div class="menuLow">EVENTOS Y PROMOCIÓNES</div>
-					<div class="menuLow">CREATIVIDAD E INNOVACIÓN</div>
-					<div class="menuLow">EXPERIENCIA DIGITAL</div>
-					<div class="menuLow">CONSTRUCCIÓN Y LOGÍSTICA</div>
-					<div class="menuLow">PRODUCCIÓN Y CONTENIDO</div>
-					<div id="menuPortafolio" class="menuHi">PORTAFOLIO</div>
+					<div class="menuHi"><a href="<?php echo(base_url('servicios/') ); ?>">SERVICIOS</a></div><br />
+					<?php
+					foreach ($serviciosDB->servicios as $i=>$v) {
+						?>
+						<div class="menuLow"><a href="<?php echo(base_url('servicios/'.url_title($v->enlace) )); ?>"><?php echo($v->titulo); ?></a></div><br />
+						<?php
+					}
+					?>
+					<div id="menuPortafolio" class="menuHi"><a href="<?php echo(base_url('portafolio/') ); ?>">PORTAFOLIO</a></div><br />
 				</div>
 			</div>
 		</div>
@@ -135,7 +137,7 @@ $headerDB->redes[] = $valor;
 						foreach ($headerDB->redes as $i=>$v) {
 						?>
 							<div class="red">
-								<a href="<?php echo($v->liga); ?>">
+								<a target="_blank" href="<?php echo($v->liga); ?>">
 <!-- 									<object type="image/svg+xml" data="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>">SVG</object> -->
 									<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
 								</a>

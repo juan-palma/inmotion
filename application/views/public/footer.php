@@ -103,7 +103,7 @@ $data_servicio_mensaje  =  array (
 										foreach ($footerDB->redes as $i=>$v) {
 										?>
 											<div class="red">
-												<a href="<?php echo($v->liga); ?>">
+												<a target="_blank" href="<?php echo($v->liga); ?>">
 													<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
 												</a>
 											</div>

@@ -282,7 +282,9 @@ footer a{
 .tns-inner{
 	margin: 0px !important;
 }
-
+.noMargin{
+	height: 1px;
+}
 
 
 
@@ -395,6 +397,34 @@ input[type="button"]:hover{
 	background-color: #c44f00;
 }
 
+.video{
+	display: block;
+    height: calc(60vh);
+    position: relative;
+    overflow: hidden;
+}
+	video{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translateX(-50%) translateY(-50%);
+		background: url() no-repeat;
+		background-size: cover;
+		transition: 1s opacity;
+	}
+	.stopfade { 
+	   opacity: .5;
+	}
+
+
+
+
+
+
 
 
 
@@ -486,6 +516,7 @@ input[type="button"]:hover{
 			#menuItems .boxCentro .boxCentrado .menuHi{
 				font-family: 'Bw Modelica Black';
 				font-size: 200%;
+				display: inline-block;
 				cursor: pointer;
 				
 				-webkit-transition: all 0.1s ease-in-out;
@@ -494,6 +525,9 @@ input[type="button"]:hover{
 				-ms-transition: all 0.1s ease-in-out;
 				transition: all 0.1s ease-in-out;
 			}
+			#menuItems .boxCentro .boxCentrado .menuHi a{
+				font-family: 'Bw Modelica Black';
+			}
 			#menuItems .boxCentro .boxCentrado .menuHi:hover{
 				transform: scale(1.3);
 			}
@@ -501,6 +535,7 @@ input[type="button"]:hover{
 				color: rgba(255, 255, 255, 0.5);
 				font-size: 120%;
 				line-height: 1.7em;
+				display: inline-block;
 				cursor: pointer;
 				
 				-webkit-transition: all 0.1s ease-in-out;
@@ -520,6 +555,7 @@ input[type="button"]:hover{
 	position: fixed;
 	padding-top: 52px;
 	z-index: 994;
+	height: auto;
 }
 	#logo img{
 		width: 100%;
@@ -530,6 +566,7 @@ input[type="button"]:hover{
 	position: fixed;
 	padding-top: 52px;
 	z-index: 994;
+	height: auto;
 }
 	#menu #btnMenu{
 		width: 90px;
@@ -829,6 +866,269 @@ body#home #nosotros main .slideMain{
 				font-size: 2.5vw;
 				text-transform: uppercase;
 			}
+
+
+
+
+
+
+
+
+
+/* --- Portafolio - General -- */
+body#portafolio #primaryContainer .redes{
+	display: none;
+}
+body#portafolio #portafolios{
+	
+}
+	body#portafolio #portafolios .mboxC{
+		width: calc(100vw);
+		min-height: calc(100vh);
+		padding: 0px;
+		text-align: center;
+		color: white;
+		left: 0px;
+	}
+		body#portafolio #portafolios .mboxC article.item{
+			height: calc(100vh);
+			align-items: center;
+			background-position: center center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+			body#portafolio #portafolios .mboxC article.item .centro{
+				display: grid;
+			    align-content: center;
+			    height: 100%;
+				text-align: left;
+				padding: calc(4rem + 90px);
+			}
+	body#portafolio #portafolios .mboxD_in{
+		right: 0px;
+		top: 144px;
+		height: calc(100vh - 144px);
+	}
+		body#portafolio #portafolios .mboxD_in #navSlide{
+			height: 100%;
+			color: white;
+			font-family: 'Bw Modelica Light';
+		}
+			body#portafolio #portafolios .mboxD_in #navSlide .centro{
+				display: grid;
+			    align-content: center;
+			    height: 100%;
+			}
+				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox{
+					position: relative;
+					cursor: pointer;
+				}
+				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active{
+					font-family: 'Bw Modelica Bold';
+				}
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .text{
+						width: 200px;
+					    text-align: right;
+					    position: absolute;
+					    right: 110px;
+					    left: auto;
+					    line-height: 1.1em;
+					    cursor: pointer;
+					}
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .circulo{
+						top: 0px;
+					    width: 30px;
+					    height: 30px;
+					    border: 1px solid white;
+					    border-radius: 50%;
+					    position: relative;
+					    left: 30px;
+					    cursor: pointer;
+					    
+					    -webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active .circulo,
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:hover .circulo{
+						border: 1px solid #ff6600;
+						background-color: #ff6600;
+					}
+					
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .line{
+						width: 50%;
+					    height: 30px;
+					    border-right: 1px solid white;
+					    position: relative;
+					}
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:last-child .line{
+						display: none;
+					}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Servicios - General -- */
+body#servicios #primaryContainer .redes{
+	display: none;
+}
+body#servicios #servicios{
+	
+}
+	body#servicios #servicios .video{
+	    height: calc(60vh);
+	}
+		body#servicios #servicios .video video{
+			position: absolute;
+			min-height: calc(60vh);
+		}
+
+	body#servicios #servicios .mboxC{
+		width: calc(100vw);
+		min-height: calc(100vh);
+		padding: 0px;
+		text-align: center;
+		color: #333;
+		left: 0px;
+	}
+	body#servicios #servicios .mboxC .video .centro{
+		position: relative;
+	    height: 100%;
+	    display: flex;
+	    align-items: center;
+	}
+	body#servicios #servicios .mboxC .video .btnPlayPause{
+		position: absolute;
+	    margin: 0 auto;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    bottom: 0px;
+	    padding: 6px 20px;
+	    font-family: 'Bw Modelica Bold';
+	    cursor: pointer;
+	    
+	    -webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	body#servicios #servicios .mboxC .video .btnPlayPause:hover{
+		color: white;
+	}
+	body#servicios #servicios .mboxC .video h1.titulos{
+		font-size: 200%;
+	    letter-spacing: 12px;
+	    position: relative;
+	    left: 90px;
+	}
+		body#servicios #servicios .mboxC .linea{
+			display: block;
+			width: 100%;
+		}
+			body#servicios #servicios .mboxC .linea .bl{
+				width: calc(50vw);
+				height: calc(50vw);
+				float: left;
+				display: flex;
+			    align-items: center;
+			    text-align: left;
+			}
+			body#servicios #servicios .mboxC .linea .bl1{
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			body#servicios #servicios .mboxC .linea .bl2{
+				background-color: white;
+			}
+				body#servicios #servicios .mboxC .linea .bl .centro{
+					width: calc(100% - 90px);
+				    vertical-align: middle;
+				    display: inline-block;
+				    margin: 0 auto 0 0;
+				    position: relative;
+				    padding: 2rem 1rem 2rem 3rem;
+				}
+					body#servicios #servicios .mboxC .linea .bl .centro .icono{
+						width: 50%;
+						max-width: 250px;
+						display: inline-block;
+					}
+						body#servicios #servicios .mboxC .linea .bl .centro .icono img{
+							width: 100%;
+							height: auto;
+							mix-blend-mode: multiply;
+						}
+					body#servicios #servicios .mboxC .linea .bl .centro .titulo{
+						letter-spacing: 4px;
+					    font-size: 1.7rem;
+					    line-height: 1.24em;
+					    color: #ff6600;
+					    margin: 1rem 0px 0.5rem;
+					}
+					body#servicios #servicios .mboxC .linea .bl .centro .texto{
+						line-height: 1.14em;
+						width: 80%;
+						display: inline-block;
+					}
+						body#servicios #servicios .mboxC .linea .bl .centro .enlace{
+							margin-top: 26px;
+						}
+							body#servicios #servicios .mboxC .linea .bl .centro .enlace input[type="button"] {
+							    padding: 11px 29px;
+							    font-family: 'Bw Modelica Bold';
+							}
+							
+			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl{
+				text-align: right;
+			}
+			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl1{
+				float: right;
+			}
+			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2{
+				float: left;
+				background-color: #ff6600;
+			}
+				body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl .centro{
+				    margin: 0 0 0 auto;
+				    position: relative;
+				    padding: 2rem 3rem 2rem 1rem;
+				}
+					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .titulo,
+					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .texto{
+						color: white;
+					}
+						body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]{
+							background-color: white;
+							color: #FF6600;
+						}
+						body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]:hover{
+							background-color: #c7c7c7;
+						}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
