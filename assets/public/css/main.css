@@ -2167,7 +2167,7 @@ footer .mboxI, footer .mboxD{
 		padding: 1px 10%;
 	}
 		body#servicios_in #servicios_main .bloque .bl {
-		    margin-left: -44px;
+		    margin-left: -42px;
 		}
 		body#servicios_in #servicios_main .bloque .bl:nth-of-type(2n) {
 		    margin-left: auto;
@@ -2175,7 +2175,7 @@ footer .mboxI, footer .mboxD{
 		}
 		body#servicios_in #servicios_main .bloque:first-child .bl {
 		    margin-left: auto;
-		    margin-right: -44px;
+		    margin-right: -42px;
 		}
 			body#servicios_in #servicios_main .bloque .bl .box {
 			    width: 96%;
