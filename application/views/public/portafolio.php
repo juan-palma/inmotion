@@ -23,7 +23,6 @@ $portafolioDB->portafolios[] = $valor;
 ?>
 <section id="portafolios" class="mboxG">
 	<div class="mboxC">
-<!-- 		<h1 class="titulos"><?php echo($portafolioDB->titulo_general); ?></h1> -->
 		<main class="">
 			<div class="slideMain">
 				<div class="slideItems">
@@ -37,7 +36,7 @@ $portafolioDB->portafolios[] = $valor;
 								<?php echo($v->titulo); ?>
 							</h2>
 							<div class="enlace">
-								<input type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
+								<input type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
 							</div>
 						</div>
 					</article>

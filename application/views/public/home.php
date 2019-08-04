@@ -28,7 +28,7 @@
 					<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 					<div class="texto"><span><?php echo($v->texto); ?></span></div>
 					<div class="enlace">
-						<input type="button" onclick="window.location.href = '<?php echo(base_url('servicios/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
+						<input type="button" onclick="window.location.href = '<?php echo(base_url('servicios/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
 					</div>
 				</article>
 				<?php
@@ -133,7 +133,7 @@ $portafolioDB->portafolios[] = $valor;
 						<?php echo($v->titulo); ?>
 					</h2>
 					<div class="enlace">
-						<input type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
+						<input type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
 					</div>
 				</article>
 				<?php

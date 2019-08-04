@@ -60,6 +60,72 @@ function db_conectE(url, datos, f, e){
 
 
 
+// habilitar boton pausa y control de video Backgroudn
+function videoControl(video, btnPlay, btPausa){
+	var vid = document.getElementById(video);
+	var playBtn = document.querySelector(btnPlay);
+	var pauseBtn = document.querySelector(btPausa);
+	
+	if (window.matchMedia('(prefers-reduced-motion)').matches) {
+		vid.removeAttribute("autoplay");
+		vid.pause();
+		playBtn.removeClass('dnone').removeClass('op0');
+		pauseBtn.addClass('dnone').addClass('op0');
+		//pauseBtn.innerHTML = "Paused";
+	}
+	
+	function vidFade() {
+		vid.classList.add("stopfade");
+	}
+	
+	vid.addEventListener('ended', function(){
+		// only functional if "loop" is removed 
+		vid.pause();
+		// to capture IE10
+		vidFade();
+	});
+	
+	
+	function vidAction(){
+		console.info('click');
+		vid.classList.toggle("stopfade");
+		if (vid.paused) {
+			vid.play();
+			playBtn.addClass('op0');
+			(function(){
+				playBtn.addClass('dnone');
+			}).delay(100);
+			pauseBtn.removeClass('dnone').removeClass('op0');
+		} else {
+			vid.pause();
+			pauseBtn.addClass('op0');
+			(function(){
+				pauseBtn.addClass('dnone');
+			}).delay(100);
+			playBtn.removeClass('dnone').removeClass('op0');
+		}
+	}
+	
+	
+	playBtn.addEventListener("click", vidAction);
+	pauseBtn.addEventListener("click", vidAction);
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,7 +202,10 @@ function header_run(){
 	function menuActive(){
 		if(idagl.menu === 'off'){
 			idagl.menu = 'on';
-			menu.removeClass('dnone').addClass('activo');
+			menu.removeClass('dnone');
+			(function(){
+				menu.addClass('activo');
+			}).delay(10);
 		} else{
 			idagl.menu = 'off';
 			menu.removeClass('activo');
@@ -198,38 +267,96 @@ function portafolio_inicio(){
 //::::::::::::::::::::::::
 // ***** Servicios *****//
 function servicio_inicio(){
-	var vid = document.getElementById("bgvid");
-	var pauseButton = document.querySelector("#servicios .btnPlayPause");
+	videoControl("bgvid", "#servicios .btnPlay",  "#servicios .btnPlayPause");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//::::::::::::::::::::::::
+// ***** Portafolio Interior *****//
+function portafolio_in_inicio(){
+	videoControl("bgvid", "#portafolio_video .btnPlay", "#portafolio_video .btnPlayPause");
 	
-	if (window.matchMedia('(prefers-reduced-motion)').matches) {
-	    vid.removeAttribute("autoplay");
-	    vid.pause();
-	    pauseButton.innerHTML = "Paused";
-	}
-	
-	function vidFade() {
-	  vid.classList.add("stopfade");
-	}
-	
-	vid.addEventListener('ended', function()
-	{
-	// only functional if "loop" is removed 
-	vid.pause();
-	// to capture IE10
-	vidFade();
-	}); 
-	
-	
-	pauseButton.addEventListener("click", function() {
-	  vid.classList.toggle("stopfade");
-	  if (vid.paused) {
-	    vid.play();
-	    pauseButton.innerHTML = "Pausa";
-	  } else {
-	    vid.pause();
-	    pauseButton.innerHTML = "Pausado";
-	  }
+	var slider = tns({
+		container: '#portafolio_main .slideItems',
+		items: 3,
+		controls:true,
+		nav:false,
+		prevButton:'#portafolio_main .slideMain .btnSlideBack',
+		nextButton:'#portafolio_main .slideMain .btnSlideNext',
+		responsive: {
+			825: {
+				items: 3
+			}
+		}
 	});
+
+	var resizeTimer;
+	window.addEventListener('resize', function () {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function () {
+			slider.refresh();
+		}, 100);
+	});
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//::::::::::::::::::::::::
+// ***** Servicios Interior *****//
+function servicios_in_inicio(){
+	videoControl("bgvid", "#servicios_video .btnPlay", "#servicios_video .btnPlayPause");
+	
+/*
+	var slider = tns({
+		container: '#portafolio_main .slideItems',
+		items: 3,
+		controls:true,
+		nav:false,
+		prevButton:'#portafolio_main .slideMain .btnSlideBack',
+		nextButton:'#portafolio_main .slideMain .btnSlideNext',
+		responsive: {
+			825: {
+				items: 3
+			}
+		}
+	});
+
+	var resizeTimer;
+	window.addEventListener('resize', function () {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function () {
+			slider.refresh();
+		}, 100);
+	});
+*/
+	
 }
 
 
@@ -435,6 +562,14 @@ window.addEvent('domready', function(){
 				
 				case 'servicios':
 					servicio_inicio();
+				break;
+				
+				case 'portafolio_in':
+					portafolio_in_inicio();
+				break;
+				
+				case 'servicios_in':
+					servicios_in_inicio();
 				break;
 			}
 		}

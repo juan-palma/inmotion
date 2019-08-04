@@ -285,7 +285,12 @@ footer a{
 .noMargin{
 	height: 1px;
 }
-
+.dnone{
+	display: none !important;
+}
+.op0{
+	opacity: 0 !important;
+}
 
 
 
@@ -420,7 +425,79 @@ input[type="button"]:hover{
 	   opacity: .5;
 	}
 
+	.video video{
+		position: absolute;
+		min-height: calc(60vh);
+	}
+	
+.video .centro{
+	position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+	.video .centro .centrado{
+		left: 90px;
+		position: relative;
+	}
 
+.video .btnPlay{
+	display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 58px;
+    color: white;
+    cursor: pointer;
+    
+    -webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+.video .btnPlay:hover{
+	font-size: 84px;
+}
+
+.video .btnPlayPause{
+	width: 89px;
+	position: absolute;
+    margin: 0 auto;
+    bottom: 0px;
+    padding: 6px 20px;
+    font-family: 'Bw Modelica Bold';
+    color: #aaaaaa;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 999;
+    
+    -webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.video .btnPlayPause:hover{
+	color: white;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.video h2{
+	color: white;
+	font-size: 122%;
+	letter-spacing: 3px;
+	font-family: 'Bw Modelica Light';
+	text-align: left;
+	padding: 0px 3rem;
+	margin-bottom: -2rem;
+}
+.video h1.titulos{
+	font-size: 200%;
+	letter-spacing: 12px;
+	position: relative;
+}
 
 
 
@@ -455,9 +532,7 @@ input[type="button"]:hover{
 	opacity: 0.94;
 	transform: scale(1);
 }
-.dnone{
-	display: none;
-}
+
 	#menuItemClose{
 		width: 90px;
 	    height: auto;
@@ -987,14 +1062,6 @@ body#servicios #primaryContainer .redes{
 body#servicios #servicios{
 	
 }
-	body#servicios #servicios .video{
-	    height: calc(60vh);
-	}
-		body#servicios #servicios .video video{
-			position: absolute;
-			min-height: calc(60vh);
-		}
-
 	body#servicios #servicios .mboxC{
 		width: calc(100vw);
 		min-height: calc(100vh);
@@ -1003,121 +1070,371 @@ body#servicios #servicios{
 		color: #333;
 		left: 0px;
 	}
-	body#servicios #servicios .mboxC .video .centro{
-		position: relative;
-	    height: 100%;
-	    display: flex;
-	    align-items: center;
+	
+	body#servicios #servicios .mboxC .linea{
+		display: block;
+		width: 100%;
 	}
-	body#servicios #servicios .mboxC .video .btnPlayPause{
-		position: absolute;
-	    margin: 0 auto;
-	    left: 50%;
-	    transform: translateX(-50%);
-	    bottom: 0px;
-	    padding: 6px 20px;
-	    font-family: 'Bw Modelica Bold';
-	    cursor: pointer;
-	    
-	    -webkit-transition: all 0.2s ease-in-out;
-		-moz-transition: all 0.2s ease-in-out;
-		-o-transition: all 0.2s ease-in-out;
-		-ms-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
-	}
-	body#servicios #servicios .mboxC .video .btnPlayPause:hover{
-		color: white;
-	}
-	body#servicios #servicios .mboxC .video h1.titulos{
-		font-size: 200%;
-	    letter-spacing: 12px;
-	    position: relative;
-	    left: 90px;
-	}
-		body#servicios #servicios .mboxC .linea{
-			display: block;
-			width: 100%;
+		body#servicios #servicios .mboxC .linea .bl{
+			width: calc(50vw);
+			height: calc(50vw);
+			float: left;
+			display: flex;
+		    align-items: center;
+		    text-align: left;
 		}
-			body#servicios #servicios .mboxC .linea .bl{
-				width: calc(50vw);
-				height: calc(50vw);
-				float: left;
-				display: flex;
+		body#servicios #servicios .mboxC .linea .bl1{
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		body#servicios #servicios .mboxC .linea .bl2{
+			background-color: white;
+		}
+			body#servicios #servicios .mboxC .linea .bl .centro{
+				width: calc(100% - 90px);
+			    vertical-align: middle;
+			    display: inline-block;
+			    margin: 0 auto 0 0;
+			    position: relative;
+			    padding: 2rem 1rem 2rem 3rem;
+			}
+				body#servicios #servicios .mboxC .linea .bl .centro .icono{
+					width: 50%;
+					max-width: 250px;
+					display: inline-block;
+				}
+					body#servicios #servicios .mboxC .linea .bl .centro .icono img{
+						width: 100%;
+						height: auto;
+						mix-blend-mode: multiply;
+					}
+				body#servicios #servicios .mboxC .linea .bl .centro .titulo{
+					letter-spacing: 4px;
+				    font-size: 1.7rem;
+				    line-height: 1.24em;
+				    color: #ff6600;
+				    margin: 1rem 0px 0.5rem;
+				}
+				body#servicios #servicios .mboxC .linea .bl .centro .texto{
+					line-height: 1.14em;
+					width: 80%;
+					display: inline-block;
+				}
+					body#servicios #servicios .mboxC .linea .bl .centro .enlace{
+						margin-top: 26px;
+					}
+						body#servicios #servicios .mboxC .linea .bl .centro .enlace input[type="button"] {
+						    padding: 11px 29px;
+						    font-family: 'Bw Modelica Bold';
+						}
+						
+		body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl{
+			text-align: right;
+		}
+		body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl1{
+			float: right;
+		}
+		body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2{
+			float: left;
+			background-color: #ff6600;
+		}
+			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl .centro{
+			    margin: 0 0 0 auto;
+			    position: relative;
+			    padding: 2rem 3rem 2rem 1rem;
+			}
+				body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .titulo,
+				body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .texto{
+					color: white;
+				}
+					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]{
+						background-color: white;
+						color: #FF6600;
+					}
+					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]:hover{
+						background-color: #c7c7c7;
+					}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Portafolio - Interno -- */
+body#portafolio_in #primaryContainer .redes{
+	display: none;
+}
+body#portafolio_in #portafolio_video{
+	
+}
+	body#portafolio_in #portafolio_video .mboxC{
+		width: calc(100vw);
+		min-height: inherit;
+		padding: 0px;
+		text-align: center;
+		color: #333;
+		left: 0px;
+	}
+	
+		
+body#portafolio_in #portafolio_main{
+	overflow: inherit;
+}
+body#portafolio_in #portafolio_main .mboxC{
+	width: calc(100vw);
+	min-height: inherit;
+	padding: 0px;
+	text-align: center;
+	color: #333;
+	left: 0px;
+}
+	body#portafolio_in #portafolio_main .mboxC article{
+		width: 100%;
+		height: auto;
+	}
+	body#portafolio_in #portafolio_main .bloque{
+		padding: 1px 90px 40px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+	
+	body#portafolio_in #portafolio_main .bloque .bl{
+		text-align: left;
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	body#portafolio_in #portafolio_main .bloque .bl:nth-of-type(2n){
+		text-align: right
+	}
+	body#portafolio_in #portafolio_main .bloque .bl.v1{
+		margin-top: -80px;
+	}
+		body#portafolio_in #portafolio_main .bloque .bl .box{
+			background-color: white;
+			display: inline-block;
+			padding: 3rem;
+			width: 45%;
+			left: 0px;
+		}
+			body#portafolio_in #portafolio_main .bloque .bl .box .titulo{
+				font-family: 'Bw Modelica Bold';
+				color: #ff6600;
+				font-size: 160%;
+				letter-spacing: 3px;
+				line-height: 1.1em;
+				margin-bottom: 1.8rem;
+			}
+	body#portafolio_in #portafolio_main .bloque:first-child .bl{
+		text-align: right;
+		margin-top: 0px;
+		margin-bottom: 125px;
+	}
+		body#portafolio_in #portafolio_main .bloque:first-child .bl .box{
+			margin-top: -50px;
+		}
+	
+	
+	body#portafolio_in #portafolio_main .bloque.informes{
+		padding: 0px 90px;
+	}
+		body#portafolio_in #portafolio_main .bloqueInformes{
+			position: relative;
+			background-size: cover;
+			padding: 3em 0px;
+			background: #ff6600;
+			color: white;
+		}
+			body#portafolio_in #portafolio_main .bloqueInformes .row{
+				padding: 0px 14px;
+				text-align: center;
+			}
+				body#portafolio_in #portafolio_main .bloqueInformes .row .icono{
+					width: 100%;
+					text-align: center;
+				}
+					body#portafolio_in #portafolio_main .bloqueInformes .row .icono img{
+						width: 84%;
+						height: auto;
+						margin: 0 auto;
+					}
+				body#portafolio_in #portafolio_main .bloqueInformes .row .titulo{
+					width: 100%;
+				    text-align: center;
+				    font-family: 'Bw Modelica Bold';
+				    font-size: 2rem;
+				    color: #fff;
+				    height: 80px;
+				    letter-spacing: px;
+				    margin: 0px;
+					height: auto;
+				}
+				body#portafolio_in #portafolio_main .bloqueInformes .row .texto{
+					text-align: center;
+					height: auto;
+					display: inline-block;
+					margin-top: 14px;
+					line-height: 1.2em;
+					font-size: 84%;
+				}
+					body#portafolio_in #portafolio_main .bloqueInformes .row .texto span{
+						align-self:center;
+					}
+	body#portafolio_in #portafolio_main .slideMain{
+		position: relative;
+	}
+		body#portafolio_in #portafolio_main .slideMain .mboxD_in{
+			height: auto;
+		    top: auto;
+		    bottom: 0px;
+		}
+			body#portafolio_in #portafolio_main .slideMain .logo{
+			    height: 219px;
+			    display: inline-flex !important;
+			    text-align: center;
+			    position: relative;
+			    background-position: center center;
+			    background-repeat: no-repeat;
+			    background-size: cover;
 			    align-items: center;
-			    text-align: left;
 			}
-			body#servicios #servicios .mboxC .linea .bl1{
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
-			body#servicios #servicios .mboxC .linea .bl2{
-				background-color: white;
-			}
-				body#servicios #servicios .mboxC .linea .bl .centro{
-					width: calc(100% - 90px);
-				    vertical-align: middle;
-				    display: inline-block;
-				    margin: 0 auto 0 0;
-				    position: relative;
-				    padding: 2rem 1rem 2rem 3rem;
+				body#portafolio_in #portafolio_main .slideMain .logo:before{
+					content: '';
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					display: block;
+					left: 0;
+					top: 0px;
+					background-color: rgba(0, 0, 0, 0.8);
 				}
-					body#servicios #servicios .mboxC .linea .bl .centro .icono{
-						width: 50%;
-						max-width: 250px;
-						display: inline-block;
-					}
-						body#servicios #servicios .mboxC .linea .bl .centro .icono img{
-							width: 100%;
-							height: auto;
-							mix-blend-mode: multiply;
-						}
-					body#servicios #servicios .mboxC .linea .bl .centro .titulo{
-						letter-spacing: 4px;
-					    font-size: 1.7rem;
-					    line-height: 1.24em;
-					    color: #ff6600;
-					    margin: 1rem 0px 0.5rem;
-					}
-					body#servicios #servicios .mboxC .linea .bl .centro .texto{
-						line-height: 1.14em;
-						width: 80%;
-						display: inline-block;
-					}
-						body#servicios #servicios .mboxC .linea .bl .centro .enlace{
-							margin-top: 26px;
-						}
-							body#servicios #servicios .mboxC .linea .bl .centro .enlace input[type="button"] {
-							    padding: 11px 29px;
-							    font-family: 'Bw Modelica Bold';
-							}
-							
-			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl{
-				text-align: right;
-			}
-			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl1{
-				float: right;
-			}
-			body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2{
-				float: left;
-				background-color: #ff6600;
-			}
-				body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl .centro{
-				    margin: 0 0 0 auto;
-				    position: relative;
-				    padding: 2rem 3rem 2rem 1rem;
+				body#portafolio_in #portafolio_main .slideMain .logo img{
+					width: 42%;
+					margin: 0 auto;
+					z-index: 10;
 				}
-					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .titulo,
-					body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .texto{
-						color: white;
-					}
-						body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]{
-							background-color: white;
-							color: #FF6600;
-						}
-						body#servicios #servicios .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]:hover{
-							background-color: #c7c7c7;
-						}
+			body#portafolio_in #portafolio_main .btnSlideBack, body#portafolio_in #portafolio_main .btnSlideNext{
+				width: 100%;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Servicios - Interno -- */
+body#servicios_in #primaryContainer .redes{
+	display: none;
+}
+body#servicios_in #servicios_video{
+	
+}
+	body#servicios_in #servicios_video .mboxC{
+		width: calc(100vw);
+		min-height: inherit;
+		padding: 0px;
+		text-align: center;
+		color: #333;
+		left: 0px;
+	}
+	
+body#servicios_in #servicios_main{
+	overflow: inherit;
+}
+body#servicios_in #servicios_main .mboxC{
+	width: calc(100vw);
+	min-height: inherit;
+	padding: 0px;
+	text-align: center;
+	color: #333;
+	left: 0px;
+}
+	body#servicios_in #servicios_main .mboxC article{
+		width: 100%;
+		height: auto;
+	}
+	body#servicios_in #servicios_main .bloque{
+		padding: 1px 90px 40px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+	body#servicios_in #servicios_main .bloque:before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		background-color: rgba(0, 0, 0, 0.45);
+	}
+	
+	body#servicios_in #servicios_main .bloque .bl{
+		text-align: left;
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	body#servicios_in #servicios_main .bloque .bl:nth-of-type(2n){
+		text-align: right;
+	}
+	body#servicios_in #servicios_main .bloque .bl.v1{
+		margin-top: -80px;
+	}
+		body#servicios_in #servicios_main .bloque .bl .box{
+			background-color: white;
+			display: inline-block;
+			padding: 3rem;
+			width: 45%;
+			left: 0px;
+		}
+			body#servicios_in #servicios_main .bloque .bl .box .titulo{
+				font-family: 'Bw Modelica Bold';
+				color: #ff6600;
+				font-size: 160%;
+				letter-spacing: 3px;
+				line-height: 1.1em;
+				margin-bottom: 1.8rem;
+			}
+	
+	body#servicios_in #servicios_main .bloque:first-child{
+		background-color: #ff6600;
+		background-size: auto 66%;
+		background-blend-mode: multiply;
+	}
+	body#servicios_in #servicios_main .bloque:first-child:before{
+		display: none;
+	}
+		body#servicios_in #servicios_main .bloque:first-child .bl{
+			text-align: right;
+			margin-top: 0px;
+			margin-bottom: 244px;
+		}
+			body#servicios_in #servicios_main .bloque:first-child .bl .box{
+				margin-top: -110px;
+			}
+
+
+
+
+
+
 
 
 
@@ -1195,7 +1512,17 @@ footer .mboxC.footer1{
 				    display: block;
 				    font-size: 110%;
 				    line-height: 1.3em;
+				    padding: 1px 0px;
 				}
+					footer .geo_point{
+						padding: 2rem 0px;
+						text-align: center;
+						margin-top: 1em;
+					}
+						footer .geo_point img{
+							width: 35%;
+							margin: 0 auto;
+						}
 				footer .mboxC.footer1 .ubicacion{
 					display: block;
 				    position: absolute;

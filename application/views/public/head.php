@@ -112,15 +112,15 @@ $headerDB->redes[] = $valor;
 				
 			<div class="boxCentro">
 				<div class="boxCentrado">
-					<div class="menuHi"><a href="<?php echo(base_url('servicios/') ); ?>">SERVICIOS</a></div><br />
+					<div class="menuHi"><a href="<?php echo(base_url('servicios') ); ?>">SERVICIOS</a></div><br />
 					<?php
 					foreach ($serviciosDB->servicios as $i=>$v) {
 						?>
-						<div class="menuLow"><a href="<?php echo(base_url('servicios/'.url_title($v->enlace) )); ?>"><?php echo($v->titulo); ?></a></div><br />
+						<div class="menuLow"><a href="<?php echo(base_url('servicios/articulo/'.url_title($v->enlace) )); ?>"><?php echo($v->titulo); ?></a></div><br />
 						<?php
 					}
 					?>
-					<div id="menuPortafolio" class="menuHi"><a href="<?php echo(base_url('portafolio/') ); ?>">PORTAFOLIO</a></div><br />
+					<div id="menuPortafolio" class="menuHi"><a href="<?php echo(base_url('portafolio') ); ?>">PORTAFOLIO</a></div><br />
 				</div>
 			</div>
 		</div>
