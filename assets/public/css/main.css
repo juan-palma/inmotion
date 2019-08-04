@@ -2167,15 +2167,15 @@ footer .mboxI, footer .mboxD{
 		padding: 1px 10%;
 	}
 		body#servicios_in #servicios_main .bloque .bl {
-		    margin-left: -40px;
+		    margin-left: -44px;
 		}
 		body#servicios_in #servicios_main .bloque .bl:nth-of-type(2n) {
 		    margin-left: auto;
-		    margin-right: -40px;
+		    margin-right: -44px;
 		}
 		body#servicios_in #servicios_main .bloque:first-child .bl {
 		    margin-left: auto;
-		    margin-right: -40px;
+		    margin-right: -44px;
 		}
 			body#servicios_in #servicios_main .bloque .bl .box {
 			    width: 96%;
@@ -2193,15 +2193,15 @@ footer .mboxI, footer .mboxD{
 		padding: 1px 10%;
 	}
 		body#portafolio_in #portafolio_main .bloque .bl {
-		    margin-left: -40px;
+		    margin-left: -42px;
 		}
 		body#portafolio_in #portafolio_main .bloque .bl:nth-of-type(2n) {
 		    margin-left: auto;
-		    margin-right: -40px;
+		    margin-right: -42px;
 		}
 		body#portafolio_in #portafolio_main .bloque:first-child .bl {
 		    margin-left: auto;
-		    margin-right: -40px;
+		    margin-right: -42px;
 		}
 			body#portafolio_in #portafolio_main .bloque .bl .box {
 			    width: 96%;
