@@ -87,7 +87,6 @@ function videoControl(video, btnPlay, btPausa){
 	
 	
 	function vidAction(){
-		console.info('click');
 		vid.classList.toggle("stopfade");
 		if (vid.paused) {
 			vid.play();
@@ -139,16 +138,16 @@ function home_inicio(){
 		items: 2,
 		axis:'vertical',
 		nav:false,
+		speed: 300,
+		controls:false,
 		prevButton:'#clientes .slideMain .btnSlideBack',
 		nextButton:'#clientes .slideMain .btnSlideNext',
 		responsive: {
-			640: {
+			780: {
 				edgePadding: 20,
-				gutter: 0,
-				items: 2
-			},
-			700: {
-				gutter: 0
+				items: 1,
+				controls:true,
+				autoplay: false
 			},
 			900: {
 				items: 2
@@ -158,12 +157,17 @@ function home_inicio(){
 	
 	var sliderNosotros = tns({
 		container: '#nosotros .slideItems',
-		items: 2,
+		items: 1,
 		nav:false,
+		speed: 300,
 		prevButton:'#nosotros .slideMain .btnSlideBack',
 		nextButton:'#nosotros .slideMain .btnSlideNext',
 		responsive: {
-			825: {
+			780: {
+				items: 2,
+				autoplay:false
+			},
+			1023: {
 				items: 4
 			}
 		}
@@ -237,7 +241,16 @@ function portafolio_inicio(){
 		items: 1,
 		controls:false,
 		nav:true,
-		navContainer:'#portafolios .mboxD_in #navSlide .centro'
+		speed: 300,
+		navContainer:'#portafolios .mboxD_in #navSlide .centro',
+		autoHeight: true,
+		disable:true,
+		responsive: {
+			780: {
+				item: 1,
+				disable:false
+			}
+		}
 	});
 	
 
@@ -245,7 +258,10 @@ function portafolio_inicio(){
 	window.addEventListener('resize', function () {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function () {
-			slider.refresh();
+			var activo = slider.getInfo();
+			if(activo.sheet.disabled = false){
+				slider.refresh();
+			}
 		}, 100);
 	});
 
@@ -292,14 +308,17 @@ function portafolio_in_inicio(){
 	
 	var slider = tns({
 		container: '#portafolio_main .slideItems',
-		items: 3,
+		items: 2,
 		controls:true,
 		nav:false,
+		autoplay: true,
+		"autoplayText": ["▶", "❚❚" ],
 		prevButton:'#portafolio_main .slideMain .btnSlideBack',
 		nextButton:'#portafolio_main .slideMain .btnSlideNext',
 		responsive: {
 			825: {
-				items: 3
+				items: 3,
+				autoplay: false
 			}
 		}
 	});

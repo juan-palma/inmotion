@@ -74,7 +74,7 @@ $data_servicio_mensaje  =  array (
 					<div class="box">
 						<div class="linea1 row">
 							<div class="col-md-4">
-								<h3 class="titulo">&nbsp;</h3>
+								<h3 class="titulo noMobile">&nbsp;</h3>
 								<dir class="direccion">
 									<?php echo($footerDB->direccion); ?>
 								</dir>
@@ -86,12 +86,12 @@ $data_servicio_mensaje  =  array (
 								<?php echo form_input( $data_footer_tel ); ?>
 							</div>
 							<div class="col-md-4">
-								<h3 class="titulo">&nbsp;</h3>
+								<h3 class="titulo noMobile">&nbsp;</h3>
 								<?php echo form_input( $data_footer_mail ); ?>
 								<?php echo form_textarea( $data_servicio_mensaje ); ?>
 							</div>
 							<div class="mboxI_in geo_point">
-								<h3 class="titulo">&nbsp;</h3>
+								<h3 class="titulo noMobile">&nbsp;</h3>
 								<img src="<?php echo(base_url('assets/public/img/geo_point.svg')); ?>" />
 							</div>
 						</div>

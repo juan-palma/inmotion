@@ -156,7 +156,7 @@ $nosotrosDB->team = [];
 
 $valor = new stdClass();
 $valor->foto = 'hombre1.jpg';
-$valor->color = '#7fcbb3';
+$valor->color = '#a1c6b4';
 $valor->nombre = 'Hombre';
 $valor->apellido = 'Uno';
 $valor->cargo = 'Puesto';
