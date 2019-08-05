@@ -1769,6 +1769,9 @@ footer .mboxI, footer .mboxD{
 	    line-height: 1.25em;
 	    font-size: 90%;
 	}
+	body#home #portafolios .mboxC article {
+	    background-attachment: inherit;
+	}
 	
 	
 /* 	FOOTER */
@@ -1852,9 +1855,6 @@ footer .mboxI, footer .mboxD{
 	    position: relative;
 	    margin-top: 96px;
 	    margin-left: 11%;
-	}
-	body#home #portafolios .mboxC article{
-		background-attachment: inherit;
 	}
 }
 
