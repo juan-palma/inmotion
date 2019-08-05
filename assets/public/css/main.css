@@ -1853,6 +1853,9 @@ footer .mboxI, footer .mboxD{
 	    margin-top: 96px;
 	    margin-left: 11%;
 	}
+	body#home #portafolios .mboxC article{
+		background-attachment: inherit;
+	}
 }
 
 
@@ -1865,6 +1868,12 @@ footer .mboxI, footer .mboxD{
 
 @media (max-width: 780px){
 /* 	GENERAL */
+	body#home {
+		background: url(../img/body_fondo.jpg) repeat-y center top;
+		background-size: auto;
+		background-attachment: initial;
+	}
+
 	.mboxC {
 	    width: calc(100vw);
 	    height: auto;
@@ -1992,13 +2001,14 @@ footer .mboxI, footer .mboxD{
 		}
 	body#home #portafolios .mboxC article {
 	    width: calc(100vw);
-	    padding: 7rem 4rem;
+	    padding: 7rem 2rem;
 	    margin-left: 0px;
 	    overflow: hidden;
 	    align-items: center;
 	}
 	body#home #nosotros main .slideMain .item {
 	    height: 400px;
+	    font-size: 1.8rem;
 	}
 	body#home #nosotros main .slideMain .item .persona .nombre {
 	    font-size: 8.5vw;
@@ -2250,6 +2260,7 @@ footer .mboxI, footer .mboxD{
 		right: auto;
 		position: relative;
 		margin-top: -24px;
+		border: 0px none transparent;
 	}
 	footer .mboxC.footer1 .mboxD_in #footerBtnEnviar {
 		padding: 1rem;
