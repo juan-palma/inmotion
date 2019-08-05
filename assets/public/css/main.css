@@ -2008,7 +2008,6 @@ footer .mboxI, footer .mboxD{
 	}
 	body#home #nosotros main .slideMain .item {
 	    height: 400px;
-	    font-size: 1.8rem;
 	}
 	body#home #nosotros main .slideMain .item .persona .nombre {
 	    font-size: 8.5vw;
@@ -2169,6 +2168,9 @@ footer .mboxI, footer .mboxD{
 /* 	HOME */
 	body#home #servicios main article .titulo {
 	    font-size: 2rem;
+	}
+	body#home #portafolios .mboxC article .titulo{
+		font-size: 1.8rem;
 	}
 	
 	
