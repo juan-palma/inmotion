@@ -291,8 +291,21 @@ footer a{
 .op0{
 	opacity: 0 !important;
 }
-
-
+.fLight{
+	font-family: 'Bw Modelica Light';
+}
+.fRegular{
+	font-family: 'Bw Modelica Regular';
+}
+.fBold{
+	font-family: 'Bw Modelica Bold';
+}
+.fBlack{
+	font-family: 'Bw Modelica Black';
+}
+.cNaranja{
+	color: #ff6600;
+}
 
 
 
@@ -367,7 +380,7 @@ div, span, img, ul, footer, nav{
 		padding: 2rem 3rem;
 		text-align: center;
 		color: white;
-		font-family: 'Bw Modelica Bold', 'Monserrat', Arial, sans-serif;
+		font-family: 'Bw Modelica Black', 'Monserrat', Arial, sans-serif;
 		letter-spacing: 30px;
 		font-size: 2.5rem;
 		line-height: 1em;

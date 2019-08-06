@@ -1,12 +1,14 @@
 <?php
 $servicios_inDB = new stdClass();
-$servicios_inDB->titulo_general = 'TOYOTA';
+$servicios_inDB->titulo_general = 'EVENTS';
 
 //Video Head
 $servicios_inDB->video = new stdClass();
-$servicios_inDB->video->poster = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
+$servicios_inDB->video->poster = base_url('assets/public/img/servicios/servicios_in_nombreevento_video_portada.jpg');
+/*
 $servicios_inDB->video->webm = 'http://thenewcode.com/assets/videos/polina.webm';
 $servicios_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
+*/
 
 $servicios_inDB->contenido = new stdClass();
 
@@ -18,8 +20,8 @@ $valor = new stdClass();
 $valor->fondo = 'servicios_arte_fondo.svg';
 $valor->valores = [];
 	$vin = new stdClass();
-	$vin->titulo = 'CONFERENCIA DE PRENSA TOYOTA-LA LIGA';
-	$vin->texto = 'TEXTO_BLOQUE_1';
+	$vin->titulo = '<span class="fLight">EXPERIENTAL</span><br />MARKETING';
+	$vin->texto = 'Sabemos que hoy no es suficiente llevar el mensaje al consumidor si no envolverlo en una experiencia única y memorable: experiential marketing.';
 	$valor->valores[] = $vin;
 $servicios_inDB->contenido->bloques[] = $valor;
 
@@ -28,14 +30,16 @@ $valor = new stdClass();
 $valor->fondo = 'servicios_bl2.jpg';
 $valor->valores = [];
 	$vin = new stdClass();
-	$vin->titulo = 'DISEÑO';
-	$vin->texto = 'TEXTO_BLOQUE_1';
+	$vin->titulo = 'SERVICIOS';
+	$vin->texto = 'Cada marca tiene necesidades diferentes y nuestro método nos permite reaccionar a cada caso de forma dinámica.';
 	$valor->valores[] = $vin;
 	
+/*
 	$vin = new stdClass();
 	$vin->titulo = 'PRODUCCIÓN';
 	$vin->texto = 'TEXTO_BLOQUE_2';
 	$valor->valores[] = $vin;
+*/
 $servicios_inDB->contenido->bloques[] = $valor;
 
 

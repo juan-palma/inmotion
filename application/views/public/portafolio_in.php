@@ -4,9 +4,11 @@ $portafolio_inDB->titulo_general = 'TOYOTA';
 
 //Video Head
 $portafolio_inDB->video = new stdClass();
-$portafolio_inDB->video->poster = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
+$portafolio_inDB->video->poster = base_url('assets/public/img/portafolios/porta_in_nombreevento_video_portada.jpg');
+/*
 $portafolio_inDB->video->webm = 'http://thenewcode.com/assets/videos/polina.webm';
 $portafolio_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
+*/
 
 $portafolio_inDB->contenido = new stdClass();
 
@@ -18,8 +20,8 @@ $valor = new stdClass();
 $valor->fondo = 'toyota_fondo_bl1.jpg';
 $valor->valores = [];
 	$vin = new stdClass();
-	$vin->titulo = 'CONFERENCIA DE PRENSA TOYOTA-LA LIGA';
-	$vin->texto = 'TEXTO_BLOQUE_1';
+	$vin->titulo = '<span class="fLight">CONFERENCIA DE PRENSA</span><br />TOYOTA-LA LIGA';
+	$vin->texto = '<span class="cNaranja">TOYOTA</span> en conjunto con <span class="cNaranja">LALIGA</span>, dieron una conferencia de presa donde develar sus autos: RAV4 y CAMRY HÍDRIDO. Se dieron ciertas figuras importantes del fútbol para hablar  de los que viene en temas deportivos.';
 	$valor->valores[] = $vin;
 $portafolio_inDB->contenido->bloques[] = $valor;
 
@@ -29,12 +31,12 @@ $valor->fondo = 'toyota_fondo_bl2.jpg';
 $valor->valores = [];
 	$vin = new stdClass();
 	$vin->titulo = 'DISEÑO';
-	$vin->texto = 'TEXTO_BLOQUE_1';
+	$vin->texto = 'Diseñamos la experiencia integral para el evento desde layout, hasta los pequeños detalles.';
 	$valor->valores[] = $vin;
 	
 	$vin = new stdClass();
 	$vin->titulo = 'PRODUCCIÓN';
-	$vin->texto = 'TEXTO_BLOQUE_2';
+	$vin->texto = 'Diseñamos la experiencia integral para el evento desde layout, hasta los pequeños detalles.';
 	$valor->valores[] = $vin;
 $portafolio_inDB->contenido->bloques[] = $valor;
 

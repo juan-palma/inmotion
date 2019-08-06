@@ -3,7 +3,7 @@ $portafolio_inDB = new stdClass();
 
 //Video Head
 $portafolio_inDB->video = new stdClass();
-$portafolio_inDB->video->poster = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
+$portafolio_inDB->video->poster = base_url('assets/public/img/servicios/servicios_genera_video_portada.jpg');//'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
 /*
 $portafolio_inDB->video->webm = 'http://thenewcode.com/assets/videos/polina.webm';
 $portafolio_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
