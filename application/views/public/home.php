@@ -23,7 +23,7 @@
 				?>
 				<article class="col-12 col-sm-6 col-md-3">
 					<div class="icono">
-						<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->foto) ); ?>" alt="servicio_icono_<?php echo($i); ?>" />
+						<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->icono) ); ?>" alt="servicio_icono_<?php echo($i); ?>" />
 					</div>
 					<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 					<div class="texto"><span><?php echo($v->texto); ?></span></div>

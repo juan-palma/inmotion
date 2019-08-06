@@ -4,8 +4,10 @@ $portafolio_inDB = new stdClass();
 //Video Head
 $portafolio_inDB->video = new stdClass();
 $portafolio_inDB->video->poster = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
+/*
 $portafolio_inDB->video->webm = 'http://thenewcode.com/assets/videos/polina.webm';
 $portafolio_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
+*/
 ?>
 <section id="servicios" class="mboxG">
 	<div class="mboxC">
@@ -38,13 +40,30 @@ $portafolio_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
 		<main class="row row-no-gutters">
 			<?php
 			foreach ($serviciosDB->servicios as $i=>$v) {
+				switch($v->enlace){
+					case 'events':
+						$v->fondo = 'servicio_intro_events.jpeg';
+					break;
+					case 'activation':
+						$v->fondo = 'servicio_intro_activation.jpeg';
+					break;
+					case 'marketing':
+						$v->fondo = 'servicio_intro_events.jpeg';
+					break;
+					case 'custom':
+						$v->fondo = 'servicio_intro_custom.jpeg';
+					break;
+					case 'branding':
+						$v->fondo = 'servicio_intro_branding.jpeg';
+					break;
+				}
 				?>
 				<article class="linea clearfix">
 					<div class="bl bl1" style="background-image: url(<?php echo( base_url('assets/public/img/servicios/'.@$v->fondo) ); ?>);"></div>
 					<div class="bl bl2">
 						<div class="centro">
 							<div class="icono">
-								<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->foto) ); ?>" alt="servicio_icono_<?php echo($i); ?>" />
+								<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->icono) ); ?>" alt="servicio_icono_<?php echo($i); ?>" />
 							</div>
 							<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 							<div class="texto"><span><?php echo($v->texto); ?></span></div>

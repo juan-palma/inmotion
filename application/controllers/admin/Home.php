@@ -118,6 +118,7 @@ class Home extends CI_Controller {
 			if ( ! $this->upload->do_upload('servicio'.$i.'_icono') ){
 				$todasCargaron == false;
 				$json['errores'][] = array('error' => $this->upload->display_errors());
+				$rutaImagenes[] = '';
 			} else{
 				$result = $this->upload->data();
 				$rutaImagenes[] = $result;
@@ -130,7 +131,7 @@ class Home extends CI_Controller {
 			$linea_servicios = '{"titulo_general":"'.$_POST['servicios']['titulo'].'", "servicios":[';
 			foreach ($_POST['servicios']['servicio'] as $i=>$v) {
 				if($i !== 0){ $linea_servicios .= ', '; }
-				$linea_servicios .= '{"foto":"'.$rutaImagenes[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.$v['enlace'].'"}';
+				$linea_servicios .= '{"icono":"'.@$rutaImagenes[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.$v['enlace'].'"}';
 			}
 			$linea_servicios .= ']}';
 			
