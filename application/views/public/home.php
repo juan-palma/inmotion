@@ -21,7 +21,8 @@
 			<?php
 			foreach ($serviciosDB->servicios as $i=>$v) {
 				?>
-				<article class="col-12 col-sm-6 col-md-3">
+<!-- 				<article class="col-12 col-sm-6 col-md-3"> -->
+					<article class="col-12 col-sm-6 col-md-2-5">
 					<div class="icono">
 						<img src="<?php echo( base_url('assets/public/img/servicios/'.$v->icono) ); ?>" alt="servicio_icono_<?php echo($i); ?>" />
 					</div>

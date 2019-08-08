@@ -64,39 +64,7 @@ function db_conectE(url, datos, f, e){
 
 
 //--- Seccion de FUNCIONES: _____________________________________________________________________________________
-
-// Funcion del controlador Load CSV
-function bs_input_file() {
-	$(".input-file").before(
-		function() {
-			if ( ! $(this).prev().hasClass('input-ghost') ) {
-				var element = $("<input type='file' name='FileCSV' class='input-ghost' style='visibility:hidden; height:0'>");
-				//element.attr("name",$(this).attr("name"));
-				element.change(function(){
-					element.next(element).find('input').val((element.val()).split('\\').pop());
-				});
-				$(this).find("button.btn-choose").click(function(){
-					element.click();
-				});
-				$(this).find("button.btn-reset").click(function(){
-					element.val(null);
-					$(this).parents(".input-file").find('input').val('');
-				});
-				$(this).find('input').css("cursor","pointer");
-				$(this).find('input').mousedown(function() {
-					$(this).parents('.input-file').prev().click();
-					return false;
-				});
-				return element;
-			}
-		}
-	);
-}
-
-
-
-
-
+/*
 // Funcion del controlador Carga de documentos
 function activeFalseBTN(){
 	var btns = $$('.input-file');
@@ -133,112 +101,11 @@ function activeFalseBTN(){
 		
 	});
 }
-
-
-
-
-
-
-//::::::::::::::::::::::::
-// ***** Funcio  para el proceso de los documentos de validacion *****//
-if(typeof pageActual !== 'undefined'){
-	if(pageActual !== '' && pageActual == 'validador'){
-		// ***. INICIO connstructor de motivos
-/*
-		var motivos = new Element('select', {'class':'selectMotivos', 'date-style':'btn-default btn-block', 'data-menu-style':'dropdown-blue'});
-		arrayMotivos.each(function(m){
-			var opcion = new Element('option', {'value':m.cat_resp_valor, 'text':m.cat_resp_valor});
-			motivos.adopt([opcion]);
-		});
-		
-		var boxMotivos = new Element('div', {'id':'boxMotivos', 'class':'motivos'});
-		var boxMotivosSelec = new Element('div', {'class':'motivosSelec'});
-			var btnMenos = new Element('div', {'class':'btnMenos', 'text':'-'});
-			btnMenos.addEvent('click', function(){
-				var padre = this.getParent();
-				padre.destroy();
-			});
-			boxMotivosSelec.adopt([motivos, btnMenos]);
-		var boxMotivosMas = new Element('div', {'class':'motivosMas', 'text':'Agregar Motivo: '});
-			var btnMas = new Element('div', {'class':'btnMas', 'text':'+'});
-			btnMas.addEvent('click', function(){
-				var myClone = boxMotivosSelec.clone();
-				var btnMenosC = myClone.getElement('.btnMenos');
-				btnMenosC.addEvent('click', function(){
-					var padre = this.getParent();
-					padre.destroy();
-				});
-				document.id('boxMotivos').adopt([myClone]);
-			});
-		boxMotivosMas.adopt([btnMas]);
-		boxMotivos.adopt([boxMotivosMas]);
 */
-		// ***. FIN connstructor de motivos
-		
-		
-		idagl.globaBox = document.id('box_files');
-		idagl.globaBoxCom = document.id('comentarios');
-		var gb = idagl.globaBox;
-		var gbc = idagl.globaBoxCom;
-	
-		idagl.leadActivo = {};
-		idagl.leadActivo.actual = "";
-	
-		var motivosStatus = false;
-		
-		idagl.fileActivo = {};
-		idagl.fileActivo.actual = "";
-	}
-}
 
 
-function makeMotivo(){
-	var motivos = new Element('select', {'class':'selectMotivos', 'date-style':'btn-default btn-block', 'data-menu-style':'dropdown-blue'});
-	arrayMotivos.each(function(m){
-		var opcion = new Element('option', {'value':m.cat_resp_valor, 'text':m.cat_resp_valor});
-		motivos.adopt([opcion]);
-	});
-	
-	var boxMotivos = new Element('div', {'class':'motivos'});
-	var boxMotivosSelec = new Element('div', {'class':'motivosSelec'});
-		var btnMenos = new Element('div', {'class':'btnMenos', 'text':'-'});
-		btnMenos.addEvent('click', function(){
-			var padre = this.getParent();
-			padre.destroy();
-		});
-		boxMotivosSelec.adopt([motivos, btnMenos]);
-	var boxMotivosMas = new Element('div', {'class':'motivosMas', 'text':'Agregar Motivo: '});
-		var btnMas = new Element('div', {'class':'btnMas', 'text':'+'});
-		btnMas.addEvent('click', function(){
-			var myClone = boxMotivosSelec.clone();
-			var btnMenosC = myClone.getElement('.btnMenos');
-			btnMenosC.addEvent('click', function(){
-				var padre = this.getParent();
-				padre.destroy();
-			});
-			this.getParent().getParent().adopt([myClone]);
-		});
-	boxMotivosMas.adopt([btnMas]);
-	boxMotivos.adopt([boxMotivosMas]);
-	
-	return boxMotivos;
-}
 
 
-function seguir(lead){
-	if(idagl.leadActivo.actual !== lead){
-		if(idagl.leadActivo.actual !== ""){
-			document.id(idagl.leadActivo.actual).removeClass('activo');
-		}
-		
-		document.id(lead).addClass('activo');
-		idagl.leadActivo.actual = lead;
-		
-		return true;
-	} else{
-		return false;
-	}
-}
 
 
 function cleanBox(){
@@ -247,85 +114,8 @@ function cleanBox(){
 }
 
 
-function tomarRegistros(){
-	var leads = $$('#box_listado .lead');
-	leads.each(function(l){
-		l.idago = arrayFiles[l.id];
-		l.addEvent('click', function(){
-			if(seguir(this.id)){
-				if(idagl.fileActivo.actual !== this.id){
-					cleanBox();
-					idagl.fileActivo.actual = this.id;
-					
-					
-					this.idago.comentarios.each(function(c){
-						var tr = new Element('tr');
-							var coment = new Element('td', {'text':c.com_text});
-						tr.adopt([coment]);
-						gbc.adopt([tr]);
-					});
-					
-					
-					var files = this.idago.archivos;
-					files.each(function(f, i){
-						var card = new Element('div', {'id':'file_'+f.id_archivo, 'class':'effect-milo card card-stats'});
-							var card_body = new Element('div', {'class':'card-body documento'});
-								var row = new Element('div', {'class':'row'});
-									var bl1 = new Element('div', {'class':'col-lg-5 col-sm-3 docImg'});
-										var imgURL = f.archivo_ruta +'/'+ f.archivo_nombre;
-										var imgURLFinal = imgURL;
-										if(f.archivo_extencion == '.pdf'){ imgURLFinal = '../assets/admin/img/pdf_icono.jpg'; }
-										
-										var enlace = new Element('a', {'href':imgURL, 'target':'_blank'});
-											var imagen = new Element('div', {'class':'docImagen'});
-											imagen.setStyle('background-image', 'url(' + imgURLFinal + ')');
-										enlace.adopt([imagen]);
-										
-									bl1.adopt([enlace]);
-									
-									var bl2 = new Element('div', {'class':'col-lg-7 col-sm-9 docInfo'});
-										var fcaption = new Element('figcaption');
-											var h = new Element('h4', {'text':f.archivo_formato});
-											var p = new Element('p', {'html':f.archivo_time + "<br />Peso: " + (f.archivo_peso / 1024).toFixed(2) + " MB<br />Extencion: " + f.archivo_extencion });
-											var validado = new Element('div', {'class':'box_val', 'text':'Valido: '});
-												var toggle = new Element('input', {
-													'type':'checkbox',
-													'id':'file'+i,
-													'name':'file'+i,
-													'data-toggle':'switch',
-													'data-on-color':'info',
-													'data-off-color':'info',
-													'data-on-text':'si',
-													'data-off-text':'no',
-													'value':'si'
-												});
-												//toggle.addEvent('change', checkNo);
-											validado.adopt([toggle]);
-											
-										fcaption.adopt([h, p, validado]);
-									bl2.adopt([fcaption]);
-						
-								row.adopt([bl1, bl2]);
-								
-								var motivos = new Element('div', {'class':'motivosBox'});
-								motivos.adopt([makeMotivo()]);
-								
-							card_body.adopt([row, motivos]);
-						card.adopt([card_body]);
-						gb.adopt([card]);
-						
-					})
-					if ($("[data-toggle='switch']").length != 0) {
-				        $("[data-toggle='switch']").bootstrapSwitch();
-				    }
-				    
-				}
-			}
-		});
-	});
-}
 
-
+/*
 function btnProcesar(){
 	if(idagl.leadActivo.actual === ""){
 		alert("No se ha seleccionado nada a procesar");
@@ -428,6 +218,7 @@ function btnProcesar(){
 	db_conectE(window.location.pathname+'/procesar', datos, limpiar, error );
 	
 }
+*/
 
 
 
@@ -600,19 +391,6 @@ window.addEvent('domready', function(){
 	if(typeof pageActual !== 'undefined'){
 		if(pageActual !== ''){
 			switch(pageActual){
-				case 'load_csv':
-					bs_input_file();
-				break;
-				
-				case 'cargaArchivos':
-					activeFalseBTN();
-				break;
-				
-				case 'validador':
-					tomarRegistros();
-					document.id('procesar').addEvent('click', btnProcesar);
-				break;
-				
 				case 'home':
 					home_inicio();
 				break;

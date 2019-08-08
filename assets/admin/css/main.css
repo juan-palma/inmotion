@@ -485,7 +485,42 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 
 
+
+/* ESTILOS GENERALES 2 */
+.hl1{
+	height: 55px !important;
+    padding: 14px 30px !important;
+}
+.hl2{
+	height: 110px !important;
+    padding: 14px 30px !important;
+}
+.hl3{
+	height: 165px !important;
+    padding: 14px 30px !important;
+}
+
+
+
+
+
+
+
 /* Secciones Generales */
+.card-header.block{
+	width: calc(100% + 30px);
+    margin-left: -15px;
+    background-color: rgb(0,0,0,0.92);
+    color: white;
+    margin-bottom: 10px;
+}
+	.card-header.block > h5.tituloBlock{
+		font-family: 'Anton';
+	}
+	.card-header.block > hr{
+		border: 1px dashed rgba(256,256,256,.5);
+	}
+
 .valueBox{
 	padding-bottom: 14px;
 }
@@ -512,7 +547,7 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 			}
 				.clone{
 					color: limegreen;
-					font-size: 191%;
+					font-size: 170%;
 					display: inline-block;
 				    text-align: center;
 				    vertical-align: middle;

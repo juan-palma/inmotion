@@ -803,14 +803,14 @@ body#home #servicios main{
 			width: 100%;
 		    text-align: center;
 		    font-family: 'Bw Modelica Regular';
-		    font-size: 1.55rem;
+		    font-size: 1.1rem;
 		    color: #ff6600;
 		    height: 80px;
 		    letter-spacing: 1px;
 		}
 		body#home #servicios main article .texto{
 			text-align: center;
-			height: 105px;
+			height: 94px;
 			display: grid;
 			line-height: 1.2em;
 		}
@@ -1054,7 +1054,7 @@ body#portafolio #portafolios{
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:last-child .line{
 						display: none;
 					}
-
+					
 
 
 
@@ -1739,6 +1739,34 @@ footer .mboxI, footer .mboxD{
 
 
 
+
+
+
+
+
+
+
+/* // Detalles Personalizados */
+@media (min-width: 768px){
+	.col-md-2-5{
+		flex: 20%;
+		max-width: 20%;
+	}
+}
+
+@media (min-width: 414px) and (max-width: 768px){
+	.col-md-2-5{
+		flex: 50%;
+		max-width: 50%;
+	}
+}
+
+
+
+
+
+
+
 /* Big. Desktop - estilos y puntos de quiebre para pantallas grandes */
 @media (min-width: 1200px){
 	.video{
@@ -1782,11 +1810,11 @@ footer .mboxI, footer .mboxD{
 	    padding: 0px 14px 6px;
 	}
 	body#home #servicios main article .titulo {
-	    font-size: 1.25rem;
+	    font-size: 0.9rem;
 	    height: 65px;
 	}
 	body#home #servicios main article .texto {
-	    height: 120px;
+	    height: 100px;
 	    display: inline-block;
 	    line-height: 1.25em;
 	    font-size: 90%;

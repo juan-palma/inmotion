@@ -102,7 +102,8 @@ class Home extends CI_Controller {
 		$json['errores']  = array();
 		
 		
-		//Seccion para procesar informacion de SERVICIOS.
+		// SERVICIOS
+		//::::::  Seccion para procesar informacion de SERVICIOS :::::
 		$config['upload_path']		= FCPATH.'assets/public/img/servicios';
 		$config['allowed_types']	= 'gif|jpg|png';
 		$config['max_size']			= 1024;
@@ -116,7 +117,7 @@ class Home extends CI_Controller {
 		//foreach ($_FILES['servicio'] as $i=>$v) {
 		for ($i = 0; $i < $servicios; $i++) {
 			if ( ! $this->upload->do_upload('servicio'.$i.'_icono') ){
-				$todasCargaron == false;
+				$todasCargaron = false;
 				$json['errores'][] = array('error' => $this->upload->display_errors());
 				$rutaImagenes[] = '';
 			} else{
@@ -126,7 +127,7 @@ class Home extends CI_Controller {
 			}
 		}
 		
-		if($todasCargaron == true){
+		if($todasCargaron === true){
 			//Datos de la seccion Servicios.
 			$linea_servicios = '{"titulo_general":"'.$_POST['servicios']['titulo'].'", "servicios":[';
 			foreach ($_POST['servicios']['servicio'] as $i=>$v) {
