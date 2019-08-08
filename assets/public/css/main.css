@@ -807,6 +807,7 @@ body#home #servicios main{
 		    color: #ff6600;
 		    height: 32px;
 		    letter-spacing: 1px;
+		    margin: 0px;
 		}
 		body#home #servicios main article .texto{
 			text-align: center;
@@ -818,7 +819,7 @@ body#home #servicios main{
 				align-self:center;
 			}
 		body#home #servicios main article .enlace{
-			margin-top: 24px;
+			margin-top: 14px;
 		}
 			body#home #servicios main article .enlace input{
 				
