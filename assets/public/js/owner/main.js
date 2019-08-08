@@ -245,6 +245,7 @@ function portafolio_inicio(){
 		navContainer:'#portafolios .mboxD_in #navSlide .centro',
 		autoHeight: true,
 		disable:true,
+		axis:'vertical',
 		responsive: {
 			780: {
 				item: 1,
