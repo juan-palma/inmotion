@@ -54,37 +54,46 @@
 		
 <?php
 $headerDB = new stdClass();
-$headerDB->titulo_general = 'CONTÁCTANOS';
-$headerDB->direccion = $generalDB->direccion;
-$headerDB->mail_destino = $generalDB->correo_form;
+//$headerDB->titulo_general = 'CONTÁCTANOS';
+//$headerDB->direccion = $generalDB->direccion;
+//$headerDB->mail_destino = $generalDB->correo;
 
-$valor = new stdClass();
-$valor->red = 'facebook';
-$valor->nombre = 'Mi Pagina';
-$valor->liga = $generalDB->facebook;
-$valor->icono = 'redes_facebook_blanco.svg';
-$headerDB->redes[] = $valor;
+if($generalDB->facebook !== ''){
+	$valor = new stdClass();
+	$valor->red = 'facebook';
+	$valor->nombre = 'Mi Pagina';
+	$valor->liga = $generalDB->facebook;
+	$valor->icono = 'redes_facebook_blanco.svg';
+	$headerDB->redes[] = $valor;
+}
 
-$valor = new stdClass();
-$valor->red = 'behance';
-$valor->nombre = 'Mi Portafolio';
-$valor->liga = $generalDB->behance;
-$valor->icono = 'redes_behance_blanco.svg';
-$headerDB->redes[] = $valor;
+if($generalDB->behance !== ''){
+	$valor = new stdClass();
+	$valor->red = 'behance';
+	$valor->nombre = 'Mi Portafolio';
+	$valor->liga = $generalDB->behance;
+	$valor->icono = 'redes_behance_blanco.svg';
+	$headerDB->redes[] = $valor;
+}
 
-$valor = new stdClass();
-$valor->red = 'instagram';
-$valor->nombre = 'Mi Galeria';
-$valor->liga = $generalDB->instagram;
-$valor->icono = 'redes_instagram_blanco.svg';
-$headerDB->redes[] = $valor;
+if($generalDB->instagram !== ''){
+	$valor = new stdClass();
+	$valor->red = 'instagram';
+	$valor->nombre = 'Mi Galeria';
+	$valor->liga = $generalDB->instagram;
+	$valor->icono = 'redes_instagram_blanco.svg';
+	$headerDB->redes[] = $valor;
+}
 
-$valor = new stdClass();
-$valor->red = 'linkedIn';
-$valor->nombre = 'Mi Curriculum';
-$valor->liga = $generalDB->linkedin;
-$valor->icono = 'redes_linkedin_blanco.svg';
-$headerDB->redes[] = $valor;
+if($generalDB->linkedin !== ''){
+	$valor = new stdClass();
+	$valor->red = 'linkedIn';
+	$valor->nombre = 'Mi Curriculum';
+	$valor->liga = $generalDB->linkedin;
+	$valor->icono = 'redes_linkedin_blanco.svg';
+	$headerDB->redes[] = $valor;
+}	
+	
 
 ?>
 						
