@@ -18,20 +18,21 @@
 				
 		<title><?php echo($titulo); ?> | INMOTION</title>
 		<meta name="description" content="<?php echo($desc); ?>" />
-
+	
 					
 		<meta name="dcterms.audience" content="Global" />
 		<meta name="rating" content="General" />
 		
-
+	
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		
-<!-- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+	<!-- 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
 	    <link href="<?php echo(base_url('assets/admin/css/light-bootstrap-dashboard.css?v=2.0.1')) ?>" rel="stylesheet" />
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
+		
 		<link href="<?php echo(base_url('assets/public/css/main.css')) ?>" rel="stylesheet" type="text/css">
 				
 		
@@ -54,50 +55,48 @@
 <?php
 $headerDB = new stdClass();
 $headerDB->titulo_general = 'CONTÁCTANOS';
-$headerDB->direccion = 'Monte Elbruz 132,<br />Lomas de Chapultepec, Miguel Hidalgo, CDMX, México';
-$headerDB->mail_destino = 'CONTÁCTANOS';
-$headerDB->team = [];
+$headerDB->direccion = $generalDB->direccion;
+$headerDB->mail_destino = $generalDB->correo_form;
 
 $valor = new stdClass();
 $valor->red = 'facebook';
 $valor->nombre = 'Mi Pagina';
-$valor->liga = 'https://www.facebook.com/inmotionmktg';
+$valor->liga = $generalDB->facebook;
 $valor->icono = 'redes_facebook_blanco.svg';
 $headerDB->redes[] = $valor;
 
-/*
 $valor = new stdClass();
 $valor->red = 'behance';
 $valor->nombre = 'Mi Portafolio';
-$valor->liga = 'https://behance.com';
+$valor->liga = $generalDB->behance;
 $valor->icono = 'redes_behance_blanco.svg';
 $headerDB->redes[] = $valor;
-*/
 
 $valor = new stdClass();
 $valor->red = 'instagram';
 $valor->nombre = 'Mi Galeria';
-$valor->liga = 'https://www.instagram.com/inmotionmktg';
+$valor->liga = $generalDB->instagram;
 $valor->icono = 'redes_instagram_blanco.svg';
 $headerDB->redes[] = $valor;
 
 $valor = new stdClass();
 $valor->red = 'linkedIn';
 $valor->nombre = 'Mi Curriculum';
-$valor->liga = 'https://www.linkedin.com/company/inmotion-communications';
+$valor->liga = $generalDB->linkedin;
 $valor->icono = 'redes_linkedin_blanco.svg';
 $headerDB->redes[] = $valor;
 
 ?>
 						
 	</head>
-	<body id="<?php echo($actual); ?>"  itemscope="itemscope" itemtype="http://schema.org/WebPage" class="">
+	<body id="<?php echo($actual); ?>" itemscope="itemscope" itemtype="http://schema.org/WebPage" style="background-image: url(<?php echo(base_url( 'assets/public/img/general/'.$generalDB->fondo[0]->img )); ?>)" >
 		<div id="menuItems" class="dnone">
 			<div id="menuItemClose"><i class="fas fa-times"></i></div>
 			
 			<div class="redes">
 				<?php
 					foreach ($headerDB->redes as $i=>$v) {
+						if($v->liga !== ''){
 					?>
 						<div class="red">
 							<a target="_blank" href="<?php echo($v->liga); ?>">
@@ -106,6 +105,7 @@ $headerDB->redes[] = $valor;
 							</a>
 						</div>
 					<?php
+						}
 					}
 				?>
 			</div>
@@ -135,6 +135,7 @@ $headerDB->redes[] = $valor;
 				<div class="redes">
 					<?php
 						foreach ($headerDB->redes as $i=>$v) {
+							if($v->liga !== ''){
 						?>
 							<div class="red">
 								<a target="_blank" href="<?php echo($v->liga); ?>">
@@ -143,6 +144,7 @@ $headerDB->redes[] = $valor;
 								</a>
 							</div>
 						<?php
+							}
 						}
 					?>
 				</div>

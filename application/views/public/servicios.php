@@ -1,65 +1,47 @@
-<?php
-$portafolio_inDB = new stdClass();
-
-//Video Head
-$portafolio_inDB->video = new stdClass();
-$portafolio_inDB->video->poster = base_url('assets/public/img/servicios/servicios_genera_video_portada.jpg');//'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg';
-/*
-$portafolio_inDB->video->webm = 'http://thenewcode.com/assets/videos/polina.webm';
-$portafolio_inDB->video->mp4 = 'http://thenewcode.com/assets/videos/polina.mp4';
-*/
-?>
 <section id="servicios" class="mboxG">
 	<div class="mboxC">
 		<div class="video">
-			<video class="stopfade" poster="<?php echo($portafolio_inDB->video->poster); ?>" id="bgvid" loop>
+			<div class="iframe-container">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo($serviciosDB->video_general); ?>?rel=0&controls=0&disablekb=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+<!--
+			<video class="stopfade" controls="false" id="bgvid" loop>
+			    <source src="https://www.youtube.com/embed/nzenephoM84" type="video/mp4" />
+			</video>
+-->
+<!--
+			<video class="stopfade" poster="<?php echo($serviciosDB->video->poster); ?>" id="bgvid" loop>
 				<?php
-					if(isset($portafolio_inDB->video->webm)){
+					if(isset($serviciosDB->video->webm)){
 					?>
-					<source src="<?php echo($portafolio_inDB->video->webm); ?>" type="video/webm">
+					<source src="<?php echo($serviciosDB->video->webm); ?>" type="video/webm">
 					<?php	
 					}
 				?>
 				<?php
-					if(isset($portafolio_inDB->video->mp4)){
+					if(isset($serviciosDB->video->mp4)){
 					?>
-					<source src="<?php echo($portafolio_inDB->video->mp4); ?>" type="video/mp4">
+					<source src="<?php echo($serviciosDB->video->mp4); ?>" type="video/mp4">
 					<?php	
 					}
 				?>
 			</video>
+
 			<div class="centro">
 				<div class="centrado">
 					<h1 class="titulos"><?php echo($serviciosDB->titulo_general); ?></h1>
 				</div>
 				<div class="btnPlay"><i class="far fa-play-circle"></i></div>
 				<div class="btnPlayPause dnone op0"><i class="fas fa-pause"></i></div>
-			</div>
-			
+			</div>			
+-->
 		</div>
 		<main class="row row-no-gutters">
 			<?php
 			foreach ($serviciosDB->servicios as $i=>$v) {
-				switch($v->enlace){
-					case 'events':
-						$v->fondo = 'servicio_intro_events.jpeg';
-					break;
-					case 'activation':
-						$v->fondo = 'servicio_intro_activation.jpeg';
-					break;
-					case 'marketing':
-						$v->fondo = 'servicio_intro_events.jpeg';
-					break;
-					case 'custom':
-						$v->fondo = 'servicio_intro_custom.jpeg';
-					break;
-					case 'branding':
-						$v->fondo = 'servicio_intro_branding.jpeg';
-					break;
-				}
 				?>
 				<article class="linea clearfix">
-					<div class="bl bl1" style="background-image: url(<?php echo( base_url('assets/public/img/servicios/'.@$v->fondo) ); ?>);"></div>
+					<div class="bl bl1" style="background-image: url(<?php echo( base_url('assets/public/img/servicios/'.@$v->foto) ); ?>);"></div>
 					<div class="bl bl2">
 						<div class="centro">
 							<div class="icono">

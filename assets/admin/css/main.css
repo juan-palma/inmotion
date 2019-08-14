@@ -486,7 +486,32 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ESTILOS GENERALES 2 */
+.hiden{
+	overflow: hidden;
+	display: none;
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	opacity: 0;
+}
 .hl1{
 	height: 55px !important;
     padding: 14px 30px !important;
@@ -499,6 +524,92 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 	height: 165px !important;
     padding: 14px 30px !important;
 }
+.input-lg {
+    height: 55px;
+    padding: 14px 24px !important;
+}
+a[href*="froala.com"]{
+	display: none !important;
+	position: absolute !important;
+	overflow: hidden;
+	opacity: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos de elemento plantilla */
+/* :::::  Plantilla IMG para imagenes cargadas en el panel  :::::: */
+.box_main{
+	padding-bottom: 32px;
+}
+	.box_main .contenedor{
+		display: flex;
+	}
+		.box_main .contenedor .imagen{
+			flex: 0 0 60%;
+			max-width: 60%;
+			background-color: #eee;
+			padding: 8px 13px;
+		}
+			.box_main .contenedor .imagen img{
+				width: 100%;
+				height: auto;
+			}
+			.box_main .contenedor .imagen .boxControl{
+				width: auto;
+				display: inline-block;
+				padding-top: 6px;
+			}
+				.box_main .contenedor .imagen .boxControl .imgDel{
+					font-size: 126%;
+					cursor: pointer;
+					
+					-webkit-transition: color 0.1s ease;
+					-moz-transition: color 0.1s ease;
+					-o-transition: color 0.1s ease;
+					-ms-transition: color 0.1s ease;
+					transition: color 0.1s ease;
+				}
+				.box_main .contenedor .imagen .boxControl .imgDel:hover{
+					color: red;
+				}
+		.box_main .contenedor .info{
+			flex: 0 0 40%;
+			max-width: 40%;
+			padding: 8px 0px 8px 13px;
+			font-size: 90%;
+			font-family: 'Abel';
+		}
+			.box_main .contenedor .info span{
+				font-family: 'Fjalla One';
+			}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -507,6 +618,10 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 
 /* Secciones Generales */
+.registro > .contenedor{
+	padding: 0px 2rem;
+}
+
 .card-header.block{
 	width: calc(100% + 30px);
     margin-left: -15px;
@@ -521,6 +636,9 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 		border: 1px dashed rgba(256,256,256,.5);
 	}
 
+.boxMainClone{
+	display: block;
+}
 .valueBox{
 	padding-bottom: 14px;
 }
@@ -538,7 +656,7 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 		    margin-bottom: 18px;
 		    position: relative;
 		}
-			.servicio_cloneBox{
+			.controlCloneRegistro{
 				display: inline-block;
 			    position: absolute;
 			    top: 0px;
@@ -569,6 +687,47 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 
 
+/* Estilos para la lista de registro */
+#boxListaRegistros{
+	padding: 2rem 1rem;
+    background-color: currentColor;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+	#boxListaRegistros > .contenedor{
+		color: #fc0;
+	}
+	#boxListaRegistros .col{
+		width: auto;
+	}
+
+#listaRegistros{
+	float: left;
+    margin: 8px;
+}
+#btnListaReg{
+	display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    color: black;
+    padding: 8px 2rem;
+    background-color: #fc0;
+    border-radius: 6px;
+    float: left;
+    margin-top: 4px;
+    cursor: pointer;
+    
+    -webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#btnListaReg:hover{
+	background-color: #f90;
+}
 
 
 
@@ -580,7 +739,33 @@ form .form-check input:checked + label::after, .form .form-check input:checked +
 
 
 
+/* Pagina Home - Seccion: Clientes: */
+#clientes .boxRepeat .controlCloneRegistro{
+	padding-top: 0px;
+}
+#clientes .boxRepeat .registro /* input[type="file"] */{
+	width: 48%;
+    display: inline-block;
+    margin: 1em .9%;
+    position: relative;
+    float: left;
+}
+#clientes .boxRepeat .cleanBox{
+	margin-top: 12px;
+}
 
+
+
+
+/* Pagina Portafolios - Registro: */
+#registro_portafolios .registro{
+	margin-top: 3rem;
+}
+
+#registro_portafolios .bloque_titulo2,
+#registro_portafolios .bloque_fondo{
+	margin-top: 2rem;
+}
 
 
 

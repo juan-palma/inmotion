@@ -6,6 +6,7 @@ class Basic_modal extends CI_Model {
 	public $campos = '*';
 	public $join = [];
 	public $condicion = '';
+	public $like = [];
 	public $o = '';
 	public $order = '';
 	public $group = '';
@@ -24,6 +25,8 @@ class Basic_modal extends CI_Model {
 	        $q = $conectDB->from($this->tabla);
         if($this->join != '' && (count($this->join) > 0) )
             $q = $conectDB->join($this->join[0], $this->join[1]);
+        if($this->like != '' && (count($this->like) > 0) )
+			$q = $conectDB->like($this->like);
         if($this->condicion != '')
             $q = $conectDB->where($this->condicion);
         if($this->o != '')
@@ -105,6 +108,7 @@ class Basic_modal extends CI_Model {
 	    $this->tabla = '';
 		$this->campos = '*';
 		$this->join = [];
+		$this->like = [];
 		$this->condicion = '';
 		$this->o = '';
 		$this->order = '';

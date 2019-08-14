@@ -1,39 +1,38 @@
 <?php
 $footerDB = new stdClass();
 $footerDB->titulo_general = 'CONTÁCTANOS';
-$footerDB->direccion = 'Monte Elbruz 132,<br />Lomas de Chapultepec, Miguel Hidalgo, CDMX, México';
-$footerDB->mail_destino = 'CONTÁCTANOS';
-$footerDB->team = [];
+$footerDB->direccion = $generalDB->direccion;
+$footerDB->mail_destino = $generalDB->correo_form;
 
 $valor = new stdClass();
 $valor->red = 'facebook';
 $valor->nombre = 'Mi Pagina';
-$valor->liga = 'https://www.facebook.com/inmotionmktg';
-$valor->icono = 'redes_facebook.svg';
+$valor->liga = $generalDB->facebook;
+$valor->icono = 'redes_facebook_blanco.svg';
 $footerDB->redes[] = $valor;
 
-/*
 $valor = new stdClass();
 $valor->red = 'behance';
 $valor->nombre = 'Mi Portafolio';
-$valor->liga = 'https://behance.com';
-$valor->icono = 'redes_behance.svg';
+$valor->liga = $generalDB->behance;
+$valor->icono = 'redes_behance_blanco.svg';
 $footerDB->redes[] = $valor;
-*/
 
 $valor = new stdClass();
 $valor->red = 'instagram';
 $valor->nombre = 'Mi Galeria';
-$valor->liga = 'https://www.instagram.com/inmotionmktg';
-$valor->icono = 'redes_instagram.svg';
+$valor->liga = $generalDB->instagram;
+$valor->icono = 'redes_instagram_blanco.svg';
 $footerDB->redes[] = $valor;
 
 $valor = new stdClass();
 $valor->red = 'linkedIn';
 $valor->nombre = 'Mi Curriculum';
-$valor->liga = 'https://www.linkedin.com/company/inmotion-communications';
-$valor->icono = 'redes_linkedin.svg';
+$valor->liga = $generalDB->linkedin;
+$valor->icono = 'redes_linkedin_blanco.svg';
 $footerDB->redes[] = $valor;
+
+
 
 //Formulario contacto
 $data_footer_nombre  =  array ( 
@@ -176,6 +175,7 @@ $data_servicio_mensaje  =  array (
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 -->
 
+		
 		<script src="<?php echo(base_url('assets/common/js/librerias/plugins/sweetalert2.min.js')) ?>" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
 		<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.helper.ie8.js"></script><![endif]-->

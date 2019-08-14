@@ -1,25 +1,27 @@
 <?php
-$portafolioDB = new stdClass();
-$portafolioDB->titulo_general = 'PORTAFOLIO';
-$portafolioDB->portafolios = [];
+/*
+portafoliosDB = new stdClass();
+portafoliosDB->titulo_general = 'PORTAFOLIO';
+portafoliosDB->portafolios = [];
 
 $valor = new stdClass();
 $valor->fondo = 'summit_2019_fondo.jpg';
 $valor->titulo = 'SPORTS ANTI-PIRACY<br />SUMMIT 2019';
 $valor->enlace = 'anti_piracy_summit_2019';
-$portafolioDB->portafolios[] = $valor;
+portafoliosDB->portafolios[] = $valor;
 
 $valor = new stdClass();
 $valor->fondo = 'national_fondo.jpg';
 $valor->titulo = 'NATIONAL<br />GEOGRAPHIC';
 $valor->enlace = 'national_geographic';
-$portafolioDB->portafolios[] = $valor;
+portafoliosDB->portafolios[] = $valor;
 
 $valor = new stdClass();
 $valor->fondo = 'toyota_fondo.jpg';
 $valor->titulo = 'TOYOTA';
 $valor->enlace = 'toyota';
-$portafolioDB->portafolios[] = $valor;
+portafoliosDB->portafolios[] = $valor;
+*/
 ?>
 <section id="portafolios" class="mboxG">
 	<div class="mboxC">
@@ -27,13 +29,13 @@ $portafolioDB->portafolios[] = $valor;
 			<div class="slideMain">
 				<div class="slideItems">
 				<?php
-				foreach ($portafolioDB->portafolios as $i=>$v) {
+				foreach ($registroDB as $i=>$v) {
 					?>
 					<article class="item" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/'.$v->fondo) ); ?>);">
 						<div class="centro">
 							<div class="noMargin"></div>
 							<h2 class="titulo">
-								<?php echo($v->titulo); ?>
+								<?php echo($v->titulo_general); ?>
 							</h2>
 							<div class="enlace">
 								<input type="button" onclick="window.location.href = '<?php echo(base_url('portafolio/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
@@ -52,10 +54,10 @@ $portafolioDB->portafolios[] = $valor;
 		<div id="navSlide">
 			<div class="centro">
 			<?php
-				foreach ($portafolioDB->portafolios as $i=>$v) {
+				foreach ($registroDB as $i=>$v) {
 					?>
 					<div class="nBox">
-						<div class="text"><?php echo($v->titulo); ?></div>
+						<div class="text"><?php echo($v->titulo_general); ?></div>
 						<div class="circulo"></div>
 						<div class="line"></div>
 					</div>

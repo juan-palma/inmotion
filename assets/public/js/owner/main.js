@@ -284,7 +284,7 @@ function portafolio_inicio(){
 //::::::::::::::::::::::::
 // ***** Servicios *****//
 function servicio_inicio(){
-	videoControl("bgvid", "#servicios .btnPlay",  "#servicios .btnPlayPause");
+	//videoControl("bgvid", "#servicios .btnPlay",  "#servicios .btnPlayPause");
 }
 
 
@@ -305,7 +305,7 @@ function servicio_inicio(){
 //::::::::::::::::::::::::
 // ***** Portafolio Interior *****//
 function portafolio_in_inicio(){
-	videoControl("bgvid", "#portafolio_video .btnPlay", "#portafolio_video .btnPlayPause");
+	//videoControl("bgvid", "#portafolio_video .btnPlay", "#portafolio_video .btnPlayPause");
 	
 	var slider = tns({
 		container: '#portafolio_main .slideItems',
@@ -351,7 +351,7 @@ function portafolio_in_inicio(){
 //::::::::::::::::::::::::
 // ***** Servicios Interior *****//
 function servicios_in_inicio(){
-	videoControl("bgvid", "#servicios_video .btnPlay", "#servicios_video .btnPlayPause");
+		//videoControl("bgvid", "#servicios_video .btnPlay", "#servicios_video .btnPlayPause");
 	
 /*
 	var slider = tns({

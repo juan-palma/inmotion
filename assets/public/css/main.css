@@ -306,6 +306,10 @@ footer a{
 .cNaranja{
 	color: #ff6600;
 }
+body{
+	background-position: center top;
+	background-repeat: repeat-y;
+}
 
 
 
@@ -418,6 +422,7 @@ input[type="button"]:hover{
 .video{
 	display: block;
     height: calc(60vh);
+    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -512,6 +517,30 @@ input[type="button"]:hover{
 	position: relative;
 }
 
+
+
+.video{
+/* 	z-index: 993; */
+}
+.video video{
+	display: none !important;
+}
+.video .centro{
+	display: none !important
+}
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+	.iframe-container iframe{
+	  position: absolute;
+	  top:0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	}
 
 
 
@@ -711,7 +740,7 @@ input[type="button"]:hover{
 
 /* --- HOME -- */
 body#home{
-	background: url(../img/body_fondo.jpg) repeat-y center top;
+/* 	background: url(../img/body_fondo.jpg) repeat-y center top; */
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -993,6 +1022,9 @@ body#portafolio #portafolios{
 				text-align: left;
 				padding: calc(4rem + 90px);
 			}
+				body#portafolio #portafolios .mboxC article.item .centro .titulo{
+					width: 76%
+				}
 	body#portafolio #portafolios .mboxD_in{
 		right: 0px;
 		top: 144px;
