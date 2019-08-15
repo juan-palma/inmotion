@@ -307,7 +307,7 @@ footer a{
 	color: #ff6600;
 }
 body{
-	background-position: center top;
+	background-position: center center;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
 	background-size: cover;

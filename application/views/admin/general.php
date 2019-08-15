@@ -129,7 +129,7 @@ $data_general_behance  =  array (
 								<div class="cleanBox" data-clonetype="general_fondo">
 								<?php
 									if(property_exists($generalDB, "fondo") && $generalDB->fondo[0]->img !== ""){
-										$data['img'] = base_url('assets/public/img/'.$generalDB->fondo[0]->img);
+										$data['img'] = base_url('assets/public/img/general'.$generalDB->fondo[0]->img);
 										$data['name'] = @$generalDB->fondo[0]->img;
 										$data['hname'] = 'general0_fondo';
 										$data['classAdd'] = 'conteo';
