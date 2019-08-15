@@ -173,9 +173,17 @@ class Servicios extends CI_Controller {
 			$loadFondo = [];
 		}
 		
+		
+		//subir logos de clientes
+		if( isset($_POST['servicios']['galeria']) ){
+			$loadGaleriaFoto = $this->loadFiles('galeria', 'foto', $_POST['servicios']['galeria'], $config);
+		} else{
+			$loadGaleriaFoto = [];
+		}
+		
 
 
-		if($loadFondo !== false && $loadFondo !== false){
+		if($loadFondo !== false && $loadGaleriaFoto !== false){
 			//Datos de la seccion Nosotros.
 			$linea = '{"titulo_general":"'.$_POST['registros']['titulo'].'", "video":"'.$_POST['registros']['video'].'", "enlace":"'.url_title($_POST['registros']['enlace']).'", "bloques":[';
 			if( isset($_POST['registros']['bloque']) ){
@@ -184,6 +192,15 @@ class Servicios extends CI_Controller {
 					$linea .= '{"fondo":"'.@$loadFondo[$i]['file_name'].'", "titulo1":"'.$v['titulo1'].'", "texto1":"'.$v['texto1'].'", "titulo2":"'.$v['titulo2'].'", "texto2":"'.$v['texto2'].'"}';
 				}
 			}
+			
+			$linea .= '], "galeria_titulo1":"'.$_POST['galeria0_titulo1'].'", "galeria_texto1":"'.$_POST['galeria0_texto1'].'", "galeria":[';
+			if( isset($_POST['servicios']['galeria']) ){
+				foreach ($_POST['servicios']['galeria'] as $i=>$v) {
+					if($i !== 0){ $linea .= ', '; }
+					$linea .= '{"foto":"'.@$loadGaleriaFoto[$i]['file_name'].'"}';
+				}
+			}
+			
 			$linea .= ']}';
 			
 			//consultar si existe un registro con valores para HOME-SECCIONES para saber si interta nuevo registro o actualizar el actual.

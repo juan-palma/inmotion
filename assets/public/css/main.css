@@ -1489,6 +1489,71 @@ body#servicios_in #servicios_main .mboxC{
 			}
 
 
+body#servicios_in #servicios_galeria{
+	overflow: inherit;
+}
+	body#servicios_in #servicios_galeria .mboxC {
+	    width: calc(100vw);
+	    height: auto;
+	    display: inline-block;
+	    position: relative;
+	    left: 0px;
+	    top: 0px;
+	    min-height: 14px;
+	    border-top: 0px none;
+	}
+	body#servicios_in #servicios_galeria .bloque:first-child{
+		background-color: #ff6600;
+		background-size: cover;
+		min-height: calc(58vh);
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	body#servicios_in #servicios_galeria .mboxD_in{
+		right: 0px;
+		top: auto;
+	    bottom: 0px;
+	    height: auto;
+	}
+	
+	body#servicios_in #servicios_galeria .bloqueInfo{
+		width: calc(100vw - 180px);
+		right: -90px;
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+	}
+	body#servicios_in #servicios_galeria .bloqueInfo .bl{
+		text-align: left;
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	body#servicios_in #servicios_galeria .bloqueInfo .bl:nth-of-type(2n){
+		text-align: right;
+	}
+	body#servicios_in #servicios_galeria .bloqueInfo .bl.v1{
+		margin-top: -80px;
+	}
+		body#servicios_in #servicios_galeria .bloqueInfo .bl .box{
+			background-color: white;
+			display: inline-block;
+			padding: 3rem;
+			width: 45%;
+			left: 0px;
+		}
+			body#servicios_in #servicios_galeria .bloqueInfo .bl .box .titulo{
+				font-family: 'Bw Modelica Bold';
+				color: #ff6600;
+				font-size: 160%;
+				letter-spacing: 3px;
+				line-height: 1.1em;
+				margin-bottom: 1.8rem;
+			}
+	
+
+
 
 
 

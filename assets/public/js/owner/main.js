@@ -351,6 +351,42 @@ function portafolio_in_inicio(){
 //::::::::::::::::::::::::
 // ***** Servicios Interior *****//
 function servicios_in_inicio(){
+/*
+	var slider = tns({
+		container: '#servicios_galeria .slideItems',
+		items: 1,
+		controls:false,
+		nav:true,
+		speed: 300,
+		navContainer:'#servicios_galeria .mboxD_in',
+		autoHeight: false,
+		disable:false,
+		responsive: {
+			780: {
+				item: 1,
+				disable:false
+			}
+		}
+	});
+*/
+	var slider = tns({
+		container: '#servicios_galeria .slideItems',
+		items: 1,
+		nav:false,
+		speed: 300,
+		prevButton:'#servicios_galeria .mboxD_in .btnSlideBack',
+		nextButton:'#servicios_galeria .mboxD_in .btnSlideNext',
+		responsive: {
+			780: {
+				items: 1,
+				autoplay:false
+			},
+			1023: {
+				items: 1
+			}
+		}
+	});
+		
 		//videoControl("bgvid", "#servicios_video .btnPlay", "#servicios_video .btnPlayPause");
 	
 /*

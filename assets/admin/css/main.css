@@ -772,6 +772,28 @@ a[href*="froala.com"]{
 
 
 
+/* Pagina Servicios registros */
+#registro_servicios #galeria .registro{
+	display: inline-block;
+    width: 49.8%;
+    float: left;
+    padding: 1rem 1.9%;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

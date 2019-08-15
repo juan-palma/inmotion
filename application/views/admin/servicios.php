@@ -35,7 +35,7 @@ $data_bloque_fondo =  array (
 $data_bloque_titulo1  =  array ( 
 	'name' => '',
 	'value' => '',
-	'class' => 'validaciones vc form-control input-lg conteo. hl1',
+	'class' => 'validaciones vc form-control input-lg conteo hl1',
 	'autocomplete' => 'off',
 	'placeholder' => '',
 	'data-conteovalin' =>"registros[bloque][",
@@ -72,6 +72,41 @@ $data_bloque_texto2  =  array (
 	'data-conteovalfin' => "][texto2]",
 	'data-conteoval' => "name"
 );
+
+
+
+
+
+
+// Imagenes para galeria
+$data_galeria_titulo1  =  array ( 
+	'name' => 'galeria0_titulo1',
+	'value' => '',
+	'class' => 'validaciones vc form-control input-lg conteo hl1',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
+$data_galeria_texto1  =  array ( 
+	'name' => 'galeria0_texto1',
+	'value' => '',
+	'class' => 'validaciones vc form-control input-lg conteo hl2',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
+$data_servicio_galeria  =  array ( 
+	'name' => '',
+	'value' => '',
+	'class' => 'validaciones vc form-control input-lg conteo',
+	'autocomplete' => 'off',
+	'placeholder' => '',
+	'data-cloneinfo' => 'galeria_foto',
+	'data-conteovalin' =>"galeria",
+	'data-conteovalfin' => "_foto",
+	'data-conteoval' => "name"
+);
+
+
+
 
 
 ?>
@@ -175,6 +210,26 @@ $data_bloque_texto2  =  array (
 				
 			</div>
 		</div>
+		
+		
+		
+		
+		<!-- 		Clones para la seccion CLIENTES -->
+		<?php
+			echo form_upload( $data_servicio_galeria );
+		?>
+		
+		<div class="registro" data-cloneinfo="foto">
+			<input type="hidden" name="" class="conteo" data-conteovalin="servicios[galeria][" data-conteovalfin="]" data-conteoval="name"></input>
+			<label>Foto: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">1</span></label>
+			<div class="controlCloneRegistro">
+				<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+			</div>
+			<div class="galeria_foto cleanBox" data-clonetype="galeria_foto">
+				<?php echo form_upload( $data_servicio_galeria ); ?>
+			</div>
+		</div>
+		
 		
 		
 		
@@ -311,6 +366,82 @@ $data_bloque_texto2  =  array (
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 	Seccion de clientes -->
+	<div id="galeria" class="row"><br/>
+		<div class="card stacked-form col-md-12">
+			<div class="card-header block">
+				<h5 class="tituloBlock">Galeria:</h5>
+				<hr class="colorgraph">
+			</div>
+			
+			<div class="valueBox">
+				<div class="contenedor">
+					<span>Si coloca contenido de titulo o texto se agregara un cuadro sobre la galería con esta información</span><br /><br />
+					<div class="row">
+						<div class="col-12 col-sm-6">
+							<label>Titulo de bloque galeria:</label>
+							<?php echo form_input( $data_galeria_titulo1 ); ?>
+						</div>
+						<div class="col-12 col-sm-6">
+							<label>Texto del bloque galeria :</label>
+							<?php echo form_input( $data_galeria_texto1 ); ?>
+						</div>
+					</div>
+				</div>
+				<div class="boxRepeat">
+					<div class="boxMainClone">Agregar una foto: <div id="galeria_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
+					
+					<?php
+					if(isset($articuloDB) && property_exists($articuloDB, "galeria") && count($articuloDB->galeria) > 0 ){
+						foreach ($articuloDB->galeria as $i=>$v) {
+							
+							?>
+							<div class="registro">
+								<input type="hidden" name="servicios[galeria][<?php echo($i); ?>]" class="conteo" data-conteovalin="servicios[galeria][" data-conteovalfin="]" data-conteoval="name"></input>
+								<label>Foto: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">$i</span></label>
+								<div class="controlCloneRegistro">
+									<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+								</div>
+								<div class="galeria_foto cleanBox" data-clonetype="galeria_foto">
+								<?php
+										if($v->foto !== ''){
+											$data['img'] = base_url('assets/public/img/servicios/registros/'.$v->foto);
+											$data['name'] = $v->foto;
+											$data['hname'] = 'galeria'.$i.'_foto';
+											$data['classAdd'] = 'conteo';
+											$data['propertyAdd'] = ' data-conteovalin="galeria" data-conteovalfin="_foto" data-conteoval="name"';
+											$this->load->view('admin/plantillas/img_block', $data);
+										} else{
+											$data_cliente_logo['name'] = 'galeria'.$i.'_foto';
+											echo form_upload( $data_servicio_galeria );
+										}
+								?>
+								</div>
+							</div>
+							<?php
+						}
+					}
+					?>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
 
 	
 	

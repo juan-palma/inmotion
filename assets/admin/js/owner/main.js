@@ -146,7 +146,6 @@ function btnDelImg(seccion){
 		this.empty();
 		this.grab(clone[0].clone());
 		
-		console.info(this.idago.cloneType);
 		reconteo('#'+seccion+' .registro');
 	}
 }
@@ -212,8 +211,6 @@ function btnMas(name, box, seccion){
 }
 
 function btnMenos(seccion){
-	console.info(this);
-	console.info(seccion);
 	this.destroy();
 	reconteo('#'+seccion+' .registro');
 }
@@ -637,6 +634,17 @@ function servicios_inicio(){
 				}
 			});
 			reconteo('#servicios .registro');
+			
+			
+			//emplazar los input por imagenes cargadas en Galeria
+			var secciones = $$('#galeria .registro');
+			secciones.each(function(s, i){
+				if(j.valores.galeria.foto[i] !== 'nop' && j.valores.galeria.foto[i] !== ''){
+					removeInputIMG(s, '.galeria_foto.cleanBox', 'imgBlock', j.valores.galeria.foto[i],  'foto', 'servicios', 'galeria', 'servicios/registros');
+				}
+			});
+			reconteo('#galeria .registro');
+			
 		}
 		
 		function error(j){
@@ -672,6 +680,26 @@ function servicios_inicio(){
 			btnMenos.call(b, 'servicios');
 		});
 	});
+	
+	
+	
+	
+	
+// 	Codigo para iniciar la seccion Galeria	
+	activeImgBbox('galeria');
+	document.id('galeria_clonemas').addEvent('click', function(){
+		btnMas('foto', document.id('galeria').getElement('.boxRepeat'), 'galeria');
+	});
+	
+	var allBTNDel = $$('#galeria .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'galeria');
+		});
+	});
+	
+	
 
 
 }

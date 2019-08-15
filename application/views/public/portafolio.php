@@ -31,7 +31,7 @@ portafoliosDB->portafolios[] = $valor;
 				<?php
 				foreach ($registroDB as $i=>$v) {
 					?>
-					<article class="item" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/'.$v->fondo) ); ?>);">
+					<article class="item" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registro'.$v->fondo) ); ?>);">
 						<div class="centro">
 							<div class="noMargin"></div>
 							<h2 class="titulo">

@@ -32,7 +32,7 @@ $data_bloque_fondo_general =  array (
 $data_bloque_titulo1  =  array ( 
 	'name' => '',
 	'value' => '',
-	'class' => 'validaciones vc form-control input-lg conteo. hl1',
+	'class' => 'validaciones vc form-control input-lg conteo hl1',
 	'autocomplete' => 'off',
 	'placeholder' => '',
 	'data-conteovalin' =>"registros[bloque][",
@@ -600,7 +600,7 @@ $data_cliente_fondo  =  array (
 							?>
 							<div class="registro">
 								<input type="hidden" name="clientes[logos][<?php echo($i); ?>]" class="conteo" data-conteovalin="clientes[logos][" data-conteovalfin="]" data-conteoval="name"></input>
-								<label>Marca: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">1</span></label>
+								<label>Marca: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">$i</span></label>
 								<div class="controlCloneRegistro">
 									<div class="clone menos"><i class="far fa-trash-alt"></i></div>
 								</div>

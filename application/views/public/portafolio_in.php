@@ -117,7 +117,7 @@ $articuloDB->contenido->clientes[] = $valor;
 			<?php
 			foreach ($articuloDB->bloques as $i=>$v) {
 				?>
-				<div class="bloque" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/'.@$v->fondo) ); ?>);">
+				<div class="bloque" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.@$v->fondo) ); ?>);">
 					<?php
 					if($v->titulo1 !== ''){
 						?>
@@ -148,24 +148,6 @@ $articuloDB->contenido->clientes[] = $valor;
 						</div>
 						<?php
 					}
-					
-					
-/*
-					foreach ($v->valores as $i2=>$v2) {
-						?>
-						<div class="bl v<?php echo($i2+1); ?>">
-							<div class="box">
-								<div class="titulo">
-									<?php echo($v2->titulo1); ?>
-								</div>
-								<div class="texto">
-									<?php echo($v2->texto1); ?>
-								</div>
-							</div>
-						</div>
-						<?php
-					}
-*/
 					?>
 				</div>
 				<?php
@@ -173,7 +155,7 @@ $articuloDB->contenido->clientes[] = $valor;
 			
 			if(count($articuloDB->informes) > 0 ){
 				?>
-				<div class="bloque informes" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/'.@$articuloDB->informes_fondo) ); ?>);">
+				<div class="bloque informes" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.@$articuloDB->informes_fondo) ); ?>);">
 					<div class="bloqueInformes">
 						<div class="row row-no-gutters">
 						<?php
@@ -181,7 +163,7 @@ $articuloDB->contenido->clientes[] = $valor;
 							?>
 							<div class="col-12 col-sm-6 col-md-3">
 								<div class="icono">
-									<img src="<?php echo( base_url('assets/public/img/portafolios/'.$v->icono) ); ?>" alt="portafolio_icono_<?php echo($i); ?>" />
+									<img src="<?php echo( base_url('assets/public/img/portafolios/registros/'.$v->icono) ); ?>" alt="portafolio_icono_<?php echo($i); ?>" />
 								</div>
 								<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 								<div class="texto"><span><?php echo($v->texto); ?></span></div>
@@ -200,8 +182,8 @@ $articuloDB->contenido->clientes[] = $valor;
 						<?php
 						foreach ($articuloDB->logos as $i=>$v) {
 							?>
-							<div class="logo" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/'.@$v->fondo) ); ?>);">
-								<img src="<?php echo( base_url('assets/public/img/portafolios/'.$v->logo) ); ?>" />
+							<div class="logo" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.@$v->fondo) ); ?>);">
+								<img src="<?php echo( base_url('assets/public/img/portafolios/registros/'.$v->logo) ); ?>" />
 							</div>
 							<?php
 						}
