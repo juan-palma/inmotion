@@ -309,6 +309,7 @@ footer a{
 body{
 	background-position: center top;
 	background-repeat: repeat-y;
+	background-attachment: fixed;
 }
 
 
