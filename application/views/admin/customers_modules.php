@@ -63,21 +63,21 @@ $customLoadFiles->overwrite = true;
  */
 // ------------------------------------------------------------------------
 $customModuleIcon = [];
-$customModuleIcon['load_csv'] = (object)[];
-$customModuleIcon['load_csv']->label = "Cargar CSV";
-$customModuleIcon['load_csv']->icono = "nc-cloud-upload-94";
 
-$customModuleIcon['new_register'] = (object)[];
-$customModuleIcon['new_register']->label = "1by1";
-$customModuleIcon['new_register']->icono = "nc-badge";
-
-$customModuleIcon['validate'] = (object)[];
-$customModuleIcon['validate']->label = "Validar Documentos";
-$customModuleIcon['validate']->icono = "nc-check-2";
+$customModuleIcon['general'] = (object)[];
+$customModuleIcon['general']->label = "Genral";
+$customModuleIcon['general']->icono = "fas fa-window-maximize";
 
 $customModuleIcon['home'] = (object)[];
 $customModuleIcon['home']->label = "Home";
 $customModuleIcon['home']->icono = "fa fa-home";
 
+$customModuleIcon['portafolios'] = (object)[];
+$customModuleIcon['portafolios']->label = "Portafolios";
+$customModuleIcon['portafolios']->icono = "fas fa-clipboard";
+
+$customModuleIcon['servicios'] = (object)[];
+$customModuleIcon['servicios']->label = "Servicios";
+$customModuleIcon['servicios']->icono = "fas fa-briefcase";
 
 ?>
