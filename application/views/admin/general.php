@@ -108,7 +108,6 @@ $data_general_behance  =  array (
 	
 	
 	
-	
 <!-- 	Seccion de nosotros -->
 	<div id="nosotros" class="row"><br/>
 		<div class="card stacked-form col-md-12">
