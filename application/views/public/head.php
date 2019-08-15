@@ -58,7 +58,7 @@ $headerDB = new stdClass();
 //$headerDB->direccion = $generalDB->direccion;
 //$headerDB->mail_destino = $generalDB->correo;
 
-if($generalDB->facebook !== ''){
+if(property_exists($generalDB, "facebook") && $generalDB->facebook !== ''){
 	$valor = new stdClass();
 	$valor->red = 'facebook';
 	$valor->nombre = 'Mi Pagina';
@@ -67,7 +67,7 @@ if($generalDB->facebook !== ''){
 	$headerDB->redes[] = $valor;
 }
 
-if($generalDB->behance !== ''){
+if(property_exists($generalDB, "behance") && $generalDB->behance !== ''){
 	$valor = new stdClass();
 	$valor->red = 'behance';
 	$valor->nombre = 'Mi Portafolio';
@@ -76,7 +76,7 @@ if($generalDB->behance !== ''){
 	$headerDB->redes[] = $valor;
 }
 
-if($generalDB->instagram !== ''){
+if(property_exists($generalDB, "instagram") && $generalDB->instagram !== ''){
 	$valor = new stdClass();
 	$valor->red = 'instagram';
 	$valor->nombre = 'Mi Galeria';
@@ -85,7 +85,7 @@ if($generalDB->instagram !== ''){
 	$headerDB->redes[] = $valor;
 }
 
-if($generalDB->linkedin !== ''){
+if(property_exists($generalDB, "linkedin") && $generalDB->linkedin !== ''){
 	$valor = new stdClass();
 	$valor->red = 'linkedIn';
 	$valor->nombre = 'Mi Curriculum';
