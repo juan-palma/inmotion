@@ -17,10 +17,18 @@ $data_registro_enlace =  array (
 $data_registro_video_general  =  array ( 
 	'name' => 'registros[video]',
 	'value' => @$articuloDB->video,
-	'class' => 'validaciones vc form-control input-lg',
+	'class' => 'validaciones vc form-control input-lg hl2',
 	'autocomplete' => 'off',
 	'placeholder' => ''
-); 
+);
+$data_video_portada =  array ( 
+	'name' => '',
+	'value' => '',
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => '',
+	'data-cloneinfo' => 'video_portada'
+);
 $data_bloque_fondo =  array ( 
 	'name' => '',
 	'value' => '',
@@ -115,6 +123,17 @@ $data_servicio_galeria  =  array (
 
 
 
+
+
+
+
+
+
+
+<div class="container area_scroll" data-page="<?php echo($actual); ?>">
+
+
+
 <!-- Lista de registros ya existentes. -->
 <div id="boxListaRegistros">
 	<div class="contenedor clearfix container-fluid">
@@ -122,6 +141,7 @@ $data_servicio_galeria  =  array (
 		<div class="row">
 			<div class="lista col -md-12">
 				<select id="listaRegistros">
+					<option value="">- -</option>
 					<?php 
 					foreach($registroDB as $l){
 						?>
@@ -132,6 +152,7 @@ $data_servicio_galeria  =  array (
 				</select>
 				
 				<div id="btnListaReg">Cargar:</div>
+				<div id="btnListaRegDel" onclick="delReg('servicios');">Borrar</div>
 			</div>
 		</div>
 	</div>
@@ -142,14 +163,13 @@ $data_servicio_galeria  =  array (
 
 
 
-<div class="container area_scroll" data-page="<?php echo($actual); ?>">
-	
 	
 <!-- 	elementos para clonar en el codigo -->
 	<div class="hiden boxClones">
 		
 		<!-- 	Clones para la seccion NOSOTROS -->	
 		<?php
+			echo form_upload( $data_video_portada );
 			echo form_upload( $data_bloque_fondo );
 			
 			$data['classAdd'] = 'conteo';
@@ -271,7 +291,28 @@ $data_servicio_galeria  =  array (
 						</div>
 						<div class="col-12 col-sm-6">
 							<label>Video general:</label>
-							<?php echo form_input( $data_registro_video_general ); ?>
+							<?php echo form_textarea( $data_registro_video_general ); ?>
+						</div>
+						<div class="col-12 col-sm-6">
+							<label>En caso de no colocar un video suba una portada:</label>
+							<div class="video_portada cleanBox" data-clonetype="video_portada">
+							<?php
+								if(isset($articuloDB)){
+									if(property_exists($articuloDB, "video_portada") && $articuloDB->video_portada !== ""){
+										$data['img'] = base_url('assets/public/img/servicios/registros/'.$articuloDB->video_portada);
+										$data['name'] = $articuloDB->video_portada;
+										$data['hname'] = 'base0_video_portada';
+										$this->load->view('admin/plantillas/img_block', $data);
+									} else{
+										$data_video_portada['name'] = 'base0_video_portada';
+										echo form_upload( $data_video_portada );
+									}
+								} else{
+									$data_video_portada['name'] = 'base0_video_portada';
+									echo form_upload( $data_video_portada );
+								}
+							?>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -411,7 +452,7 @@ $data_servicio_galeria  =  array (
 							?>
 							<div class="registro">
 								<input type="hidden" name="servicios[galeria][<?php echo($i); ?>]" class="conteo" data-conteovalin="servicios[galeria][" data-conteovalfin="]" data-conteoval="name"></input>
-								<label>Foto: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">$i</span></label>
+								<label>Foto: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1); ?></span></label>
 								<div class="controlCloneRegistro">
 									<div class="clone menos"><i class="far fa-trash-alt"></i></div>
 								</div>

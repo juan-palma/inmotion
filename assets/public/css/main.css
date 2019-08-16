@@ -130,7 +130,7 @@ body, p, .navbar, .brand, .alert, a, .td-name, td, button.close {
 	width: 100%;
 /* 	height: 100%; */
 	min-height: 100%;
-	min-height: calc(100vh);
+/* 	min-height: calc(100vh); */
 	display: block;
 	position: relative;
 }
@@ -312,6 +312,22 @@ body{
 	background-attachment: fixed;
 	background-size: cover;
 }
+.hide{
+	display: none;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+	opacity: 0;
+}
+
+
+
+/* Clases de colores dinamicos */
+.colDin1{}
+.colDin1-op{}
+.colDin1-back{}
+.colDin1-back-op{}
 
 
 
@@ -427,6 +443,7 @@ input[type="button"]:hover{
     height: auto;
     position: relative;
     overflow: hidden;
+    background: rgb(0,0,0,0.7);
 }
 	video{
 		position: fixed;
@@ -451,10 +468,11 @@ input[type="button"]:hover{
 	}
 	
 .video .centro{
-	position: relative;
+	position: absolute;
     height: 100%;
     display: flex;
     align-items: center;
+    top: 0px;
 }
 	.video .centro .centrado{
 		left: 90px;
@@ -527,9 +545,11 @@ input[type="button"]:hover{
 .video video{
 	display: none !important;
 }
+/*
 .video .centro{
 	display: none !important
 }
+*/
 .iframe-container{
   position: relative;
   width: 100%;
@@ -543,7 +563,9 @@ input[type="button"]:hover{
 	  width: 100%;
 	  height: 100%;
 	}
-
+.videoPortada{
+	min-height: calc(65vh);
+}
 
 
 
@@ -615,6 +637,9 @@ input[type="button"]:hover{
 			-ms-transition: all 0.1s ease-in-out;
 			transition: all 0.1s ease-in-out;
 		}
+			#menuItems .redes .red svg{
+				fill:#fff;
+			}
 		#menuItems .redes .red:hover{
 			transform: scale(1.3);
 		}
@@ -697,6 +722,7 @@ input[type="button"]:hover{
 	    color: #ff6600;
 	    font-size: 210%;
 	    cursor: pointer;
+	    position: relative;
 	    
 	    -webkit-transition: all 0.1s ease-in-out;
 		-moz-transition: all 0.1s ease-in-out;
@@ -704,10 +730,30 @@ input[type="button"]:hover{
 		-ms-transition: all 0.1s ease-in-out;
 		transition: all 0.1s ease-in-out;
 	}
-	#menu #btnMenu:hover{
-		color: #fff;
-		background-color: #ff6600;
+	#menu #btnMenu:before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		background-color: #000;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+		z-index: 0;
+		
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		-ms-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
 	}
+	#menu #btnMenu:hover:before{
+		opacity: 0.3;
+	}
+		#menu #btnMenu i{
+			position: relative;
+		}
 	#menu .redes{
 		margin-top: 28px;
 	}
@@ -728,7 +774,8 @@ input[type="button"]:hover{
 			#menu .red a:hover{
 				transform: scale(1.2);
 			}
-				#menu .red a img{
+				#menu .red a img,
+				#menu .red a svg{
 					width: 48%;
 					margin: 0 auto;
 				}
@@ -816,8 +863,18 @@ body#home #servicios main{
 	position: relative;
 	background-size: cover;
 	padding: 2em 0px;
-	background-color: rgb(256,256,256,0.9);
+/* 	background-color: rgb(256,256,256,0.9); */
 }
+	body#home #servicios main .colorFondoBack{
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		background-color: #fff;
+		opacity: 0.9;
+	}
 	body#home #servicios main article{
 		padding: 0px 14px 20px;
 		text-align: center;
@@ -877,14 +934,18 @@ body#home #clientes main{
 				width: 100%;
 				height: auto;
 				position: relative;
-				display: table;
+				display: block;
 			}
 				body#home #clientes main .slideMain .slideItems .slideLine .logo{
-					display: table-cell;
+					display: inline-block;
+				    width: 25%;
+				    float: left;
+				    text-align: center;
 				}
 					body#home #clientes main .slideMain .slideItems .slideLine .logo img{
-						width: 100%;
+						width: 90%;
 						height: auto;
+						margin: 0 auto;
 					}
 		body#home #clientes .btnSlideBack, body#home #clientes .btnSlideNext{
 			width: 100%;
@@ -1263,6 +1324,10 @@ body#portafolio_in #portafolio_main .mboxC{
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
+		min-height: calc(65vh);
+	}
+	body#portafolio_in #portafolio_main .bloque.informes{
+		min-height: auto;
 	}
 	
 	body#portafolio_in #portafolio_main .bloque .bl{
@@ -1431,6 +1496,7 @@ body#servicios_in #servicios_main .mboxC{
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
+		min-height: calc(65vh);
 	}
 	body#servicios_in #servicios_main .bloque:before{
 		content: '';
@@ -1473,7 +1539,6 @@ body#servicios_in #servicios_main .mboxC{
 	body#servicios_in #servicios_main .bloque:first-child{
 		background-color: #ff6600;
 		background-size: auto 66%;
-		background-blend-mode: multiply;
 		min-height: calc(58vh);
 	}
 	body#servicios_in #servicios_main .bloque:first-child:before{
@@ -1553,6 +1618,128 @@ body#servicios_in #servicios_galeria{
 			}
 	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- vacantes - General -- */
+body#vacantes #primaryContainer .redes{
+	display: none;
+}
+body#vacantes #vacantes{
+	
+}
+	body#vacantes #vacantes .mboxC{
+		width: calc(100vw);
+		min-height: auto;
+		padding: 0px;
+		text-align: center;
+		color: #333;
+		left: 0px;
+	}
+	
+	body#vacantes #vacantes .mboxC .linea{
+		display: block;
+		width: 100%;
+	}
+		body#vacantes #vacantes .mboxC .linea .bl{
+			width: calc(50vw);
+			height: calc(50vw);
+			float: left;
+			display: flex;
+		    align-items: center;
+		    text-align: left;
+		    position: relative;
+		}
+		body#vacantes #vacantes .mboxC .linea .bl1{
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		body#vacantes #vacantes .mboxC .linea .bl1:before{
+			content: '';
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    display: block;
+		    background-color: rgb(0,0,0,0.4);
+		}
+		body#vacantes #vacantes .mboxC .linea .bl2{
+			background-color: white;
+		}
+			body#vacantes #vacantes .mboxC .linea .bl .centro{
+				width: calc(100% - 90px);
+			    vertical-align: middle;
+			    display: inline-block;
+			    margin: 0 auto 0 0;
+			    position: relative;
+			    padding: 2rem 1rem 2rem 3rem;
+			}
+				body#vacantes #vacantes .mboxC .linea .bl .centro .icono{
+					width: 50%;
+					max-width: 250px;
+					display: inline-block;
+				}
+					body#vacantes #vacantes .mboxC .linea .bl .centro .icono img{
+						width: 100%;
+						height: auto;
+						mix-blend-mode: multiply;
+					}
+				body#vacantes #vacantes .mboxC .linea .bl .centro .titulo{
+					letter-spacing: 4px;
+				    font-size: 1.7rem;
+				    line-height: 1.24em;
+				    color: #ff6600;
+				    margin: 1rem 0px 0.5rem;
+				}
+				body#vacantes #vacantes .mboxC .linea .bl .centro .texto{
+					line-height: 1.14em;
+					width: 80%;
+					display: inline-block;
+				}
+					body#vacantes #vacantes .mboxC .linea .bl .centro .enlace{
+						margin-top: 26px;
+					}
+						body#vacantes #vacantes .mboxC .linea .bl .centro .enlace input[type="button"] {
+						    padding: 11px 29px;
+						    font-family: 'Bw Modelica Bold';
+						}
+						
+		body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl{
+			text-align: right;
+		}
+		body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl1{
+			float: right;
+		}
+		body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl2{
+			float: left;
+			background-color: #ff6600;
+		}
+			body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl .centro{
+			    margin: 0 0 0 auto;
+			    position: relative;
+			    padding: 2rem 3rem 2rem 1rem;
+			}
+				body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl2 .centro .titulo,
+				body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl2 .centro .texto{
+					color: white;
+				}
+					body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]{
+						background-color: white;
+						color: #FF6600;
+					}
+					body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl2 .centro .enlace input[type="button"]:hover{
+						background-color: #c7c7c7;
+					}
 
 
 
@@ -1693,10 +1880,14 @@ footer .mboxC.footer1{
 					footer #redes .red:hover{
 						transform: scale(1.2);
 					}
+						footer #redes .red svg{
+							fill: #ff6600;
+						}
 					footer #redes .red a:hover{
 						color: #b34900;
 					}
-						footer #redes .red a img{
+						footer #redes .red a img,
+						footer #redes .red a svg{
 							width: 40px;
 							height: auto;
 						}

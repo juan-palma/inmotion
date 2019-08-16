@@ -108,6 +108,22 @@ function cleanBox(){
 
 
 
+function delReg(seccion){
+	if(document.id('idRegistro') !== null){
+		if(document.id('idRegistro').value !== ''){
+			if(confirm('¿Esta seguro que desea borrar el registro actualmente cargado que se encuentra en pantalla?')){
+				window.location.replace( baseDir + 'admin/' + seccion + '/delReg/' + document.id('idRegistro').value);
+			}
+		} else{
+			alert('No ha cargado ningun registro que se pueda borrar');
+		}
+	}
+	
+}
+
+
+
+
 
 
 
@@ -230,6 +246,18 @@ function runListaReg(seccion){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Pagina Home
 function home_inicio(){
 	//Desactivar el formulario para cobtrolar el envio
@@ -247,7 +275,16 @@ function home_inicio(){
 	function validar(){
 		
 		function fin(j){
-			//emplazar los input por imagenes cargadas en SERVICIOS
+			//remplazar los input por imagenes cargadas en SERVICIOS
+			
+			var contenedor = $$('#servicios');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
+				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'servicios', 'base', 'servicios');
+				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+			
 			var secciones = $$('#servicios .registro');
 			secciones.each(function(s, i){
 				if(j.valores.servicio.icono[i] !== 'nop' && j.valores.servicio.icono[i] !== ''){
@@ -260,7 +297,7 @@ function home_inicio(){
 			reconteo('#servicios .registro');
 			
 			
-			//emplazar los input por imagenes cargadas en Clientes
+			//remplazar los input por imagenes cargadas en Clientes
 			var secciones = $$('#clientes .registro');
 			secciones.each(function(s, i){
 				if(j.valores.cliente.logo[i] !== 'nop' && j.valores.cliente.logo[i] !== ''){
@@ -270,7 +307,7 @@ function home_inicio(){
 			reconteo('#clientes .registro');
 			
 			
-			//emplazar los input por imagenes cargadas en Clientes
+			//remplazar los input por imagenes cargadas en Clientes
 			var secciones = $$('#portafolios .registro');
 			secciones.each(function(s, i){
 				if(j.valores.portafolio.fondo[i] !== 'nop' && j.valores.portafolio.fondo[i] !== ''){
@@ -280,7 +317,7 @@ function home_inicio(){
 			reconteo('#portafolios .registro');
 			
 			
-			//emplazar los input por imagenes cargadas en Nosotros
+			//remplazar los input por imagenes cargadas en Nosotros
 			var secciones = $$('#nosotros .registro');
 			secciones.each(function(s, i){
 				if(j.valores.team.fondo[i] !== 'nop' && j.valores.team.fondo[i] !== ''){
@@ -414,7 +451,7 @@ function general_inicio(){
 	function validar(){
 		
 		function fin(j){
-			//emplazar los input por imagenes cargadas en Nosotros
+			//remplazar los input por imagenes cargadas en Nosotros
 			var secciones = $$('#general .registro');
 			secciones.each(function(s, i){
 				if(j.valores.general.fondo[i] !== 'nop' && j.valores.general.fondo[i] !== ''){
@@ -474,12 +511,22 @@ function portafolios_inicio(){
 				document.id('idRegistro').value = j.valores.registro.id;
 			}
 			
-			//emplazar los input por imagenes cargadas en Registros Bloques
-			if(j.valores.registro.fondo[0] !== 'nop' && j.valores.registro.fondo[0] !== ''){
-				removeInputIMG(s, '.registro_fondo .cleanBox', 'imgBlock', j.valores.registro.fondo[0],  'fondo', 'portafolios', 'registro', 'portafolios/registros');
+			var contenedor = $$('#portafolios .contenedor');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
+				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'portafolios', 'base', 'portafolios/registros');
+				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
 			}
 			
-			//emplazar los input por imagenes cargadas en Registros Bloques
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.registro.fondo[0] !== 'nop' && j.valores.registro.fondo[0] !== ''){
+				removeInputIMG(contenedor[0], '.registro_fondo.cleanBox', 'imgBlock', j.valores.registro.fondo[0],  'fondo', 'portafolios', 'registro', 'portafolios/registros');
+				var hiden = $$('.registro_fondo.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+			
+			//remplazar los input por imagenes cargadas en Registros Bloques
 			var secciones = $$('#portafolios .registro');
 			secciones.each(function(s, i){
 				if(j.valores.bloque.fondo[i] !== 'nop' && j.valores.bloque.fondo[i] !== ''){
@@ -490,7 +537,7 @@ function portafolios_inicio(){
 			
 			
 			
-			//emplazar los input por imagenes cargadas en informes
+			//remplazar los input por imagenes cargadas en informes
 			var secciones = $$('#informes .registro');
 			secciones.each(function(s, i){
 				if(j.valores.informe.icono[i] !== 'nop' && j.valores.informe.icono[i] !== ''){
@@ -500,7 +547,7 @@ function portafolios_inicio(){
 			reconteo('#informes .registro');
 			
 			
-			//emplazar los input por imagenes cargadas en Clientes
+			//remplazar los input por imagenes cargadas en Clientes
 			var secciones = $$('#clientes .registro');
 			secciones.each(function(s, i){
 				if(j.valores.cliente.logo[i] !== 'nop' && j.valores.cliente.logo[i] !== ''){
@@ -626,17 +673,27 @@ function servicios_inicio(){
 				document.id('idRegistro').value = j.valores.registro.id;
 			}
 			
-			//emplazar los input por imagenes cargadas en Registros Bloques
+			
+			var contenedor = $$('#servicios .contenedor');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
+				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'servicios', 'base', 'servicios/registros');
+				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+			
+			
+			//remplazar los input por imagenes cargadas en Registros Bloques
 			var secciones = $$('#servicios .registro');
 			secciones.each(function(s, i){
 				if(j.valores.bloque.fondo[i] !== 'nop' && j.valores.bloque.fondo[i] !== ''){
-					removeInputIMG(s, '.bloque_fondo .cleanBox', 'imgBlock', j.valores.bloque.fondo[i],  'fondo', 'servicios', 'bloque');
+					removeInputIMG(s, '.bloque_fondo .cleanBox', 'imgBlock', j.valores.bloque.fondo[i],  'fondo', 'servicios', 'bloque', 'servicios/registros');
 				}
 			});
 			reconteo('#servicios .registro');
 			
 			
-			//emplazar los input por imagenes cargadas en Galeria
+			//remplazar los input por imagenes cargadas en Galeria
 			var secciones = $$('#galeria .registro');
 			secciones.each(function(s, i){
 				if(j.valores.galeria.foto[i] !== 'nop' && j.valores.galeria.foto[i] !== ''){
@@ -717,6 +774,93 @@ function servicios_inicio(){
 
 
 
+
+// Pagina Vacantes
+function vacantes_inicio(){
+	//Desactivar el formulario para cobtrolar el envio
+	document.id('formulario').addEvent('submit', function(e){
+		e.preventDefault();
+		e.stop();
+		
+		validar();
+	});	
+	
+	
+	
+	//funciones para validar y enviar el formulario
+	//validar
+	function validar(){
+		
+		function fin(j){
+			//remplazar los input por imagenes cargadas en vacantes
+			
+			var contenedor = $$('#vacantes .contenedor');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.video_portada[0] !== 'nop' && j.valores.base.video_portada[0] !== ''){
+				removeInputIMG(contenedor[0], '.video_portada.cleanBox', 'imgBlock', j.valores.base.video_portada[0],  'video_portada', 'servicios', 'base', 'vacantes');
+				var hiden = $$('.video_portada.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+			
+			
+			var secciones = $$('#vacantes .registro');
+			secciones.each(function(s, i){
+				if(j.valores.vacante.icono[i] !== 'nop' && j.valores.vacante.icono[i] !== ''){
+					removeInputIMG(s, '.vacante_icono .cleanBox', 'imgBlock', j.valores.vacante.icono[i],  'icono', 'vacantes', 'vacante', 'vacantes');
+				}
+				if(j.valores.vacante.foto[i] !== 'nop' && j.valores.vacante.foto[i] !== ''){
+					removeInputIMG(s, '.vacante_foto .cleanBox', 'imgBlock', j.valores.vacante.foto[i],  'foto', 'vacantes', 'vacante', 'vacantes');
+				}
+			});
+			reconteo('#vacantes .registro');
+			
+		}
+		
+		function error(j){
+			
+		}
+		
+		var datos = new FormData(document.id('formulario'));
+		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
+		
+	}
+	
+	
+	
+	
+	
+// 	Codigo para iniciar la seccion vacantes
+	activeImgBbox('vacantes');
+	document.id('vacante_clonemas').addEvent('click', function(){
+		btnMas('formvacante', document.id('vacantes').getElement('.boxRepeat'), 'vacantes');
+	});
+	
+	var allBTNDel = $$('#vacantes .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'vacantes');
+		});
+	});
+	
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //--- Eventos a ejecutar cuando el DOM este listo _____________________________________________________________________________________
 window.addEvent('domready', function(){
 	if(typeof pageActual !== 'undefined'){
@@ -738,6 +882,10 @@ window.addEvent('domready', function(){
 				case 'registro_servicios':
 					servicios_inicio();
 					runListaReg('servicios');
+				break;
+				
+				case 'bolsa_trabajo':
+					vacantes_inicio();
 				break;
 			}
 		}

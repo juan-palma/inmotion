@@ -22,7 +22,7 @@
 	<div class="row">
 	    <div class="col -md-12">
 			<span class="pageTitulo">Datos de <?php echo($titulo); ?>: </span>
-			<input id="boton_c" type="button" class="btn btn-default" value="Cancelar" />
+			<input id="boton_c" type="button" class="btn btn-default" value="Cancelar" onclick="location.reload();" />
 			<input id="boton_r" type="submit" class="btn btn-info" value="Guardar" />
 	    </div>
 	</div>

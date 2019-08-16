@@ -9,7 +9,10 @@ if(property_exists($generalDB, "facebook") && $generalDB->facebook !== ''){
 	$valor->red = 'facebook';
 	$valor->nombre = 'Mi Pagina';
 	$valor->liga = $generalDB->facebook;
-	$valor->icono = 'redes_facebook.svg';
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice">
+						<use xlink:href="#svg_facebook"/>
+				    </svg>
+					';
 	$footerDB->redes[] = $valor;
 }
 
@@ -18,7 +21,10 @@ if(property_exists($generalDB, "behance") && $generalDB->behance !== ''){
 	$valor->red = 'behance';
 	$valor->nombre = 'Mi Portafolio';
 	$valor->liga = $generalDB->behance;
-	$valor->icono = 'redes_behance.svg';
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice">
+						<use xlink:href="#svg_behance"/>
+				    </svg>
+					';
 	$footerDB->redes[] = $valor;
 }
 
@@ -27,7 +33,10 @@ if(property_exists($generalDB, "instagram") && $generalDB->instagram !== ''){
 	$valor->red = 'instagram';
 	$valor->nombre = 'Mi Galeria';
 	$valor->liga = $generalDB->instagram;
-	$valor->icono = 'redes_instagram.svg';
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice">
+						<use xlink:href="#svg_instagram"/>
+				    </svg>
+					';
 	$footerDB->redes[] = $valor;
 }
 
@@ -36,7 +45,10 @@ if(property_exists($generalDB, "linkedin") && $generalDB->linkedin !== ''){
 	$valor->red = 'linkedIn';
 	$valor->nombre = 'Mi Curriculum';
 	$valor->liga = $generalDB->linkedin;
-	$valor->icono = 'redes_linkedin.svg';
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice">
+						<use xlink:href="#svg_linkedin"/>
+				    </svg>
+					';
 	$footerDB->redes[] = $valor;
 }	
 
@@ -75,6 +87,8 @@ $data_servicio_mensaje  =  array (
 	'data-validar' => 'texto'
 );
 ?>
+		</div>
+		
 			<footer id="footer" class="mboxG">
 				<form id="footerContactoForm" class="mboxC footer1">
 					<div class="box">
@@ -106,7 +120,7 @@ $data_servicio_mensaje  =  array (
 								<input type="button" value="DESCARGAR CONTACTO" onclick="descargar_vcard();"></input>
 							</div>
 							<div class="col-md-4">
-								<input type="button" value="TRABAJA CON NOSOTROS" onclick="window.location.href = '<?php echo(base_url('bolsa_de_trabajo')); ?>'"></input>
+								<input type="button" value="TRABAJA CON NOSOTROS" onclick="window.location.href = '<?php echo(base_url('vacantes')); ?>'"></input>
 							</div>
 							<div class="col-md-4">
 								<a href="<?php echo( base_url('politicas_de_privacidad') ); ?>">Políticas de privacidad</a>
@@ -116,7 +130,7 @@ $data_servicio_mensaje  =  array (
 										?>
 											<div class="red">
 												<a target="_blank" href="<?php echo($v->liga); ?>">
-													<img src="<?php echo( base_url('assets/public/img/'.$v->icono) ); ?>" />
+													<?php echo( $v->icono); ?>
 												</a>
 											</div>
 										<?php
@@ -170,7 +184,7 @@ $data_servicio_mensaje  =  array (
 				<div class="mboxD"></div>
 			</footer>
 
-		</main>	
+		
 		
 		
 		<!-- Carga de librerias !!.. -->

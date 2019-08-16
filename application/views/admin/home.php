@@ -11,10 +11,18 @@ $data  =  array (
 $data_video  =  array ( 
 	'name' => 'servicios[video]',
 	'value' => @$serviciosDB->video_general,
-	'class' => 'validaciones vc form-control input-lg',
+	'class' => 'validaciones vc form-control input-lg hl2',
 	'autocomplete' => 'off',
 	'placeholder' => ''
-); 
+);
+$data_video_portada =  array ( 
+	'name' => '',
+	'value' => '',
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => '',
+	'data-cloneinfo' => 'video_portada'
+);
 
 
 $data_servicio_icono  =  array ( 
@@ -283,7 +291,10 @@ $data_team_puesto  =  array (
 		
 		
 <!-- 		Clones para la seccion CLIENTES -->
-		<?php echo form_upload( $data_cliente_logo ); ?>
+		<?php
+			echo form_upload( $data_cliente_logo );
+			echo form_upload( $data_video_portada );
+		?>
 		
 		<div class="registro" data-cloneinfo="logo">
 			<input type="hidden" name="" class="conteo" data-conteovalin="clientes[logos][" data-conteovalfin="]" data-conteoval="name"></input>
@@ -405,7 +416,29 @@ $data_team_puesto  =  array (
 				<?php echo form_input( $data ); ?>
 				
 				<label>Video general:</label>
-				<?php echo form_input( $data_video ); ?>
+				<?php echo form_textarea( $data_video ); ?>
+				
+				<div class="">
+					<label>En caso de no colocar un video suba una portada:</label>
+					<div class="video_portada cleanBox" data-clonetype="video_portada">
+					<?php
+						if(isset($serviciosDB)){
+							if(property_exists($serviciosDB, "video_portada") && $serviciosDB->video_portada !== ""){
+								$data['img'] = base_url('assets/public/img/servicios/'.$serviciosDB->video_portada);
+								$data['name'] = $serviciosDB->video_portada;
+								$data['hname'] = 'base0_video_portada';
+								$this->load->view('admin/plantillas/img_block', $data);
+							} else{
+								$data_video_portada['name'] = 'base0_video_portada';
+								echo form_upload( $data_video_portada );
+							}
+						} else{
+							$data_video_portada['name'] = 'base0_video_portada';
+							echo form_upload( $data_video_portada );
+						}
+					?>
+					</div>
+				</div>
 				
 				<div class="boxRepeat">
 					<div class="boxMainClone">Agregar un servicio: <div id="servicio_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
@@ -534,7 +567,7 @@ $data_team_puesto  =  array (
 							?>
 							<div class="registro">
 								<input type="hidden" name="clientes[logos][<?php echo($i); ?>]" class="conteo" data-conteovalin="clientes[logos][" data-conteovalfin="]" data-conteoval="name"></input>
-								<label>logo: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text">1</span></label>
+								<label>logo: <span class="valNum conteo"  data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1); ?></span></label>
 								<div class="controlCloneRegistro">
 									<div class="clone menos"><i class="far fa-trash-alt"></i></div>
 								</div>
@@ -602,7 +635,7 @@ $data_team_puesto  =  array (
 											<div class="cleanBox" data-clonetype="portafolio_fondo">
 											<?php
 												if(property_exists($v, "fondo") && $v->fondo !== ""){
-													$data['img'] = base_url('assets/public/img/servicios/'.$v->fondo);
+													$data['img'] = base_url('assets/public/img/portafolios/'.$v->fondo);
 													$data['name'] = $v->fondo;
 													$data['hname'] = 'portafolio'.$i.'_fondo';
 													$data['classAdd'] = 'conteo';

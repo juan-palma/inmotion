@@ -133,6 +133,7 @@ function videoControl(video, btnPlay, btPausa){
 //::::::::::::::::::::::::
 // ***** HOME *****//
 function home_inicio(){
+/*
 	var slider = tns({
 		container: '#clientes .slideItems',
 		items: 2,
@@ -151,6 +152,22 @@ function home_inicio(){
 			},
 			900: {
 				items: 2
+			}
+		}
+	});
+*/
+	var slider = tns({
+		container: '#clientes .slideItems',
+		items: 2,
+		axis:'vertical',
+		nav:false,
+		speed: 300,
+		prevButton:'#clientes .slideMain .btnSlideBack',
+		nextButton:'#clientes .slideMain .btnSlideNext',
+		responsive: {
+			780: {
+				items: 2,
+				autoplay:false
 			}
 		}
 	});
@@ -306,32 +323,35 @@ function servicio_inicio(){
 // ***** Portafolio Interior *****//
 function portafolio_in_inicio(){
 	//videoControl("bgvid", "#portafolio_video .btnPlay", "#portafolio_video .btnPlayPause");
-	
-	var slider = tns({
-		container: '#portafolio_main .slideItems',
-		items: 2,
-		controls:true,
-		nav:false,
-		autoplay: true,
-		"autoplayText": ["▶", "❚❚" ],
-		prevButton:'#portafolio_main .slideMain .btnSlideBack',
-		nextButton:'#portafolio_main .slideMain .btnSlideNext',
-		responsive: {
-			825: {
-				items: 3,
-				autoplay: false
+	var logosBox = $$('#portafolio_main .informes .slideMain');
+	if(logosBox.length > 0){
+		
+		var slider = tns({
+			container: '#portafolio_main .slideItems',
+			items: 2,
+			controls:true,
+			nav:false,
+			autoplay: true,
+			"autoplayText": ["▶", "❚❚" ],
+			prevButton:'#portafolio_main .slideMain .btnSlideBack',
+			nextButton:'#portafolio_main .slideMain .btnSlideNext',
+			responsive: {
+				825: {
+					items: 3,
+					autoplay: false
+				}
 			}
-		}
-	});
-
-	var resizeTimer;
-	window.addEventListener('resize', function () {
-		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(function () {
-			slider.refresh();
-		}, 100);
-	});
+		});
 	
+		var resizeTimer;
+		window.addEventListener('resize', function () {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+				slider.refresh();
+			}, 100);
+		});
+		
+	}
 }
 
 
@@ -351,67 +371,36 @@ function portafolio_in_inicio(){
 //::::::::::::::::::::::::
 // ***** Servicios Interior *****//
 function servicios_in_inicio(){
-/*
-	var slider = tns({
-		container: '#servicios_galeria .slideItems',
-		items: 1,
-		controls:false,
-		nav:true,
-		speed: 300,
-		navContainer:'#servicios_galeria .mboxD_in',
-		autoHeight: false,
-		disable:false,
-		responsive: {
-			780: {
-				item: 1,
-				disable:false
+	if(document.id('servicios_galeria') !== null){
+				var slider = tns({
+			container: '#servicios_galeria .slideItems',
+			items: 1,
+			nav:false,
+			speed: 300,
+			prevButton:'#servicios_galeria .mboxD_in .btnSlideBack',
+			nextButton:'#servicios_galeria .mboxD_in .btnSlideNext',
+			responsive: {
+				780: {
+					items: 1,
+					autoplay:false
+				},
+				1023: {
+					items: 1
+				}
 			}
-		}
-	});
-*/
-	var slider = tns({
-		container: '#servicios_galeria .slideItems',
-		items: 1,
-		nav:false,
-		speed: 300,
-		prevButton:'#servicios_galeria .mboxD_in .btnSlideBack',
-		nextButton:'#servicios_galeria .mboxD_in .btnSlideNext',
-		responsive: {
-			780: {
-				items: 1,
-				autoplay:false
-			},
-			1023: {
-				items: 1
-			}
-		}
-	});
-		
-		//videoControl("bgvid", "#servicios_video .btnPlay", "#servicios_video .btnPlayPause");
+		});
+			
 	
-/*
-	var slider = tns({
-		container: '#portafolio_main .slideItems',
-		items: 3,
-		controls:true,
-		nav:false,
-		prevButton:'#portafolio_main .slideMain .btnSlideBack',
-		nextButton:'#portafolio_main .slideMain .btnSlideNext',
-		responsive: {
-			825: {
-				items: 3
-			}
-		}
-	});
+		var resizeTimer;
+		window.addEventListener('resize', function () {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+				slider.refresh();
+			}, 100);
+		});
 
-	var resizeTimer;
-	window.addEventListener('resize', function () {
-		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(function () {
-			slider.refresh();
-		}, 100);
-	});
-*/
+	}
+	
 	
 }
 

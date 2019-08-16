@@ -3,6 +3,7 @@
 class Portafolios extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		$this->load->library('upload');
 	}
 	
 	public $varFlash = 'flashHome';
@@ -113,7 +114,7 @@ class Portafolios extends CI_Controller {
 	
 	
 	private function loadFiles($s, $it, $a, $c){
-		$this->load->library('upload', $c);
+		$this->upload->initialize($c);
 		
 		$todasCargaron = true;
 		$rutaImagenes = [];
@@ -173,6 +174,7 @@ class Portafolios extends CI_Controller {
 		
 		
 		//subir fotos de registro
+		$loadPortada = $this->loadFiles('base', 'video_portada', ['null'], $config);
 		$loadFondoGeneral = $this->loadFiles('registro', 'fondo', ['null'], $config);
 		
 		//subir fotos de registro
@@ -203,7 +205,8 @@ class Portafolios extends CI_Controller {
 
 		if($loadFondo !== false && $loadInformeIcono !== false){
 			//Datos de la seccion Nosotros.
-			$linea = '{"titulo_general":"'.$_POST['registros']['titulo'].'", "video":"'.$_POST['registros']['video'].'", "enlace":"'.url_title($_POST['registros']['enlace']).'", "fondo":"'.$loadFondoGeneral[0]['file_name'].'", "bloques":[';
+			$linea = '{"titulo_general":"'.$_POST['registros']['titulo'].'", "video":"'.$_POST['registros']['video'].'", "enlace":"'.url_title($_POST['registros']['enlace']).'", "fondo":"'.$loadFondoGeneral[0]['file_name'].'", "video_portada":"'.$loadPortada[0]['file_name'].'", "bloques":[';
+			
 			if( isset($_POST['registros']['bloque']) ){
 				foreach ($_POST['registros']['bloque'] as $i=>$v) {
 					if($i !== 0){ $linea .= ', '; }
@@ -288,6 +291,20 @@ class Portafolios extends CI_Controller {
 		$this->status = [];
 		$this->valores = [];
 		$this->errores = [];
+	}
+	
+	
+	public function delReg($id = ''){
+		isNoLogged();
+		
+		if($id !== ''){
+			$this->basic_modal->clean();
+			$this->basic_modal->tabla = 'contenido';
+			$valores = array('id_contenido' => $id);
+			$insert = $this->basic_modal->genericDelete('sistema', $valores);
+			
+			header('Location: '. base_url('admin/portafolios'));
+		}
 	}
 	
 }

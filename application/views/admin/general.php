@@ -75,6 +75,13 @@ $data_general_behance  =  array (
 	'autocomplete' => 'off',
 	'placeholder' => ''
 );
+$data_general  =  array ( 
+	'name' => 'general[behance]',
+	'value' => @$generalDB->behance,
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
 
 
 
@@ -123,6 +130,14 @@ $data_general_behance  =  array (
 				<div class="registro">
 					<div class="row">
 						<div class="col -md-3">
+							<div class="general_color_fondo">
+								<label>Color de fondo:</label>
+								<?php
+									$data_general['name'] = 'general[color_fondo]';
+									$data_general['value'] = @$generalDB->color_fondo;
+									echo form_input( $data_general );
+								?>
+							</div>
 							<div class="body_fondo">
 								<label>Fondo del sitio web:</label>
 								<div class="cleanBox" data-clonetype="general_fondo">
@@ -141,6 +156,26 @@ $data_general_behance  =  array (
 								?>
 								</div>
 							</div>
+							<div class="general_color_principal">
+								<label>Color Principal para titulos y texto sobre el fondo: (user # al inicio del color)</label>
+								<?php
+									$data_general['name'] = 'general[color_principal]';
+									$data_general['value'] = @$generalDB->color_principal;
+									echo form_input( $data_general );
+								?>
+							</div>
+							<div class="general_color_contraste">
+								<label>Color de contraste al color principal para elementos que están dentro del color principal. (user # al inicio del color)</label>
+								<?php
+									$data_general['name'] = 'general[color_contraste]';
+									$data_general['value'] = @$generalDB->color_contraste;
+									echo form_input( $data_general );
+								?>
+							</div>
+							
+						</div>
+						
+						<div class="col -md-9">
 							<div class="general_telefono">
 								<label>Telefono:</label>
 								<?php
@@ -165,9 +200,6 @@ $data_general_behance  =  array (
 									echo form_input( $data_general_correo_form );
 								?>
 							</div>
-						</div>
-						
-						<div class="col -md-9">
 							<div class="team_nombre">
 								<label>liga de mapa:</label>
 								<?php

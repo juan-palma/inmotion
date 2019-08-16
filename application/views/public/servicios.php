@@ -1,15 +1,32 @@
 <section id="servicios" class="mboxG">
 	<div class="mboxC">
 		<div class="video">
-			<div class="iframe-container">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo($serviciosDB->video_general); ?>?rel=0&controls=0&disablekb=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
+			<?php
+				if(isset($serviciosDB)){
+					if(property_exists($serviciosDB, "video_general") && $serviciosDB->video_general !== ''){
+						?>
+						<div class="iframe-container">
+							<?php echo($serviciosDB->video_general); ?>
+						</div>
+						<?php
+					} else{
+						?>
+						<div class="videoPortada" style="background-image: url(<?php echo( base_url('assets/public/img/servicios/'.@$serviciosDB->video_portada) ); ?>);"></div>
+						
+						<div class="centro">
+							<div class="centrado">
+								<h1 class="titulos"><?php echo($serviciosDB->titulo_general); ?></h1>
+							</div>
+						</div>
+						<?php
+					}
+				}
+			?>
+
 <!--
 			<video class="stopfade" controls="false" id="bgvid" loop>
 			    <source src="https://www.youtube.com/embed/nzenephoM84" type="video/mp4" />
 			</video>
--->
-<!--
 			<video class="stopfade" poster="<?php echo($serviciosDB->video->poster); ?>" id="bgvid" loop>
 				<?php
 					if(isset($serviciosDB->video->webm)){

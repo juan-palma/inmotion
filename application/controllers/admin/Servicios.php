@@ -3,6 +3,7 @@
 class Servicios extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		$this->load->library('upload');
 	}
 	
 	public $varFlash = 'flashHome';
@@ -109,7 +110,7 @@ class Servicios extends CI_Controller {
 	
 	
 	private function loadFiles($s, $it, $a, $c){
-		$this->load->library('upload', $c);
+		$this->upload->initialize($c);
 		
 		$todasCargaron = true;
 		$rutaImagenes = [];
@@ -120,6 +121,7 @@ class Servicios extends CI_Controller {
 			if( !isset($_POST[$s.$i.'_'.$it]) ){
 				if(isset($_FILES[$s.$i.'_'.$it])){
 					if($_FILES[$s.$i.'_'.$it]['name'] !== "" && $_FILES[$s.$i.'_'.$it]['error'] == 0){
+						
 						if ( ! $this->upload->do_upload($s.$i.'_'.$it) ){
 							$todasCargaron = false;
 							$this->status = 'error';
@@ -164,8 +166,11 @@ class Servicios extends CI_Controller {
 		
 		$config['upload_path']		= FCPATH.'assets/public/img/servicios/registros/';
 		$config['allowed_types']	= 'gif|jpg|jpeg|png|svg';
-		$config['max_size']			= 1024;
+		$config['max_size']			= 2048;
 		$config['overwrite']		= true;
+		
+		
+		$loadPortada = $this->loadFiles('base', 'video_portada', ['null'], $config);
 		
 		if( isset($_POST['registros']['bloque']) ){
 			$loadFondo = $this->loadFiles('bloque', 'fondo', $_POST['registros']['bloque'], $config);
@@ -185,7 +190,8 @@ class Servicios extends CI_Controller {
 
 		if($loadFondo !== false && $loadGaleriaFoto !== false){
 			//Datos de la seccion Nosotros.
-			$linea = '{"titulo_general":"'.$_POST['registros']['titulo'].'", "video":"'.$_POST['registros']['video'].'", "enlace":"'.url_title($_POST['registros']['enlace']).'", "bloques":[';
+			$linea = '{"titulo_general":"'.$_POST['registros']['titulo'].'", "video":"'.$_POST['registros']['video'].'", "video_portada":"'.$loadPortada[0]['file_name'].'", "enlace":"'.url_title($_POST['registros']['enlace']).'", "bloques":[';
+			
 			if( isset($_POST['registros']['bloque']) ){
 				foreach ($_POST['registros']['bloque'] as $i=>$v) {
 					if($i !== 0){ $linea .= ', '; }
@@ -262,6 +268,20 @@ class Servicios extends CI_Controller {
 		$this->status = [];
 		$this->valores = [];
 		$this->errores = [];
+	}
+	
+	
+	public function delReg($id = ''){
+		isNoLogged();
+		
+		if($id !== ''){
+			$this->basic_modal->clean();
+			$this->basic_modal->tabla = 'contenido';
+			$valores = array('id_contenido' => $id);
+			$insert = $this->basic_modal->genericDelete('sistema', $valores);
+			
+			header('Location: '. base_url('admin/servicios'));
+		}
 	}
 	
 }

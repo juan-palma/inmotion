@@ -128,6 +128,9 @@ class General extends CI_Controller {
 			$linea .= '"telefono":"'.$_POST['general']['telefono'].'",';
 			$linea .= '"correo":"'.$_POST['general']['correo'].'",';
 			$linea .= '"correo_form":"'.$_POST['general']['correo_form'].'",';
+			$linea .= '"color_fondo":"'.$_POST['general']['color_fondo'].'",';
+			$linea .= '"color_principal":"'.$_POST['general']['color_principal'].'",';
+			$linea .= '"color_contraste":"'.$_POST['general']['color_contraste'].'",';
 			$linea .= '"fondo" : [';
 			$linea .= '{"img":"'.@$loadBodyFondo[0]['file_name'].'"}';
 			$linea .= ']}';

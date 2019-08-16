@@ -3,6 +3,7 @@
 class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		$this->load->library('upload');
 	}
 	
 	public $varFlash = 'flashHome';
@@ -131,7 +132,8 @@ class Home extends CI_Controller {
 	
 	
 	private function loadFiles($s, $it, $a, $c){
-		$this->load->library('upload', $c);
+		//$this->load->library('upload', $c);
+		$this->upload->initialize($c);
 		
 		$todasCargaron = true;
 		$rutaImagenes = [];
@@ -189,13 +191,15 @@ class Home extends CI_Controller {
 		$config['max_size']			= 1024;
 		$config['overwrite']		= true;
 		
+		$loadPortada = $this->loadFiles('base', 'video_portada', ['null'], $config);
+		
 		$loadSerIco = $this->loadFiles('servicio', 'icono', $_POST['servicios']['servicio'], $config);
 		$loadSerFoto = $this->loadFiles('servicio', 'foto', $_POST['servicios']['servicio'], $config);
 
 
 		if($loadSerIco !== false && $loadSerFoto !== false){
 			//Datos de la seccion Servicios.
-			$linea_servicios = '{"titulo_general":"'.$_POST['servicios']['titulo'].'", "video_general":"'.$_POST['servicios']['video'].'", "servicios":[';
+			$linea_servicios = '{"titulo_general":"'.$_POST['servicios']['titulo'].'", "video_general":"'.$_POST['servicios']['video'].'", "video_portada":"'.$loadPortada[0]['file_name'].'", "servicios":[';
 			foreach ($_POST['servicios']['servicio'] as $i=>$v) {
 				if($i !== 0){ $linea_servicios .= ', '; }
 				$linea_servicios .= '{"icono":"'.@$loadSerIco[$i]['file_name'].'", "foto":"'.@$loadSerFoto[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.url_title($v['enlace']).'"}';
@@ -246,14 +250,22 @@ class Home extends CI_Controller {
 		$config['max_size']			= 1024;
 		$config['overwrite']		= true;
 		
-		$loadCliente = $this->loadFiles('cliente', 'logo', $_POST['clientes']['logos'], $config);
+		if( isset($_POST['clientes']['logos']) ){
+			$loadCliente = $this->loadFiles('cliente', 'logo', $_POST['clientes']['logos'], $config);
+		} else{
+			$loadCliente = [];
+		}
+		
 
 		if($loadCliente !== false && $loadCliente !== false){
 			//Datos de la seccion Servicios.
 			$linea_registros = '{"titulo_general":"'.$_POST['clientes']['titulo'].'", "logos":[';
-			foreach ($_POST['clientes']['logos'] as $i=>$v) {
-				if($i !== 0){ $linea_registros .= ', '; }
-				$linea_registros .= '{"logo":"'.@$loadCliente[$i]['file_name'].'"}';
+			
+			if( isset($_POST['clientes']['logos']) ){
+				foreach ($_POST['clientes']['logos'] as $i=>$v) {
+					if($i !== 0){ $linea_registros .= ', '; }
+					$linea_registros .= '{"logo":"'.@$loadCliente[$i]['file_name'].'"}';
+				}
 			}
 			$linea_registros .= ']}';
 			
