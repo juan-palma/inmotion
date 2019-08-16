@@ -3,6 +3,7 @@
 class Vacantes extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+		$this->load->library('upload');
 	}
 	
 	public $varFlash = 'flashVacantes';
@@ -48,7 +49,7 @@ class Vacantes extends CI_Controller {
 	
 	
 	private function loadFiles($s, $it, $a, $c){
-		$this->load->library('upload', $c);
+		$this->upload->initialize($c);
 		
 		$todasCargaron = true;
 		$rutaImagenes = [];

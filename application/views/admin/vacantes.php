@@ -11,31 +11,20 @@ $data  =  array (
 $data_video  =  array ( 
 	'name' => 'vacantes[video]',
 	'value' => @$vacantesDB->video_general,
-	'class' => 'validaciones vc form-control input-lg',
+	'class' => 'validaciones vc form-control input-lg hl2',
 	'autocomplete' => 'off',
 	'placeholder' => ''
 );
 $data_video_portada =  array ( 
 	'name' => '',
 	'value' => '',
-	'class' => 'validaciones vc form-control input-lg hl2',
+	'class' => 'validaciones vc form-control input-lg',
 	'autocomplete' => 'off',
 	'placeholder' => '',
 	'data-cloneinfo' => 'video_portada'
 ); 
 
 
-$data_vacante_icono  =  array ( 
-	'name' => '',
-	'value' => '',
-	'class' => 'validaciones vc form-control input-lg conteo',
-	'autocomplete' => 'off',
-	'placeholder' => '',
-	'data-cloneinfo' => 'icono',
-	'data-conteovalin' =>"vacante",
-	'data-conteovalfin' => "_icono",
-	'data-conteoval' => "name"
-);
 $data_vacante_foto  =  array ( 
 	'name' => '',
 	'value' => '',
@@ -111,12 +100,6 @@ $data_vacante_link  =  array (
 			
 			<div class="row">
 				<div class="col -md-3">
-					<div class="vacante_icono">
-						<label>Icono:</label>
-						<div class="cleanBox" data-clonetype="icono">
-							<?php echo form_upload( $data_vacante_icono ); ?>
-						</div>
-					</div>
 					<div class="vacante_foto">
 						<label>Foto:</label>
 						<div class="cleanBox" data-clonetype="foto">
@@ -135,7 +118,7 @@ $data_vacante_link  =  array (
 						<?php echo form_textarea( $data_vacante_intro ); ?>
 					</div>
 					<div class="vacante_enlace">
-						<label>Enlace del vacante:</label>
+						<label>Correo a donde dirigir la vacante:</label>
 						<?php echo form_input( $data_vacante_link ); ?>
 					</div>
 				</div>
@@ -261,7 +244,7 @@ $data_vacante_link  =  array (
 											?>
 										</div>
 										<div class="vacante_enlace">
-											<label>Enlace del vacante:</label>
+											<label>Correo a donde dirigir la vacante:</label>
 											<?php
 												$data_vacante_link['name'] = 'vacantes[vacante]['.$i.'][enlace]';
 												$data_vacante_link['value'] = $v->enlace;

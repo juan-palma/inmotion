@@ -805,9 +805,6 @@ function vacantes_inicio(){
 			
 			var secciones = $$('#vacantes .registro');
 			secciones.each(function(s, i){
-				if(j.valores.vacante.icono[i] !== 'nop' && j.valores.vacante.icono[i] !== ''){
-					removeInputIMG(s, '.vacante_icono .cleanBox', 'imgBlock', j.valores.vacante.icono[i],  'icono', 'vacantes', 'vacante', 'vacantes');
-				}
 				if(j.valores.vacante.foto[i] !== 'nop' && j.valores.vacante.foto[i] !== ''){
 					removeInputIMG(s, '.vacante_foto .cleanBox', 'imgBlock', j.valores.vacante.foto[i],  'foto', 'vacantes', 'vacante', 'vacantes');
 				}

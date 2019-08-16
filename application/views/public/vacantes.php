@@ -39,13 +39,10 @@
 						<div class="bl bl1" style="background-image: url(<?php echo( base_url('assets/public/img/vacantes/'.@$v->foto) ); ?>);"></div>
 						<div class="bl bl2">
 							<div class="centro">
-								<div class="icono">
-									<img src="<?php echo( base_url('assets/public/img/vacantes/'.$v->icono) ); ?>" alt="vacante_icono_<?php echo($i); ?>" />
-								</div>
 								<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 								<div class="texto"><span><?php echo($v->texto); ?></span></div>
 								<div class="enlace">
-									<input type="button" onclick="window.location.href = '<?php echo(base_url('vacantes/articulo/'.url_title($v->enlace) )); ?>'" value="ver más"></input>
+									<a href="mailto:<?php echo($v->enlace)?>">POSTULARCE</a>
 								</div>
 							</div>
 						</div>
