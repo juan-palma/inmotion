@@ -50,7 +50,19 @@ if(property_exists($generalDB, "linkedin") && $generalDB->linkedin !== ''){
 				    </svg>
 					';
 	$footerDB->redes[] = $valor;
-}	
+}
+
+if(property_exists($generalDB, "vimeo") && $generalDB->vimeo !== ''){
+	$valor = new stdClass();
+	$valor->red = 'vimeo';
+	$valor->nombre = 'Mi Canal';
+	$valor->liga = $generalDB->vimeo;
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice" class="">
+						<use xlink:href="#svg_vimeo"/>
+				    </svg>
+					';
+	$footerDB->redes[] = $valor;
+}
 
 
 //Formulario contacto
@@ -196,6 +208,7 @@ $data_servicio_mensaje  =  array (
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 -->
 
+		<script src="https://player.vimeo.com/api/player.js"></script>
 		
 		<script src="<?php echo(base_url('assets/common/js/librerias/plugins/sweetalert2.min.js')) ?>" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>

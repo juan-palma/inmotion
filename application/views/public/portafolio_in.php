@@ -5,8 +5,11 @@
 				if(isset($articuloDB)){
 					if(property_exists($articuloDB, "video") && $articuloDB->video !== '' ){
 						?>
-						<div class="iframe-container">
+						<div class="iframe-container stopfade">
 							<?php echo($articuloDB->video); ?>
+						</div>
+						<div class="centro">
+							<div class="btnPlay"><i class="far fa-play-circle"></i></div>
 						</div>
 						<?php
 					} else{
@@ -41,12 +44,16 @@
 						?>
 						<div class="bl v1">
 							<div class="box">
+								<?php if(property_exists($v, "titulo1") && $v->titulo1 !== ''){ ?>
 								<div class="titulo">
 									<?php echo(@$v->titulo1); ?>
 								</div>
+								<?php } ?>
+								<?php if(property_exists($v, "texto1") && $v->texto1 !== ''){ ?>
 								<div class="texto">
 									<?php echo(@$v->texto1); ?>
 								</div>
+								<?php } ?>
 							</div>
 						</div>
 						<?php
@@ -56,12 +63,16 @@
 						?>
 						<div class="bl v2">
 							<div class="box">
+								<?php if(property_exists($v, "texto2") && $v->texto2 !== ''){ ?>
 								<div class="titulo">
 									<?php echo(@$v->texto2); ?>
 								</div>
+								<?php } ?>
+								<?php if(property_exists($v, "texto2") && $v->texto2 !== ''){ ?>
 								<div class="texto">
 									<?php echo(@$v->texto2); ?>
 								</div>
+								<?php } ?>
 							</div>
 						</div>
 						<?php

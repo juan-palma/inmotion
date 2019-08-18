@@ -8,6 +8,9 @@
 						<div class="iframe-container">
 							<?php echo($serviciosDB->video_general); ?>
 						</div>
+						<div class="centro">
+							<div class="btnPlay"><i class="far fa-play-circle"></i></div>
+						</div>
 						<?php
 					} else{
 						?>

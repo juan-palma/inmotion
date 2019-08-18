@@ -441,88 +441,92 @@ $data_team_puesto  =  array (
 				</div>
 				
 				<div class="boxRepeat">
-					<div class="boxMainClone">Agregar un servicio: <div id="servicio_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
-					
+					<div class="boxMainClone"> Agregar un servicio: <div id="servicio_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
+					<div class="boxDrag">
 					<?php
 					if(count($serviciosDB->servicios) > 0 ){
 						foreach ($serviciosDB->servicios as $i=>$v) {
 							
 							?>
 							<div class="registro">
-								<div class="valHead">
-									<h5>Servicio <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1); ?></span></h5>
-									<div class="controlCloneRegistro">
-										<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+								<div class="boxShow">
+									<div class="valHead">
+										<h5>Servicio <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1). ' - ' .$v->titulo; ?></span></h5>
+										<div class="controlCloneRegistro">
+											<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+										</div>
 									</div>
 								</div>
 								
-								<div class="row">
-									<div class="col -md-3">
-										<div class="servicio_icono">
-											<label>Icono:</label>
-											<div class="cleanBox" data-clonetype="icono">
-											<?php
-												if(property_exists($v, "icono") && $v->icono !== ""){
-													$data['img'] = base_url('assets/public/img/servicios/'.$v->icono);
-													$data['name'] = $v->icono;
-													$data['hname'] = 'servicio'.$i.'_icono';
-													$data['classAdd'] = 'conteo';
-													$data['propertyAdd'] = ' data-conteovalin="servicio" data-conteovalfin="_icono" data-conteoval="name"';
-													$this->load->view('admin/plantillas/img_block', $data);
-												} else{
-													$data_servicio_icono['name'] = 'servicio'.$i.'_icono';
-													echo form_upload( $data_servicio_icono );
-												}
-											?>
+								<div class="boxHide">
+									<div class="row">
+										<div class="col -md-3">
+											<div class="servicio_icono">
+												<label>Icono:</label>
+												<div class="cleanBox" data-clonetype="icono">
+												<?php
+													if(property_exists($v, "icono") && $v->icono !== ""){
+														$data['img'] = base_url('assets/public/img/servicios/'.$v->icono);
+														$data['name'] = $v->icono;
+														$data['hname'] = 'servicio'.$i.'_icono';
+														$data['classAdd'] = 'conteo';
+														$data['propertyAdd'] = ' data-conteovalin="servicio" data-conteovalfin="_icono" data-conteoval="name"';
+														$this->load->view('admin/plantillas/img_block', $data);
+													} else{
+														$data_servicio_icono['name'] = 'servicio'.$i.'_icono';
+														echo form_upload( $data_servicio_icono );
+													}
+												?>
+												</div>
+											</div>
+											<div class="servicio_foto">
+												<label>Foto:</label>
+												<div class="cleanBox"  data-clonetype="foto">
+												<?php
+													if(property_exists($v, "foto") && $v->foto !== ""){
+														$data['img'] = base_url('assets/public/img/servicios/'.$v->foto);
+														$data['name'] = $v->foto;
+														$data['hname'] = 'servicio'.$i.'_foto';
+														$data['classAdd'] = 'conteo';
+														$data['propertyAdd'] = ' data-conteovalin="servicio" data-conteovalfin="_foto" data-conteoval="name"';
+														$this->load->view('admin/plantillas/img_block', $data);
+													} else{
+														$data_servicio_foto['name'] = 'servicio'.$i.'_foto';
+														echo form_upload( $data_servicio_foto );
+													}
+												?>
+												</div>
 											</div>
 										</div>
-										<div class="servicio_foto">
-											<label>Foto:</label>
-											<div class="cleanBox"  data-clonetype="foto">
-											<?php
-												if(property_exists($v, "foto") && $v->foto !== ""){
-													$data['img'] = base_url('assets/public/img/servicios/'.$v->foto);
-													$data['name'] = $v->foto;
-													$data['hname'] = 'servicio'.$i.'_foto';
-													$data['classAdd'] = 'conteo';
-													$data['propertyAdd'] = ' data-conteovalin="servicio" data-conteovalfin="_foto" data-conteoval="name"';
-													$this->load->view('admin/plantillas/img_block', $data);
-												} else{
-													$data_servicio_foto['name'] = 'servicio'.$i.'_foto';
-													echo form_upload( $data_servicio_foto );
-												}
-											?>
+										
+										<div class="col -md-9">
+											<div class="servicio_titulo">
+												<label>Titulo del Servicio:</label>
+												<?php
+													$data_servicio_titulo['name'] = 'servicios[servicio]['.$i.'][titulo]';
+													$data_servicio_titulo['value'] = $v->titulo;
+													echo form_input( $data_servicio_titulo );
+												?>
 											</div>
-										</div>
-									</div>
-									
-									<div class="col -md-9">
-										<div class="servicio_titulo">
-											<label>Titulo del Servicio:</label>
-											<?php
-												$data_servicio_titulo['name'] = 'servicios[servicio]['.$i.'][titulo]';
-												$data_servicio_titulo['value'] = $v->titulo;
-												echo form_input( $data_servicio_titulo );
-											?>
-										</div>
-										<div class="servicio_texto">
-											<label>Introducción:</label>
-											<?php
-												$data_servicio_intro['name'] = 'servicios[servicio]['.$i.'][texto]';
-												//$encontrar = array("<br />");
-												//$remplazar = '\r\n ';
-												//$nuevoValor = str_replace($encontrar, $remplazar, $v->texto);
-												$data_servicio_intro['value'] = $v->texto;
-												echo form_textarea( $data_servicio_intro );
-											?>
-										</div>
-										<div class="servicio_enlace">
-											<label>Enlace del servicio:</label>
-											<?php
-												$data_servicio_link['name'] = 'servicios[servicio]['.$i.'][enlace]';
-												$data_servicio_link['value'] = $v->enlace;
-												echo form_input( $data_servicio_link );
-											?>
+											<div class="servicio_texto">
+												<label>Introducción:</label>
+												<?php
+													$data_servicio_intro['name'] = 'servicios[servicio]['.$i.'][texto]';
+													//$encontrar = array("<br />");
+													//$remplazar = '\r\n ';
+													//$nuevoValor = str_replace($encontrar, $remplazar, $v->texto);
+													$data_servicio_intro['value'] = $v->texto;
+													echo form_textarea( $data_servicio_intro );
+												?>
+											</div>
+											<div class="servicio_enlace">
+												<label>Enlace del servicio:</label>
+												<?php
+													$data_servicio_link['name'] = 'servicios[servicio]['.$i.'][enlace]';
+													$data_servicio_link['value'] = $v->enlace;
+													echo form_input( $data_servicio_link );
+												?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -531,6 +535,7 @@ $data_team_puesto  =  array (
 						}
 					}
 					?>
+					</div>
 				</div>
 				
 			</div>
@@ -559,7 +564,7 @@ $data_team_puesto  =  array (
 				
 				<div class="boxRepeat">
 					<div class="boxMainClone">Agregar un cliente: <div id="clientes_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
-					
+					<div class="boxDrag">
 					<?php
 					if(property_exists($clientesDB, "logos") && count($clientesDB->logos) > 0 ){
 						foreach ($clientesDB->logos as $i=>$v) {
@@ -586,6 +591,7 @@ $data_team_puesto  =  array (
 						}
 					}
 					?>
+					</div>
 				</div>
 				
 			</div>
@@ -614,6 +620,7 @@ $data_team_puesto  =  array (
 				
 				<div class="boxRepeat">
 					<div class="boxMainClone">Agregar un portafolio: <div id="portafolios_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
+					<div class="boxDrag">
 					
 					<?php
 					if(property_exists($portafoliosDB, "portafolios") && count($portafoliosDB->portafolios) > 0 ){
@@ -621,51 +628,55 @@ $data_team_puesto  =  array (
 							
 							?>
 							<div class="registro">
-								<div class="valHead">
-									<h5>Portafolio <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1); ?></span></h5>
-									<div class="controlCloneRegistro">
-										<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+								<div class="boxShow">
+									<div class="valHead">
+										<h5>Portafolio <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1). ' - ' .$v->enlace; ?></span></h5>
+										<div class="controlCloneRegistro">
+											<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+										</div>
 									</div>
 								</div>
 								
-								<div class="row">
-									<div class="col -md-3">
-										<div class="portafolio_fondo">
-											<label>Fondo:</label>
-											<div class="cleanBox" data-clonetype="portafolio_fondo">
-											<?php
-												if(property_exists($v, "fondo") && $v->fondo !== ""){
-													$data['img'] = base_url('assets/public/img/portafolios/'.$v->fondo);
-													$data['name'] = $v->fondo;
-													$data['hname'] = 'portafolio'.$i.'_fondo';
-													$data['classAdd'] = 'conteo';
-													$data['propertyAdd'] = ' data-conteovalin="portafolio" data-conteovalfin="_fondo" data-conteoval="name"';
-													$this->load->view('admin/plantillas/img_block', $data);
-												} else{
-													$data_portafolio_fondo['name'] = 'portafolio'.$i.'_fondo';
-													echo form_upload( $data_portafolio_fondo );
-												}
-											?>
+								<div class="boxHide">
+									<div class="row">
+										<div class="col -md-3">
+											<div class="portafolio_fondo">
+												<label>Fondo:</label>
+												<div class="cleanBox" data-clonetype="portafolio_fondo">
+												<?php
+													if(property_exists($v, "fondo") && $v->fondo !== ""){
+														$data['img'] = base_url('assets/public/img/portafolios/'.$v->fondo);
+														$data['name'] = $v->fondo;
+														$data['hname'] = 'portafolio'.$i.'_fondo';
+														$data['classAdd'] = 'conteo';
+														$data['propertyAdd'] = ' data-conteovalin="portafolio" data-conteovalfin="_fondo" data-conteoval="name"';
+														$this->load->view('admin/plantillas/img_block', $data);
+													} else{
+														$data_portafolio_fondo['name'] = 'portafolio'.$i.'_fondo';
+														echo form_upload( $data_portafolio_fondo );
+													}
+												?>
+												</div>
 											</div>
 										</div>
-									</div>
-									
-									<div class="col -md-9">
-										<div class="portafolio_titulo">
-											<label>Titulo del portafolio:</label>
-											<?php
-												$data_portafolio_titulo['name'] = 'portafolios[portafolio]['.$i.'][titulo]';
-												$data_portafolio_titulo['value'] = $v->titulo;
-												echo form_input( $data_portafolio_titulo );
-											?>
-										</div>
-										<div class="portafolio_enlace">
-											<label>Enlace del servicio:</label>
-											<?php
-												$data_portafolio_link['name'] = 'portafolios[portafolio]['.$i.'][enlace]';
-												$data_portafolio_link['value'] = $v->enlace;
-												echo form_input( $data_portafolio_link );
-											?>
+										
+										<div class="col -md-9">
+											<div class="portafolio_titulo">
+												<label>Titulo del portafolio:</label>
+												<?php
+													$data_portafolio_titulo['name'] = 'portafolios[portafolio]['.$i.'][titulo]';
+													$data_portafolio_titulo['value'] = $v->titulo;
+													echo form_input( $data_portafolio_titulo );
+												?>
+											</div>
+											<div class="portafolio_enlace">
+												<label>Enlace del servicio:</label>
+												<?php
+													$data_portafolio_link['name'] = 'portafolios[portafolio]['.$i.'][enlace]';
+													$data_portafolio_link['value'] = $v->enlace;
+													echo form_input( $data_portafolio_link );
+												?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -674,6 +685,7 @@ $data_team_puesto  =  array (
 						}
 					}
 					?>
+					</div>
 				</div>
 				
 			</div>
@@ -703,6 +715,7 @@ $data_team_puesto  =  array (
 				
 				<div class="boxRepeat">
 					<div class="boxMainClone">Agregar un integrante: <div id="team_clonemas" class="clone mas"><i class="fas fa-plus-circle"></i></div></div>
+					<div class="boxDrag">
 					
 					<?php
 					if(property_exists($nosotrosDB, "team") && count($nosotrosDB->team) > 0 ){
@@ -710,67 +723,71 @@ $data_team_puesto  =  array (
 							
 							?>
 							<div class="registro">
-								<div class="valHead">
-									<h5>Integrante <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1); ?></span></h5>
-									<div class="controlCloneRegistro">
-										<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+								<div class="boxShow">
+									<div class="valHead">
+										<h5>Integrante <span class="valNum conteo" data-conteovalin="" data-conteovalfin="" data-conteoval="text"><?php echo($i+1).' - '.$v->nombre.' '.$v->apellido; ?></span></h5>
+										<div class="controlCloneRegistro">
+											<div class="clone menos"><i class="far fa-trash-alt"></i></div>
+										</div>
 									</div>
 								</div>
 								
-								<div class="row">
-									<div class="col -md-3">
-										<div class="team_fondo">
-											<label>Fondo:</label>
-											<div class="cleanBox" data-clonetype="team_fondo">
-											<?php
-												if(property_exists($v, "fondo") && $v->fondo !== ""){
-													$data['img'] = base_url('assets/public/img/nosotros/'.$v->fondo);
-													$data['name'] = $v->fondo;
-													$data['hname'] = 'team'.$i.'_fondo';
-													$data['classAdd'] = 'conteo';
-													$data['propertyAdd'] = ' data-conteovalin="team" data-conteovalfin="_fondo" data-conteoval="name"';
-													$this->load->view('admin/plantillas/img_block', $data);
-												} else{
-													$data_team_fondo['name'] = 'team'.$i.'_fondo';
-													echo form_upload( $data_team_fondo );
-												}
-											?>
+								<div class="boxHide">
+									<div class="row">
+										<div class="col -md-3">
+											<div class="team_fondo">
+												<label>Fondo:</label>
+												<div class="cleanBox" data-clonetype="team_fondo">
+												<?php
+													if(property_exists($v, "fondo") && $v->fondo !== ""){
+														$data['img'] = base_url('assets/public/img/nosotros/'.$v->fondo);
+														$data['name'] = $v->fondo;
+														$data['hname'] = 'team'.$i.'_fondo';
+														$data['classAdd'] = 'conteo';
+														$data['propertyAdd'] = ' data-conteovalin="team" data-conteovalfin="_fondo" data-conteoval="name"';
+														$this->load->view('admin/plantillas/img_block', $data);
+													} else{
+														$data_team_fondo['name'] = 'team'.$i.'_fondo';
+														echo form_upload( $data_team_fondo );
+													}
+												?>
+												</div>
+											</div>
+											<div class="team_color">
+												<label>Color para el fondo de la foto:  (formato web = #ffffff)</label>
+												<?php
+													$data_team_color['name'] = 'nosotros[team]['.$i.'][color]';
+													$data_team_color['value'] = $v->color;
+													echo form_input( $data_team_color );
+												?>
 											</div>
 										</div>
-										<div class="team_color">
-											<label>Color para el fondo de la foto:  (formato web = #ffffff)</label>
-											<?php
-												$data_team_color['name'] = 'nosotros[team]['.$i.'][color]';
-												$data_team_color['value'] = $v->color;
-												echo form_input( $data_team_color );
-											?>
-										</div>
-									</div>
-									
-									<div class="col -md-9">
-										<div class="team_nombre">
-											<label>Nombre del integrante:</label>
-											<?php
-												$data_team_nombre['name'] = 'nosotros[team]['.$i.'][nombre]';
-												$data_team_nombre['value'] = $v->nombre;
-												echo form_input( $data_team_nombre );
-											?>
-										</div>
-										<div class="team_apellido">
-											<label>Apellido del integrante:</label>
-											<?php
-												$data_team_apellido['name'] = 'nosotros[team]['.$i.'][apellido]';
-												$data_team_apellido['value'] = $v->apellido;
-												echo form_input( $data_team_apellido );
-											?>
-										</div>
-										<div class="team_puesto">
-											<label>Puesto del integrante</label>
-											<?php
-												$data_team_puesto['name'] = 'nosotros[team]['.$i.'][puesto]';
-												$data_team_puesto['value'] = $v->puesto;
-												echo form_input( $data_team_puesto );
-											?>
+										
+										<div class="col -md-9">
+											<div class="team_nombre">
+												<label>Nombre del integrante:</label>
+												<?php
+													$data_team_nombre['name'] = 'nosotros[team]['.$i.'][nombre]';
+													$data_team_nombre['value'] = $v->nombre;
+													echo form_input( $data_team_nombre );
+												?>
+											</div>
+											<div class="team_apellido">
+												<label>Apellido del integrante:</label>
+												<?php
+													$data_team_apellido['name'] = 'nosotros[team]['.$i.'][apellido]';
+													$data_team_apellido['value'] = $v->apellido;
+													echo form_input( $data_team_apellido );
+												?>
+											</div>
+											<div class="team_puesto">
+												<label>Puesto del integrante</label>
+												<?php
+													$data_team_puesto['name'] = 'nosotros[team]['.$i.'][puesto]';
+													$data_team_puesto['value'] = $v->puesto;
+													echo form_input( $data_team_puesto );
+												?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -779,6 +796,7 @@ $data_team_puesto  =  array (
 						}
 					}
 					?>
+					</div>
 				</div>
 				
 			</div>

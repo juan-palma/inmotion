@@ -105,11 +105,25 @@ if(property_exists($generalDB, "linkedin") && $generalDB->linkedin !== ''){
 					';
 	$headerDB->redes[] = $valor;
 }	
+
+if(property_exists($generalDB, "vimeo") && $generalDB->vimeo !== ''){
+	$valor = new stdClass();
+	$valor->red = 'vimeo';
+	$valor->nombre = 'Mi Canal';
+	$valor->liga = $generalDB->vimeo;
+	$valor->icono = '<svg viewBox="0 0 40 40" preserveAspectRatio="xMidYMin slice" class="">
+						<use xlink:href="#svg_vimeo"/>
+				    </svg>
+					';
+	$headerDB->redes[] = $valor;
+}	
 	
 
 ?>
 						
 	</head>
+	<div id="lineaIzquierda"></div>
+	<div id="lineaDerecha"></div>
 	<body id="<?php echo($actual); ?>" itemscope="itemscope" itemtype="http://schema.org/WebPage" style="background-image: url(<?php echo(base_url( 'assets/public/img/general/'.$generalDB->fondo[0]->img )); ?>);" >
 		<style type="text/css">
 			<?php if(property_exists($generalDB, "color_fondo") && $generalDB->color_fondo !== ''){ echo('body{background-color:'.$generalDB->color_fondo.' !important;}'); } ?>
@@ -191,6 +205,25 @@ if(property_exists($generalDB, "linkedin") && $generalDB->linkedin !== ''){
 						c0,0,0.1-10.7,0-11.8h3.9v1.7c0.5-0.8,1.5-2,3.5-2c2.6,0,4.5,1.7,4.5,5.3V28.7z"/>
 				</symbol>
 			</svg>
+			
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" xml:space="preserve" class="colDin1">
+				<symbol id="svg_vimeo" >
+					<g>
+						<path class="st0" d="M20,40C9,40,0,31,0,20S9,0,20,0s20,9,20,20S31,40,20,40z M20,1C9.5,1,1,9.5,1,20s8.5,19,19,19s19-8.5,19-19
+							S30.4,1,20,1z"/>
+					</g>
+					<g>
+						<path class="st0" d="M30.7,16.1c-0.1,0.4-0.2,0.9-0.3,1.3c-0.3,1.2-0.9,2.3-1.5,3.4c-1.3,2.1-2.8,4.1-4.5,6c-0.9,1-1.8,1.9-3,2.6
+							c-0.6,0.4-1.2,0.7-1.9,0.8c-1,0.2-1.8-0.1-2.4-0.9c-0.8-1-1.3-2.2-1.6-3.4c-0.5-2-1.1-4.1-1.7-6.1c-0.2-0.8-0.5-1.5-1-2.2
+							c-0.1-0.1-0.2-0.3-0.3-0.4c-0.3-0.3-0.5-0.3-0.9-0.1c-0.5,0.3-0.9,0.6-1.4,0.9c0,0,0,0-0.1-0.1c-0.3-0.4-0.6-0.8-0.9-1.2
+							c0,0,0,0,0-0.1c1.3-1.2,2.6-2.3,4-3.5c0.5-0.4,1-0.7,1.5-1c1.2-0.6,2.5-0.2,3.2,1c0.4,0.7,0.5,1.4,0.7,2.2c0.3,1.8,0.7,3.7,1,5.5
+							c0.1,0.7,0.4,1.4,0.7,2c0.4,0.7,0.8,0.8,1.4,0.2c0.5-0.5,0.9-1.1,1.2-1.6c0.5-0.8,1-1.7,1.4-2.6c0.2-0.4,0.2-0.9,0.2-1.4
+							c-0.1-0.6-0.4-1-1.1-1.1c-0.6-0.1-1.1,0-1.6,0.2c-0.1,0-0.2,0.1-0.3,0.1c0.1-0.4,0.3-0.7,0.4-1.1c0.4-1,1-1.9,1.8-2.7
+							c0.8-0.7,1.8-1.1,3-1.2c0.6-0.1,1.2-0.1,1.7,0.1c1.1,0.3,1.8,1,2.1,2c0.1,0.4,0.1,0.7,0.2,1.1C30.7,15.4,30.7,15.8,30.7,16.1z"/>
+					</g>
+				</symbol>
+			</svg>
+			
 		</div>
 <!-- 	FIN SVG -->
 		

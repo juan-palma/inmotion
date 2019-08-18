@@ -75,6 +75,13 @@ $data_general_behance  =  array (
 	'autocomplete' => 'off',
 	'placeholder' => ''
 );
+$data_general_vimeo  =  array ( 
+	'name' => 'general[vimeo]',
+	'value' => @$generalDB->vimeo,
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
 $data_general  =  array ( 
 	'name' => 'general[behance]',
 	'value' => @$generalDB->behance,
@@ -246,6 +253,14 @@ $data_general  =  array (
 									$data_general_behance['name'] = 'general[behance]';
 									$data_general_behance['value'] = @$generalDB->behance;
 									echo form_input( $data_general_behance );
+								?>
+							</div>
+							<div class="team_vimeo">
+								<label>Vimeo</label>
+								<?php
+									$data_general_behance['name'] = 'general[vimeo]';
+									$data_general_behance['value'] = @$generalDB->vimeo;
+									echo form_input( $data_general_vimeo );
 								?>
 							</div>
 						</div>

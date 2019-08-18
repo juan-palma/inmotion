@@ -61,10 +61,48 @@ function db_conectE(url, datos, f, e){
 
 
 // habilitar boton pausa y control de video Backgroudn
+function videoControl(){
+	var padre = document.id('primaryContainer');
+	if(padre.getElement('.video .iframe-container')){
+	
+		var box = padre.getElement('.video');
+		
+		var iframe = box.getElement('iframe');
+	    var player = new Vimeo.Player(iframe);
+	    
+	    var playBtn = document.querySelector('.btnPlay');
+	    var centro = document.querySelector('.centro');
+	    var frameBox = document.querySelector('.iframe-container');
+	    
+	    function onPlay(){
+		    console.info('en play');
+		    frameBox.removeClass('stopfade');
+		    centro.addclass('op0').addClass('dnone');
+	    }
+	    player.on('play', onPlay);
+	    
+	    function onPause(){
+		    frameBox.removeClass('dnone').addClass('stopfade');
+		    centro.removeClass('dnone').removeClass('op0');
+	    }
+	    player.on('pause', onPause);
+	    player.on('ended', onPause);
+	    
+	    playBtn.addEvent('click', function(){
+		    player.play();
+		    
+		    frameBox.removeClass('stopfade');
+		    centro.addClass('op0').addClass('dnone');
+	    });
+    
+    }
+
+}
+/*
 function videoControl(video, btnPlay, btPausa){
 	var vid = document.getElementById(video);
 	var playBtn = document.querySelector(btnPlay);
-	var pauseBtn = document.querySelector(btPausa);
+	//var pauseBtn = document.querySelector(btPausa);
 	
 	if (window.matchMedia('(prefers-reduced-motion)').matches) {
 		vid.removeAttribute("autoplay");
@@ -109,6 +147,7 @@ function videoControl(video, btnPlay, btPausa){
 	playBtn.addEventListener("click", vidAction);
 	pauseBtn.addEventListener("click", vidAction);
 }
+*/
 	
 
 
@@ -133,29 +172,6 @@ function videoControl(video, btnPlay, btPausa){
 //::::::::::::::::::::::::
 // ***** HOME *****//
 function home_inicio(){
-/*
-	var slider = tns({
-		container: '#clientes .slideItems',
-		items: 2,
-		axis:'vertical',
-		nav:false,
-		speed: 300,
-		controls:false,
-		prevButton:'#clientes .slideMain .btnSlideBack',
-		nextButton:'#clientes .slideMain .btnSlideNext',
-		responsive: {
-			780: {
-				edgePadding: 20,
-				items: 1,
-				controls:true,
-				autoplay: false
-			},
-			900: {
-				items: 2
-			}
-		}
-	});
-*/
 	var slider = tns({
 		container: '#clientes .slideItems',
 		items: 2,
@@ -164,10 +180,15 @@ function home_inicio(){
 		speed: 300,
 		prevButton:'#clientes .slideMain .btnSlideBack',
 		nextButton:'#clientes .slideMain .btnSlideNext',
+		"autoplay": true,
+		"autoplayHoverPause": true,
+		"autoplayTimeout": 3500,
+		"autoplayText": [ "▶", "❚❚" ],
+		"swipeAngle": false,
 		responsive: {
 			780: {
 				items: 2,
-				autoplay:false
+				autoplay:true
 			}
 		}
 	});
@@ -302,6 +323,7 @@ function portafolio_inicio(){
 // ***** Servicios *****//
 function servicio_inicio(){
 	//videoControl("bgvid", "#servicios .btnPlay",  "#servicios .btnPlayPause");
+	videoControl();
 }
 
 
@@ -352,6 +374,9 @@ function portafolio_in_inicio(){
 		});
 		
 	}
+	
+	
+	videoControl();
 }
 
 
@@ -401,11 +426,26 @@ function servicios_in_inicio(){
 
 	}
 	
+	videoControl();
 	
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+function vacantes(){
+	videoControl();
+}
 
 
 
@@ -615,6 +655,10 @@ window.addEvent('domready', function(){
 				
 				case 'servicios_in':
 					servicios_in_inicio();
+				break;
+				
+				case 'vacantes':
+					vacantes();
 				break;
 			}
 		}

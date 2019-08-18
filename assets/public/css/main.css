@@ -312,6 +312,21 @@ body{
 	background-attachment: fixed;
 	background-size: cover;
 }
+.bl ul:last-child{
+	margin-bottom: 0px !important;
+}
+.bl ul{
+	list-style: none;
+	padding-inline-start: 15px;
+}
+.bl ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: red; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
 .hide{
 	display: none;
 	position: absolute;
@@ -320,6 +335,25 @@ body{
 	overflow: hidden;
 	opacity: 0;
 }
+.tns-outer [aria-controls], .tns-outer [data-action]{
+	cursor: pointer;
+    border: 0px none;
+    color: #444;
+    background-color: rgb(256,256,256,0.2);
+    position: absolute;
+    z-index: 800;
+    
+    -webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+.tns-outer [aria-controls]:hover, .tns-outer [data-action]:hover{
+	background-color: rgb(256,256,256,0.8);
+}
+
+
 
 
 
@@ -328,6 +362,28 @@ body{
 .colDin1-op{}
 .colDin1-back{}
 .colDin1-back-op{}
+
+
+
+
+
+
+#lineaIzquierda, #lineaDerecha{
+	width: 1px;
+	height: calc(100vh);
+	display: inline-block;
+	position: fixed;
+	top: 0px;
+	left: 90px;
+	right: auto;
+	background-color: rgb(255,255,255,0.55);
+	z-index: 998;
+}
+#lineaDerecha{
+	left: auto;
+	right: 90px;
+}
+
 
 
 
@@ -357,7 +413,7 @@ div, span, img, ul, footer, nav{
 		left: 90px;
 		top: 0px;
 		min-height: 14px;
-		border-top: 1px solid rgba(255, 255, 255, 0.55);
+/* 		border-top: 1px solid rgba(255, 255, 255, 0.55); */
 	}
 	.mboxI,
 	.mboxD{
@@ -368,6 +424,7 @@ div, span, img, ul, footer, nav{
 		left: 0px;
 		top: 0px;
 		z-index: 990;
+		height: auto;
 	}
 	.mboxD{
 		left: auto;
@@ -382,6 +439,7 @@ div, span, img, ul, footer, nav{
 		left: -90px;
 		top: 0px;
 		z-index: 995;
+		height: auto;
 	}
 	.mboxD_in{
 		left: auto;
@@ -389,11 +447,11 @@ div, span, img, ul, footer, nav{
 	}
 	
 	.mboxI,  .mboxI_in{
-		border-right: 1px solid rgba(255, 255, 255, 0.55);
+/* 		border-right: 1px solid rgba(255, 255, 255, 0.55); */
 /* 		border-top: 1px solid rgba(255, 255, 255, 0.55); */
 	}
 	.mboxD,  .mboxD_in{
-		border-left: 1px solid rgba(255, 255, 255, 0.55);
+/* 		border-left: 1px solid rgba(255, 255, 255, 0.55); */
 /* 		border-top: 1px solid rgba(255, 255, 255, 0.55); */
 	}
 	
@@ -470,6 +528,7 @@ input[type="button"]:hover{
 .video .centro{
 	position: absolute;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     top: 0px;
@@ -565,6 +624,10 @@ input[type="button"]:hover{
 	}
 .videoPortada{
 	min-height: calc(65vh);
+	background-color: #333;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -1057,6 +1120,9 @@ body#home #nosotros main .slideMain{
 
 
 /* --- Portafolio - General -- */
+body#portafolio{
+	background-image: none !important;
+}
 body#portafolio #primaryContainer .redes{
 	display: none;
 }
@@ -1165,6 +1231,9 @@ body#portafolio #portafolios{
 
 
 /* --- Servicios - General -- */
+body#servicios{
+	background-image: none !important;
+}
 body#servicios #primaryContainer .redes{
 	display: none;
 }
@@ -1287,6 +1356,9 @@ body#servicios #servicios{
 
 
 /* --- Portafolio - Interno -- */
+body#portafolio_in{
+	background-image: none !important;
+}
 body#portafolio_in #primaryContainer .redes{
 	display: none;
 }
@@ -1460,6 +1532,9 @@ body#portafolio_in #portafolio_main .mboxC{
 
 
 /* --- Servicios - Interno -- */
+body#servicios_in{
+	background-image: none !important;
+}
 body#servicios_in #primaryContainer .redes{
 	display: none;
 }
@@ -1632,6 +1707,9 @@ body#servicios_in #servicios_galeria{
 
 
 /* --- vacantes - General -- */
+body#vacantes{
+	background-image: none !important;
+}
 body#vacantes #primaryContainer .redes{
 	display: none;
 }
@@ -1941,6 +2019,7 @@ footer .mboxC.footer1{
 			
 	footer .mboxC.footer1 .mboxD_in{
 		background-color: #ff6600;
+		height: 100%;
 	}
 		footer .mboxC.footer1 .mboxD_in #footerBtnEnviar{
 			width: 100%;
@@ -2008,6 +2087,7 @@ footer .mboxC.footer2{
 			footer .mboxC.footer2 .mboxI_in, footer .mboxC.footer2  .mboxD_in{
 				background: #333;
 				border-top: 1px solid rgba(255, 255, 255, 0.55);
+				height: 100%;
 			}
 			footer .mboxC.footer2 #certificaciones .icono{
 				margin-right: 6px;
@@ -2029,19 +2109,23 @@ footer .mboxC.footer2{
 			height: auto;
 		}
 	footer .mboxC.footer2 .mboxI_in{
-		border-right: 1px solid rgba(255, 255, 255, 0.55);
+		height: 100%;
+/* 		border-right: 1px solid rgba(255, 255, 255, 0.55); */
 	}
 	footer .mboxC.footer2 .mboxD_in{
-		border-left: 1px solid rgba(255, 255, 255, 0.55);
+/* 		border-left: 1px solid rgba(255, 255, 255, 0.55); */
 	}
 	
 
 footer .mboxI, footer .mboxD{
 	background: white;
+	height: 100%;
 }
 
 
-
+footer #certificaciones,  footer #premios{
+	display: none;
+}
 
 
 

@@ -125,6 +125,7 @@ class General extends CI_Controller {
 			$linea .= '"instagram":"'.$_POST['general']['instagram'].'",';
 			$linea .= '"linkedin":"'.$_POST['general']['linkedin'].'",';
 			$linea .= '"behance":"'.$_POST['general']['behance'].'",';
+			$linea .= '"vimeo":"'.$_POST['general']['vimeo'].'",';
 			$linea .= '"telefono":"'.$_POST['general']['telefono'].'",';
 			$linea .= '"correo":"'.$_POST['general']['correo'].'",';
 			$linea .= '"correo_form":"'.$_POST['general']['correo_form'].'",';
