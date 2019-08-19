@@ -1070,14 +1070,32 @@ body#home #nosotros main .slideMain{
 		background-size: contain;
 		height: 500px;
 		cursor: pointer;
+		position: relative;
 	}
+		body#home #nosotros main .slideMain .item .foto{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+			body#home #nosotros main .slideMain .item .foto img{
+				height: 100%;
+				width: auto;
+				margin: 0 auto;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		body#home #nosotros main .slideMain .item .persona{
 			width: 100%;
 			height: 100%;
 			display: grid;
+			position: absolute;
+			top: 0px;
 			align-content: center;
 			padding: 3rem;
 			align-items: center;
+			justify-content: center;
 			background-color: rgba(0, 0, 0, 0.58);
 			opacity: 0;
 			cursor: pointer;
@@ -1913,7 +1931,7 @@ footer .mboxC.footer1{
 	color: #ff6600;
 }
 	footer .mboxC.footer1 .box{
-		padding: 2rem 4%;
+		padding: 2rem 3%;
 	}
 		footer .mboxC.footer1 .box .linea1{
 			padding-bottom: 3.5rem;
@@ -1977,7 +1995,7 @@ footer .mboxC.footer1{
 						font-size: 220%;
 						display: inline-block;
 						position: relative;
-						margin-left: 8px;
+						margin-left: 6px;
 						
 						-webkit-transition: all 0.1s ease-in-out;
 						-moz-transition: all 0.1s ease-in-out;
@@ -1996,7 +2014,7 @@ footer .mboxC.footer1{
 					}
 						footer #redes .red a img,
 						footer #redes .red a svg{
-							width: 40px;
+							width: 36px;
 							height: auto;
 						}
 					

@@ -182,7 +182,8 @@
 					$conteo = 0;
 					foreach ($nosotrosDB->team as $i=>$v) {
 					?>
-						<article class="item" style="background-image: url(<?php echo( base_url('assets/public/img/nosotros/'.$v->fondo) ); ?>); background-color: <?php echo($v->color); ?>">
+						<article class="item" style="/* background-image: url(<?php echo( base_url('assets/public/img/nosotros/'.$v->fondo) ); ?>); */ background-color: <?php echo($v->color); ?>">
+							<div class="foto"><img src="<?php echo( base_url('assets/public/img/nosotros/'.$v->fondo) ); ?>" /></div>
 							<div class="persona">
 								<span class="nombre"><?php echo($v->nombre ); ?></span>
 								<span class="apellido"><?php echo($v->apellido ); ?></span>
