@@ -126,17 +126,7 @@ body, p, .navbar, .brand, .alert, a, .td-name, td, button.close {
     -webkit-font-smoothing: antialiased;
     font-family: 'Bw Modelica Regular', 'Bw Modelica Regular', 'Monserrat', Arial, sans-serif;
 }
-#bodyBackFix{
-	width: calc(100vw);
-	height: calc(100vh);
-	position: fixed;
-	display: block;
-	top: 0px;
-	left: 0px;
-	background-position: center center;
-	background-repeat: repeat-y;
-	background-size: cover;
-}
+
 #primaryContainer{
 	width: 100%;
 /* 	height: 100%; */
@@ -867,6 +857,17 @@ body#home{
 	background-size: cover;
 	background-attachment: fixed;
 }
+	body#home #bodyBackFix{
+		width: calc(100vw);
+		height: calc(100vh);
+		position: fixed;
+		display: block;
+		top: 0px;
+		left: 0px;
+		background-position: center center;
+		background-repeat: repeat-y;
+		background-size: cover;
+	}
 	body#home #header .mboxC{
 		padding-bottom: 24rem;
 	}
