@@ -1437,7 +1437,7 @@ body#portafolio_in #portafolio_main .mboxC{
 		margin-top: -80px;
 	}
 		body#portafolio_in #portafolio_main .bloque .bl .box{
-			background-color: white;
+			background-color: rgba(255, 255, 255, 0.9);
 			display: inline-block;
 			padding: 3rem;
 			width: 45%;
@@ -2400,8 +2400,8 @@ footer #certificaciones,  footer #premios{
 	    left: 26px;
 	}
 		#menuItems .redes .red {
-		    width: 43px;
-		    margin: 0 6px;
+		    width: 32px;
+		    margin: 0 4px;
 		    display: inline-block;
 		}
 	#menuItems .boxCentro {
@@ -2698,7 +2698,7 @@ footer #certificaciones,  footer #premios{
 		}
 		body#portafolio_in #portafolio_main .bloque:first-child .bl {
 		    margin-left: auto;
-		    margin-right: -42px;
+		    margin-right: -32px;
 		}
 			body#portafolio_in #portafolio_main .bloque .bl .box {
 			    width: 96%;
