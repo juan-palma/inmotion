@@ -1158,6 +1158,7 @@ body#portafolio #portafolios{
 		right: 0px;
 		top: 144px;
 		height: calc(100vh - 144px);
+		position: fixed;
 	}
 		body#portafolio #portafolios .mboxD_in #navSlide{
 			height: 100%;
@@ -1202,7 +1203,8 @@ body#portafolio #portafolios{
 						transition: all 0.2s ease-in-out;
 					}
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active .circulo,
-					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:hover .circulo{
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:hover .circulo,
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.active .circulo{
 						border: 1px solid #ff6600;
 						background-color: #ff6600;
 					}

@@ -274,6 +274,46 @@ function header_run(){
 //::::::::::::::::::::::::
 // ***** Portafolio *****//
 function portafolio_inicio(){
+	items = $$('#portafolios .slideItems .item');
+	items.reverse();
+	
+	var lateral = $$('#portafolios .mboxD_in .centro .nBox');
+	lateral.reverse();
+	
+	var scrollFX = new Fx.Scroll(window);
+	
+	items.each(function(it, i){
+		var p = it.getPosition().y;
+		//lateral[i].idago = {};
+		//lateral[i].idago.p = p;
+		
+		lateral[i].addEvent('click', function(){
+			scrollFX.toElement(it, 'y');
+		});
+	});
+	
+	
+	
+	(function(){
+		scrollFX.toElement(items[1], 'y');
+	}).delay(2000);
+		
+	document.addEventListener('scroll', function(event) {
+		
+		items.each(function(it, i){
+			var h = it.getSize().y;
+			var p = it.getPosition().y;
+			var s = window.getScroll().y;
+			if(s > (p - (h * 0.1)) && s < ( (h * 0.9) + p ) ){
+				lateral[i].addClass('active');
+			} else{
+				lateral[i].removeClass('active');
+			}
+		});
+	});
+	
+	
+/*
 	var slider = tns({
 		container: '#portafolios .slideItems',
 		items: 1,
@@ -303,6 +343,7 @@ function portafolio_inicio(){
 			}
 		}, 100);
 	});
+*/
 
 }
 
