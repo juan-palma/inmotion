@@ -124,7 +124,7 @@ class Vacantes extends CI_Controller {
 			if( isset($_POST['vacantes']['vacante']) ){
 				foreach ($_POST['vacantes']['vacante'] as $i=>$v) {
 					if($i !== 0){ $linea_vacantes .= ', '; }
-					$linea_vacantes .= '{"foto":"'.@$loadSerFoto[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.url_title($v['enlace']).'"}';
+					$linea_vacantes .= '{"foto":"'.@$loadSerFoto[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.$v['enlace'].'"}';
 				}
 			}
 			$linea_vacantes .= ']}';

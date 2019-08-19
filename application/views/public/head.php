@@ -124,7 +124,8 @@ if(property_exists($generalDB, "vimeo") && $generalDB->vimeo !== ''){
 	</head>
 	<div id="lineaIzquierda"></div>
 	<div id="lineaDerecha"></div>
-	<body id="<?php echo($actual); ?>" itemscope="itemscope" itemtype="http://schema.org/WebPage" style="background-image: url(<?php echo(base_url( 'assets/public/img/general/'.$generalDB->fondo[0]->img )); ?>);" >
+	<body id="<?php echo($actual); ?>" itemscope="itemscope" itemtype="http://schema.org/WebPage" >
+		<div id="bodyBackFix" style="background-image: url(<?php echo(base_url( 'assets/public/img/general/'.$generalDB->fondo[0]->img )); ?>);"></div>
 		<style type="text/css">
 			<?php if(property_exists($generalDB, "color_fondo") && $generalDB->color_fondo !== ''){ echo('body{background-color:'.$generalDB->color_fondo.' !important;}'); } ?>
 			<?php 
