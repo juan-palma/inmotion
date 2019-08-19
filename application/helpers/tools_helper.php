@@ -182,6 +182,39 @@ if ( ! function_exists('popFlash'));
 
 
 
+// ------------------------------------------------------------------------
+
+if ( ! function_exists('vcard'))
+{
+	/**
+	 * vCard
+	 *
+	 * Genera un arcvhio de contacto descargable
+	 *
+	 * @return	mixed  string
+	 */
+	function vcard(){
+	    return utf8_encode('BEGIN:VCARD
+							N:Inmotion
+							TEL:(55) 5393 8627
+							EMAIL:info@inmotion.com.mx
+							URL:https://inmotion.com.mx
+							ADR:Monte Elbruz 132, Lomas de Chapultepec Miguel Hidalgo, CDMX, México
+							ORG:Inmotion Communications
+							NOTE:
+							VERSION:3.0
+							END:VCARD'
+		);
+	}
+}
+
+
+
+
+
+
+
+
 
 
 

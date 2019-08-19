@@ -60,6 +60,90 @@ function db_conectE(url, datos, f, e){
 
 
 
+function db_conect(url, datos, f, e){
+	// Set up the request.
+	var xhr = new XMLHttpRequest();
+	
+	// Open the connection.
+	xhr.open('POST', url, true);
+	
+	// Set up a handler for when the request finishes.
+	xhr.onload = function () {
+		var j = JSON.parse(xhr.response);
+		
+		if (xhr.status === 200) {
+			if(j.status != 'ok'){
+				console.info('Ocurrio un error al procesar tu informacion.');
+				console.info(j);
+				swal('', 'Ocurrio un error al procesar tu informacion, intentelo más tarde o póngase en contacto con su área de sistemas.', 'warning');
+				e(j);
+			} else{
+				swal('', 'Se envio su mensaje con exito', 'success');
+				f(j);
+			}
+		} else {
+			console.info('Ocurrio un error con la coneccion.');
+			console.info(j);
+			swal('', 'Ocurrio un error con la coneccion., intentelo más tarde o póngase en contacto con su área de sistemas.', 'warning');
+			e(j);
+		}
+	};
+	
+	xhr.onerror = function(){
+		console.info('Ocurrio un error con la coneccion.');
+		console.info(j);
+		swal('', 'Ocurrio un error con la coneccion., intentelo más tarde o póngase en contacto con su área de sistemas.', 'warning');
+		e(j);
+	}
+	
+	// Send the Data.
+	var consulta = xhr.send(datos);
+}
+
+
+
+
+
+
+
+function requestDownload(url){
+    var request = new XMLHttpRequest();
+    request.open('POST', url, true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.responseType = 'blob';
+
+    request.onload = function() {
+      // Only handle status code 200
+      if(request.status === 200) {
+        // Try to find out the filename from the content disposition `filename` value
+        var disposition = request.getResponseHeader('content-disposition');
+        var matches = /"([^"]*)"/.exec(disposition);
+        var filename = (matches != null && matches[1] ? matches[1] : 'inmotion.vcf');
+
+        // The actual download
+        var blob = new Blob([request.response], { type: 'text/x-vcard' });
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+      }
+      
+    };
+
+    request.send('content=' + 'nada');
+}
+
+
+
+
+
+
+
 // habilitar boton pausa y control de video Backgroudn
 function videoControl(){
 	var padre = document.id('primaryContainer');
@@ -155,6 +239,16 @@ function videoControl(video, btnPlay, btPausa){
 
 
 
+function descargar_vcard(){
+	requestDownload(baseDir+'ajax/downloadVcard');
+}
+
+
+
+
+
+
+
 
 
 
@@ -222,9 +316,6 @@ function home_inicio(){
 
 }
 
-function descargar_vcard(){
-	console.info('Hiciste click en descargar vCard');
-}
 
 
 
@@ -312,39 +403,6 @@ function portafolio_inicio(){
 		});
 	});
 	
-	
-/*
-	var slider = tns({
-		container: '#portafolios .slideItems',
-		items: 1,
-		controls:false,
-		nav:true,
-		speed: 300,
-		navContainer:'#portafolios .mboxD_in #navSlide .centro',
-		autoHeight: true,
-		disable:true,
-		axis:'vertical',
-		responsive: {
-			780: {
-				item: 1,
-				disable:false
-			}
-		}
-	});
-	
-
-	var resizeTimer;
-	window.addEventListener('resize', function () {
-		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(function () {
-			var activo = slider.getInfo();
-			if(activo.sheet.disabled = false){
-				slider.refresh();
-			}
-		}, 100);
-	});
-*/
-
 }
 
 
@@ -385,7 +443,6 @@ function servicio_inicio(){
 //::::::::::::::::::::::::
 // ***** Portafolio Interior *****//
 function portafolio_in_inicio(){
-	//videoControl("bgvid", "#portafolio_video .btnPlay", "#portafolio_video .btnPlayPause");
 	var logosBox = $$('#portafolio_main .informes .slideMain');
 	if(logosBox.length > 0){
 		

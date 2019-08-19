@@ -921,6 +921,17 @@ function vacantes_inicio(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 //--- Eventos a ejecutar cuando el DOM este listo _____________________________________________________________________________________
 window.addEvent('domready', function(){
 	if(typeof pageActual !== 'undefined'){
@@ -950,6 +961,7 @@ window.addEvent('domready', function(){
 			}
 		}
 	}
+	
 });
 
 

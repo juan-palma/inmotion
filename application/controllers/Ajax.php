@@ -40,6 +40,12 @@ class Ajax extends CI_Controller {
 		echo( json_encode($json) );
 	}
 	
+	
+	public function downloadVcard(){
+		header('Content-Type: text/x-vcard');  
+		header('Content-Disposition: inline; filename="inmotion.vcf"');
+		echo (vcard());
+	}
 			
 		
 	
