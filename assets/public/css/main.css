@@ -1169,22 +1169,25 @@ body#portafolio #portafolios{
 				display: grid;
 			    align-content: center;
 			    height: 100%;
+			    transform: scale(0.6);
 			}
 				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox{
 					position: relative;
 					cursor: pointer;
 				}
-				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active{
+				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active,
+				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.active{
 					font-family: 'Bw Modelica Bold';
 				}
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .text{
-						width: 200px;
+						width: 260px;
 					    text-align: right;
 					    position: absolute;
 					    right: 110px;
 					    left: auto;
 					    line-height: 1.1em;
 					    cursor: pointer;
+					    font-size: 116%;
 					}
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .circulo{
 						top: 0px;
@@ -1211,7 +1214,7 @@ body#portafolio #portafolios{
 					
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .line{
 						width: 50%;
-					    height: 30px;
+					    height: 16px;
 					    border-right: 1px solid white;
 					    position: relative;
 					}
@@ -2338,6 +2341,14 @@ footer #certificaciones,  footer #premios{
 	.mboxI, .mboxD, mboxI_in, .mboxD_in {
 		display: none;
 	}
+	#lineaIzquierda, #lineaDerecha{
+		left: 55px;
+		display: none;
+	}
+	#lineaDerecha{
+		left: auto;
+		right: 53px;
+	}
 	#logo {
 	    display: inline-block;
 	    position: fixed;
@@ -2398,16 +2409,17 @@ footer #certificaciones,  footer #premios{
 			}
 			
 	.video .centro .centrado{
-			left: 55px;
+		left: 55px;
+		width: calc(100vw - 55px);
+	}
+		.video .centro .centrado h2{
+			margin-top: 0px;
+		    letter-spacing: 1px;
+		    padding-left: 1.84rem;
 		}
-			.video .centro .centrado h2{
-				margin-top: 0px;
-			    letter-spacing: 1px;
-			    padding-left: 1.84rem;
-			}
-			.video h1.titulos{
-				padding: 2rem;
-			}
+		.video h1.titulos{
+			padding: 2rem;
+		}
 			
 			
 /* 	HOME */
@@ -2536,7 +2548,9 @@ footer #certificaciones,  footer #premios{
 			    text-align: center;
 			}
 				body#portafolio #portafolios .mboxC article.item .centro h2.titulo{
-					font-size: 2rem;
+					font-size: 1.5rem;
+				    text-align: center;
+				    width: 100%;
 				}
 	
 	
@@ -2689,6 +2703,34 @@ footer #certificaciones,  footer #premios{
 	body#portafolio_in #portafolio_main .slideMain .logo {
 		height: 130px;
 	}
+	
+	
+	
+	
+	/* 	vacantes - GENERAL */
+	body#vacantes #vacantes .mboxC .linea .bl {
+		width: calc(100vw);
+		height: auto;
+		display: block;
+	}
+	body#vacantes #vacantes .mboxC .linea .bl .centro {
+	    width: calc(100% - 45px);
+	    padding: 2rem 0rem 2rem 3rem;
+	}
+	body#vacantes #vacantes .mboxC .linea:nth-of-type(2n) .bl .centro {
+	    padding: 2rem 3rem 2rem 0rem;
+	}
+	
+	
+	
+	body#portafolio_in #portafolio_main .bloque:first-child .bl .box {
+	    margin-top: 0px;
+	    margin-bottom: 4rem;
+	}
+	body#servicios_in #servicios_main .bloque:first-child .bl .box {
+	    margin-top: 0px;
+	    margin-bottom: 4rem;
+	}
 
 	
 }
@@ -2701,9 +2743,10 @@ footer #certificaciones,  footer #premios{
 
 @media (max-width: 414px){
 	.video h1.titulos{
-	    padding: 2rem 1rem;
-	    font-size: 140%;
-	    letter-spacing: 5px;
+	    padding: 3rem 28px;
+	    font-size: 180%;
+	    letter-spacing: 3px;
+	    text-align: left;
 	}
 	footer .mboxC.footer1 .mboxD_in {
 		display: block;

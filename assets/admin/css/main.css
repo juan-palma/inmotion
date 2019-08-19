@@ -800,6 +800,10 @@ a[href*="froala.com"]{
 	margin-top: 2rem;
 }
 
+	#registro_portafolios .boxRepeat > .registro:nth-child(2) .bloque_titulo2,
+	#registro_portafolios .boxRepeat > .registro:nth-child(2) .bloque_texto2{
+		display: none;
+	}
 
 
 
