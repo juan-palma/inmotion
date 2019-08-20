@@ -26,12 +26,22 @@ portafoliosDB->portafolios[] = $valor;
 <section id="portafolios" class="mboxG">
 	<div class="mboxC">
 		<main class="">
+			<div id="portFondosBox">
+				<?php
+				foreach ($registroDB as $i=>$v) {
+					?>
+					<div class="itemFotoFondo <?php if($i !== 0){ echo('op0'); }?>" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.$v->fondo) ); ?>);">
+					</div>
+					<?php
+				}
+				?>
+			</div>
 			<div class="slideMain">
 				<div class="slideItems">
 				<?php
 				foreach ($registroDB as $i=>$v) {
 					?>
-					<article class="item" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.$v->fondo) ); ?>);">
+					<article class="item">
 						<div class="centro">
 							<div class="noMargin"></div>
 							<h2 class="titulo">
@@ -56,7 +66,7 @@ portafoliosDB->portafolios[] = $valor;
 			<?php
 				foreach ($registroDB as $i=>$v) {
 					?>
-					<div class="nBox">
+					<div class="nBox <?php if($i === 0){ echo('active'); }?>">
 						<div class="text"><?php echo($v->titulo_general); ?></div>
 						<div class="circulo"></div>
 						<div class="line"></div>
@@ -68,3 +78,8 @@ portafoliosDB->portafolios[] = $valor;
 		</div>
 	</div>
 </section>
+
+
+
+
+
