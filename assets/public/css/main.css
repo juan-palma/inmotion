@@ -1165,7 +1165,7 @@ body#portafolio #portafolios{
 	
 }
 	body#portafolio #portafolios .mboxC{
-		width: calc(100vw);
+		width: calc(100%);
 		min-height: calc(100vh);
 		padding: 0px;
 		text-align: center;
@@ -1313,7 +1313,7 @@ body#servicios #servicios{
 	
 }
 	body#servicios #servicios .mboxC{
-		width: calc(100vw);
+		width: calc(100%);
 		min-height: calc(100vh);
 		padding: 0px;
 		text-align: center;
@@ -1438,7 +1438,7 @@ body#portafolio_in #portafolio_video{
 	
 }
 	body#portafolio_in #portafolio_video .mboxC{
-		width: calc(100vw);
+		width: calc(100%);
 		min-height: inherit;
 		padding: 0px;
 		text-align: center;
@@ -1451,7 +1451,7 @@ body#portafolio_in #portafolio_main{
 	overflow: inherit;
 }
 body#portafolio_in #portafolio_main .mboxC{
-	width: calc(100vw);
+	width: calc(100%);
 	min-height: inherit;
 	padding: 0px;
 	text-align: center;
@@ -1632,7 +1632,7 @@ body#servicios_in #servicios_video{
 	
 }
 	body#servicios_in #servicios_video .mboxC{
-		width: calc(100vw);
+		width: calc(100%);
 		min-height: inherit;
 		padding: 0px;
 		text-align: center;
@@ -1644,7 +1644,7 @@ body#servicios_in #servicios_main{
 	overflow: inherit;
 }
 body#servicios_in #servicios_main .mboxC{
-	width: calc(100vw);
+	width: calc(100%);
 	min-height: inherit;
 	padding: 0px;
 	text-align: center;
@@ -1723,7 +1723,7 @@ body#servicios_in #servicios_galeria{
 	overflow: inherit;
 }
 	body#servicios_in #servicios_galeria .mboxC {
-	    width: calc(100vw);
+	    width: calc(100%);
 	    height: auto;
 	    display: inline-block;
 	    position: relative;
@@ -1807,7 +1807,7 @@ body#vacantes #vacantes{
 	
 }
 	body#vacantes #vacantes .mboxC{
-		width: calc(100vw);
+		width: calc(100%);
 		min-height: auto;
 		padding: 0px;
 		text-align: center;
