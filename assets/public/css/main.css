@@ -1455,51 +1455,67 @@ body#portafolio_in #portafolio_main .mboxC{
 		height: auto;
 	}
 	body#portafolio_in #portafolio_main .bloque{
-		padding: 1px 90px 40px;
+		padding: 0px 90px;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
 		min-height: calc(65vh);
 	}
-	body#portafolio_in #portafolio_main .bloque.informes{
-		min-height: auto;
-	}
-	
-	body#portafolio_in #portafolio_main .bloque .bl{
-		text-align: left;
+	body#portafolio_in #portafolio_main .bloque .imgContent{
+		width: calc(100vw);
+		height: auto;
 		position: relative;
-		margin-bottom: 3rem;
+		display: block;
+		left: -90px;
 	}
-	body#portafolio_in #portafolio_main .bloque .bl:nth-of-type(2n){
-		text-align: right;
-	}
-	body#portafolio_in #portafolio_main .bloque .bl.v1{
-		margin-top: -80px;
-	}
-		body#portafolio_in #portafolio_main .bloque .bl .box{
-			background-color: rgba(255, 255, 255, 0.9);
-			display: inline-block;
-			padding: 3rem;
-			width: 45%;
-			left: 0px;
+		body#portafolio_in #portafolio_main .bloque .imgContent img{
+			width: 100%;
+			height: auto;
 		}
-			body#portafolio_in #portafolio_main .bloque .bl .box .titulo{
-				font-family: 'Bw Modelica Bold';
-				color: #ff6600;
-				font-size: 160%;
-				letter-spacing: 3px;
-				line-height: 1.1em;
-				margin-bottom: 1.8rem;
+	body#portafolio_in #portafolio_main .bloque .contenedor{
+		top: 0px;
+		position: absolute;
+		width: calc(100vw - 180px);
+	}
+		body#portafolio_in #portafolio_main .bloque.informes{
+			min-height: auto;
+		}
+		
+		body#portafolio_in #portafolio_main .bloque .bl{
+			text-align: left;
+			position: relative;
+			margin-bottom: 3rem;
+		}
+		body#portafolio_in #portafolio_main .bloque .bl:nth-of-type(2n){
+			text-align: right;
+		}
+		body#portafolio_in #portafolio_main .bloque .bl.v1{
+			margin-top: -80px;
+		}
+			body#portafolio_in #portafolio_main .bloque .bl .box{
+				background-color: rgba(255, 255, 255, 0.9);
+				display: inline-block;
+				padding: 3rem;
+				width: 45%;
+				left: 0px;
 			}
-	body#portafolio_in #portafolio_main .bloque:first-child .bl{
-		text-align: right;
-		margin-top: 0px;
-		margin-bottom: 125px;
-	}
-		body#portafolio_in #portafolio_main .bloque:first-child .bl .box{
-			margin-top: -50px;
+				body#portafolio_in #portafolio_main .bloque .bl .box .titulo{
+					font-family: 'Bw Modelica Bold';
+					color: #ff6600;
+					font-size: 160%;
+					letter-spacing: 3px;
+					line-height: 1.1em;
+					margin-bottom: 1.8rem;
+				}
+		body#portafolio_in #portafolio_main .bloque:first-child .bl{
+			text-align: right;
+			margin-top: 0px;
+			margin-bottom: 125px;
 		}
+			body#portafolio_in #portafolio_main .bloque:first-child .bl .box{
+				margin-top: -50px;
+			}
 	
 	
 	body#portafolio_in #portafolio_main .bloque.informes{
