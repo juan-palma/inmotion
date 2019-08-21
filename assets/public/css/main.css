@@ -100,8 +100,10 @@ html, body{
 	--font-family-sans-serif: 'Bw Modelica Regular', 'Monserrat', sans-serif;
 }
 
+/*
 *::-webkit-scrollbar { width: 0 !important }
 * { -ms-overflow-style: none; overflow: -moz-scrollbars-none; }
+*/
 
 body:before{
 	content: '';
@@ -412,7 +414,7 @@ div, span, img, ul, footer, nav{
     overflow-x: hidden;
 }
 	.mboxC{
-		width: calc(100vw - 180px);
+		width: calc(100% - 180px);
 		height: auto;
 		display: inline-block;
 		position: relative;
