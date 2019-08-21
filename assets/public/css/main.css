@@ -498,8 +498,7 @@ input[type="button"]:hover{
 
 .video{
 	display: block;
-    height: calc(60vh);
-    height: auto;
+    height: calc(80vh);
     position: relative;
     overflow: hidden;
     background: rgb(0,0,0,0.7);
@@ -624,7 +623,7 @@ input[type="button"]:hover{
 	  height: 100%;
 	}
 .videoPortada{
-	min-height: calc(65vh);
+	min-height: 100%;
 	background-color: #333;
     background-position: center;
     background-repeat: no-repeat;
@@ -2235,7 +2234,7 @@ footer #certificaciones,  footer #premios{
 /* Big. Desktop - estilos y puntos de quiebre para pantallas grandes */
 @media (min-width: 1200px){
 	.video{
-	    height: calc(100vh);
+	    height: calc(75vh);
 	}
 	body#servicios_in #servicios_main .bloque:first-child{
 		min-height: calc(70vh);
@@ -2649,6 +2648,9 @@ footer #certificaciones,  footer #premios{
 
 
 @media (max-width: 780px) and (orientation: portrait){
+	.video{
+		height: calc(70vh);
+	}
 	body#portafolio #portafolios #tns1-mw{
 		height: auto !important;
 	}

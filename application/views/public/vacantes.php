@@ -45,7 +45,7 @@
 								<h2 class="titulo"><?php echo($v->titulo); ?></h2>
 								<div class="texto"><span><?php echo($v->texto); ?></span></div>
 								<div class="enlace">
-									<a href="mailto:<?php echo($v->enlace)?>">POSTULARCE</a>
+									<a href="mailto:<?php echo($v->enlace)?>">POSTULARSE</a>
 								</div>
 							</div>
 						</div>
