@@ -498,7 +498,7 @@ input[type="button"]:hover{
 
 .video{
 	display: block;
-    height: calc(80vh);
+    height: auto;
     position: relative;
     overflow: hidden;
     background: rgb(0,0,0,0.7);
@@ -623,12 +623,13 @@ input[type="button"]:hover{
 	  height: 100%;
 	}
 .videoPortada{
-	min-height: 100%;
+	height: calc(80vh);
 	background-color: #333;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 
 
@@ -2249,8 +2250,8 @@ footer #certificaciones,  footer #premios{
 
 /* Big. Desktop - estilos y puntos de quiebre para pantallas grandes */
 @media (min-width: 1200px){
-	.video{
-	    height: calc(75vh);
+	.videoPortada{
+		height: calc(75vh);
 	}
 	body#servicios_in #servicios_main .bloque:first-child{
 		min-height: calc(70vh);
@@ -2374,7 +2375,7 @@ footer #certificaciones,  footer #premios{
 	#logo, #menu{
 		padding-top: 0px;
 	}
-	.video{
+	.videoPortada{
 		height: calc(100vh);
 	}
 		.video video{
@@ -2642,7 +2643,7 @@ footer #certificaciones,  footer #premios{
 
 
 @media (max-width: 780px) and (orientation: landscape){
-	.video{
+	.videoPortada{
 		height: calc(100vh);
 	}
 		.video video{
@@ -2664,7 +2665,7 @@ footer #certificaciones,  footer #premios{
 
 
 @media (max-width: 780px) and (orientation: portrait){
-	.video{
+	.videoPortada{
 		height: calc(70vh);
 	}
 	body#portafolio #portafolios #tns1-mw{
