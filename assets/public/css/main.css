@@ -94,10 +94,15 @@ html, body{
 	min-height: calc(100vh);
 	background: #272727;
 	font-family: 'Bw Modelica Regular', 'Monserrat', Arial, sans-serif;
+	
 }
 :root{
 	--font-family-sans-serif: 'Bw Modelica Regular', 'Monserrat', sans-serif;
 }
+
+*::-webkit-scrollbar { width: 0 !important }
+* { -ms-overflow-style: none; overflow: -moz-scrollbars-none; }
+
 body:before{
 	content: '';
 	width: 100%;
@@ -1521,6 +1526,7 @@ body#portafolio_in #portafolio_main .mboxC{
 	
 	body#portafolio_in #portafolio_main .bloque.informes{
 		padding: 0px 90px;
+		background-color: white;
 	}
 		body#portafolio_in #portafolio_main .bloqueInformes{
 			position: relative;
@@ -1532,6 +1538,7 @@ body#portafolio_in #portafolio_main .mboxC{
 			body#portafolio_in #portafolio_main .bloqueInformes .row{
 				padding: 0px 14px;
 				text-align: center;
+				justify-content: center;
 			}
 				body#portafolio_in #portafolio_main .bloqueInformes .row .icono{
 					width: 100%;
