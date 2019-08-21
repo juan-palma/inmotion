@@ -7,7 +7,7 @@
 	
 	$idaMail_data['cc'] = array();
 	
-	$idaMail_data['bcc'] = array();
+	$idaMail_data['bcc'] = array();s
 	$idaMail_data['bcc'][] = 'soporte@idalibre.com';
 	$idaMail_data['bcc'][] = 'monserrat@radicaltesta.com';
 	

@@ -1080,23 +1080,21 @@ body#home #nosotros main .slideMain{
 		background-position: center bottom;
 		background-repeat: no-repeat;
 		background-size: contain;
-		height: calc(50vw);
+		height: auto;
 		cursor: pointer;
 		position: relative;
 	}
 		body#home #nosotros main .slideMain .item .foto{
 			width: 100%;
-			height: 100%;
+			height: auto;
 			overflow: hidden;
 			position: relative;
 		}
 			body#home #nosotros main .slideMain .item .foto img{
-				height: 100%;
-				width: auto;
+				height: auto;
+				width: 100%;
 				margin: 0 auto;
 				position: relative;
-				left: 50%;
-				transform: translateX(-50%);
 			}
 		body#home #nosotros main .slideMain .item .persona{
 			width: 100%;
@@ -2289,11 +2287,7 @@ footer #certificaciones,  footer #premios{
 	body#home #portafolios .mboxC article {
 	    background-attachment: inherit;
 	}
-	
-	body#home #nosotros main .slideMain .item{
-		height: calc(100vw);
-	}
-	
+		
 	
 /* 	FOOTER */
 	footer .mboxC.footer1 .direccion {
@@ -2535,9 +2529,6 @@ footer #certificaciones,  footer #premios{
 	    margin-left: 0px;
 	    overflow: hidden;
 	    align-items: center;
-	}
-	body#home #nosotros main .slideMain .item {
-	    max-height: 400px;
 	}
 		body#home #nosotros main .slideMain .item .foto img{
 		    width: 100%;

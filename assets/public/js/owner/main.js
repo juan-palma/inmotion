@@ -295,12 +295,18 @@ function home_inicio(){
 		prevButton:'#nosotros .slideMain .btnSlideBack',
 		nextButton:'#nosotros .slideMain .btnSlideNext',
 		responsive: {
-			780: {
+			568: {
 				items: 2,
 				autoplay:false
 			},
 			1023: {
+				items: 3
+			},
+			1200: {
 				items: 4
+			},
+			1400: {
+				items: 5
 			}
 		}
 	});
