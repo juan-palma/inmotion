@@ -1326,7 +1326,7 @@ body#servicios #servicios{
 		width: 100%;
 	}
 		body#servicios #servicios .mboxC .linea .bl{
-			width: calc(50vw);
+			width: calc(50%);
 			height: calc(50vw);
 			float: left;
 			display: flex;
@@ -1484,7 +1484,7 @@ body#portafolio_in #portafolio_main .mboxC{
 	body#portafolio_in #portafolio_main .bloque .contenedor{
 		top: 0px;
 		position: absolute;
-		width: calc(100vw - 180px);
+		width: calc(100% - 180px);
 	}
 		body#portafolio_in #portafolio_main .bloque.informes{
 			min-height: auto;
@@ -1820,7 +1820,7 @@ body#vacantes #vacantes{
 		width: 100%;
 	}
 		body#vacantes #vacantes .mboxC .linea .bl{
-			width: calc(50vw);
+			width: calc(50%);
 			height: calc(50vw);
 			float: left;
 			display: flex;
