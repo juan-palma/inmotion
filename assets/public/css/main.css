@@ -94,7 +94,7 @@ html, body{
 	min-height: calc(100vh);
 	background: #272727;
 	font-family: 'Bw Modelica Regular', 'Monserrat', Arial, sans-serif;
-	
+	overflow-x: hidden;
 }
 :root{
 	--font-family-sans-serif: 'Bw Modelica Regular', 'Monserrat', sans-serif;
@@ -1242,20 +1242,31 @@ body#portafolio #portafolios{
 					position: relative;
 					cursor: pointer;
 				}
-				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.tns-nav-active,
-				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.active{
+				body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox{
 					font-family: 'Bw Modelica Bold';
 				}
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .text{
-						width: 260px;
+						width: 280px;
 					    text-align: right;
 					    position: absolute;
 					    right: 145px;
 					    left: auto;
 					    line-height: 1.1em;
 					    cursor: pointer;
-					    font-size: 116%;
+					    font-size: 130%;
+					    opacity: 0;
+					    
+					    -webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						-ms-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
 					}
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox:hover .text,
+					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox.active .text{
+						opacity: 1;
+					}
+					
 					body#portafolio #portafolios .mboxD_in #navSlide .centro .nBox .circulo{
 						top: 0px;
 					    width: 30px;
@@ -1936,6 +1947,50 @@ body#vacantes #vacantes{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* --- vacantes - General -- */
+body#politicas{
+	background-color: white;
+	text-align: center;
+}
+	body#politicas #primaryContainer{
+		background-color: white;
+	}
+		body#politicas .mboxC{
+			display: block;
+		}
+			body#politicas #aviso .contenedor{
+				width: 70%;
+				height: auto;
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				text-align: justify;
+				padding: 8rem 0px;
+			}
+				body#politicas #aviso .contenedor h3{
+					color: #f60;
+					margin: 0rem 0px 2rem;
+					text-align: left;
+				}
+				body#politicas #aviso .contenedor hr:nth-child(3){
+					width: 20%;
+				    margin: 6rem auto;
+				    display: block;
+				    color: #f60;
+				    border-color: #f60;
+				    border-style: dashed;
+				}
 
 
 
@@ -2841,6 +2896,14 @@ footer #certificaciones,  footer #premios{
 	    letter-spacing: 3px;
 	    text-align: left;
 	}
+	
+	body#politicas #aviso .contenedor{
+		font-size: 90%;
+	}
+		body#politicas #aviso .contenedor h3{
+			font-size: 6vw;
+		}
+	
 	footer .mboxC.footer1 .mboxD_in {
 		display: block;
 		width: 100%;
