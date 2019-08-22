@@ -38,7 +38,7 @@
 			<?php
 			foreach ($articuloDB->bloques as $i=>$v) {
 				?>
-				<div class="bloque" style="background-image: url();">
+				<div class="bloque" style="background-image: url(<?php echo( base_url('assets/public/img/portafolios/registros/'.@$v->fondo) ); ?>);">
 					<div class="imgContent">
 						<img src="<?php echo( base_url('assets/public/img/portafolios/registros/'.@$v->fondo) ); ?>"/>
 					</div>

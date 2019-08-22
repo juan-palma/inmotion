@@ -2695,6 +2695,11 @@ footer #certificaciones,  footer #premios{
 				}
 	
 	
+	body#portafolio_in #portafolio_main .bloque .imgContent{
+		opacity: 0;
+	}
+	
+	
 }
 
 
