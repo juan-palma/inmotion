@@ -53,10 +53,21 @@ class Ajax extends CI_Controller {
 		$info['empresa'] = 'INMOTION';
 		$info['sitio'] = base_url();
 		
-		$respMail = ida_sendMail($template, $info, $idaMail_data);
-		if($respMail){
-			$json['valores'][] = 'Se envió de correo de manera correcta.';
+		
+		if($_POST['nombre'] !== '' && $_POST['correo'] !== '' && $_POST['telefono'] !== '' && $_POST['mensaje'] !== ''){
+			$respMail = ida_sendMail($template, $info, $idaMail_data);
+			if($respMail){
+				$json['valores'][] = 'Se envió de correo de manera correcta.';
+			} else{
+				$json['status'] = 'error';
+				$json['errores'][]  = 'Error interno al enviar el correo';
+			}
+
+		} else{
+			$json['status'] = 'error';
+			$json['errores'][]  = 'Es necesario que todos los campos tengan un valor.';
 		}
+		
 		
 		echo( json_encode($json) );
 	}

@@ -41,8 +41,8 @@ $ida_mail_templateHTML = '
 					Nombre: <b>'. $info["nombre"] .'</b>,<br />
 					Telefono: <b>'. $info["tel"] .'</b>,<br />
 					Correo: <b>'. $info["mail"] .'</b>,<br />
-					Mensaje:<br />
 					<hr />
+					Mensaje:<br />
 					<b>'. $info["mensaje"] .'</b>.<br />
 				</div>
 				
