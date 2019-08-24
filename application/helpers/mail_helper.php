@@ -174,6 +174,7 @@ function ida_sendMail($template, $info, $idaMail_data){
 	    $mail->Priority = $idaMail_data['priority'];
 		$mail->Encoding = $idaMail_data['encoding'];
 	    
+/*
 	    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
 	    $mail->isSMTP();                                      // Set mailer to use SMTP
 	    $mail->Host = $idaMail_data['host'];  				  // Specify main and backup SMTP servers
@@ -182,6 +183,7 @@ function ida_sendMail($template, $info, $idaMail_data){
 	    $mail->Password = $idaMail_data['password'];                           // SMTP password
 	    $mail->SMTPSecure = 'tls';                          // Enable TLS encryption, `ssl` also accepted
 	    $mail->Port = $idaMail_data['port'];                                    // TCP port to connect to
+*/
 	
 	    //Recipients
 	    $mail->setFrom($idaMail_data['origen_mail'], $idaMail_data['origen_nombre']);
