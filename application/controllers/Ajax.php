@@ -18,6 +18,8 @@ class Ajax extends CI_Controller {
 		$json['valores'] = array();
 		$json['errores']  = array();
 		
+		$encontrar = array("\r\n", "\n", "\r");
+		$remplazar = '';
 		
 		//Consulta - GENERAL
 		$this->basic_modal->clean();
