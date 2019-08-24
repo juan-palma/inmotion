@@ -42,6 +42,8 @@ class Ajax extends CI_Controller {
 		$idaMail_data['username'] = $cleanObjecDB->correo_form;
 		$idaMail_data['password'] = 'Nm2019';
 		
+		print_r($idaMail_data);
+		
 		$template = FCPATH.'assets/public/template/contactoForm.php';
 		$info = array();
 		$info['nombre'] = $_POST['nombre'];
@@ -52,10 +54,12 @@ class Ajax extends CI_Controller {
 		$info['empresa'] = 'INMOTION';
 		$info['sitio'] = base_url();
 		
+/*
 		$respMail = ida_sendMail($template, $info, $idaMail_data);
 		if($respMail){
 			$json['valores'][] = 'Se envió de correo de manera correcta.';
 		}
+*/
 		
 		echo( json_encode($json) );
 	}
