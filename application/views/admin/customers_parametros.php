@@ -21,13 +21,11 @@
 	$idaMail_data['priority'] = 3;
 	$idaMail_data['encoding'] = 'quoted-printable';
 	
-	$idaMail_data['host'] = 'mail.inmotion.com.mx';
-	$idaMail_data['port'] = 587;
-	$idaMail_data['username'] = '';
-	$idaMail_data['password'] = '';
-	
-	$idaMail_data['username'] = '';
-	
+	$idaMail_data['host'] = 'inmotion.com.mx';
+	$idaMail_data['port'] = 465;
+	$idaMail_data['username'] = 'contacto@inmotion.com.mx';
+	$idaMail_data['password'] = 'Nm2019';
+		
 	
 	$idaMail_data['texto_plano'] = '
 		INMOTION:
