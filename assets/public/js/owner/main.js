@@ -275,14 +275,13 @@ function home_inicio(){
 		prevButton:'#clientes .slideMain .btnSlideBack',
 		nextButton:'#clientes .slideMain .btnSlideNext',
 		"autoplay": true,
-		"autoplayHoverPause": true,
+		"autoplayHoverPause": false,
 		"autoplayTimeout": 3500,
 		"autoplayText": [ "▶", "❚❚" ],
 		"swipeAngle": false,
 		responsive: {
 			780: {
-				items: 2,
-				autoplay:true
+				items: 2
 			}
 		}
 	});

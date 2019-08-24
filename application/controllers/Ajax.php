@@ -18,10 +18,28 @@ class Ajax extends CI_Controller {
 		$json['valores'] = array();
 		$json['errores']  = array();
 		
+		
+		//Consulta - GENERAL
+		$this->basic_modal->clean();
+		$this->basic_modal->tabla = 'contenido';
+		$this->basic_modal->campos = 'contenido_info';
+		$this->basic_modal->condicion = array( "contenido_pagina" => 'general' );
+		
+		$respuesta = $this->basic_modal->genericSelect('sistema');
+		$consulta = (is_array($respuesta) && count($respuesta) > 0) ? $respuesta[0] : '';
+		$clean = (isset($consulta) && property_exists($consulta, 'contenido_info')) ? str_replace($encontrar, $remplazar, $consulta->contenido_info) : '';
+		$cleanObjecDB = ( is_object(json_decode($clean)) ) ? json_decode($clean) : new stdClass();
+		
+		
 		$this->load->helper('mail');
 		require(VIEWPATH.'admin/customers_parametros.php');
 		
-		$idaMail_data['destino_mail'][] = 'juan.palma@me.com';
+		$idaMail_data['destino_mail'][] = $cleanObjecDB->correo;
+		$idaMail_data['origen_mail'] = $cleanObjecDB->correo_form;
+		$idaMail_data['reply_mail'] = $cleanObjecDB->correo;
+		$idaMail_data['username'] = $cleanObjecDB->correo_form;
+		$idaMail_data['password'] = 'Nm2019';
+		
 		$template = FCPATH.'assets/public/template/contactoForm.php';
 		$info = array();
 		$info['nombre'] = $_POST['nombre'];

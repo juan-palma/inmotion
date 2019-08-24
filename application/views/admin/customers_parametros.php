@@ -7,7 +7,7 @@
 	
 	$idaMail_data['cc'] = array();
 	
-	$idaMail_data['bcc'] = array();s
+	$idaMail_data['bcc'] = array();
 	$idaMail_data['bcc'][] = 'soporte@idalibre.com';
 	$idaMail_data['bcc'][] = 'monserrat@radicaltesta.com';
 	
@@ -21,10 +21,10 @@
 	$idaMail_data['priority'] = 3;
 	$idaMail_data['encoding'] = 'quoted-printable';
 	
-	$idaMail_data['host'] = 'smtp.gmail.com';
-	$idaMail_data['port'] = 587;
-	$idaMail_data['username'] = 'informes@idalibre.com';
-	$idaMail_data['password'] = 'Informes.libre';
+	$idaMail_data['host'] = 'inmotion.com.mx';
+	$idaMail_data['port'] = 465;
+	$idaMail_data['username'] = '';
+	$idaMail_data['password'] = '';
 	
 	$idaMail_data['username'] = '';
 	
