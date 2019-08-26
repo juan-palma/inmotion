@@ -29,6 +29,9 @@ class Login extends CI_Controller {
 			$redir = '';
 			$post = $this->input->post(NULL,FALSE);
 			
+			//print_r($this->ida_protect->encrypt_decrypt('encrypt', $post['password']));
+			//echo('<br />');
+			//print_r(uuid());
 			
 			if( $post['username'] !== '' && $post['password'] !== '' ){
 				$result = $this->admin_modal->loginValid($post['username'], $post['password']);

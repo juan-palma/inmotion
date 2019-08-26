@@ -274,11 +274,13 @@ function home_inicio(){
 		speed: 300,
 		prevButton:'#clientes .slideMain .btnSlideBack',
 		nextButton:'#clientes .slideMain .btnSlideNext',
+/*
 		"autoplay": true,
 		"autoplayHoverPause": false,
 		"autoplayTimeout": 3500,
 		"autoplayText": [ "▶", "❚❚" ],
 		"swipeAngle": false,
+*/
 		responsive: {
 			780: {
 				items: 2
@@ -310,14 +312,13 @@ function home_inicio(){
 		}
 	});
 
-	var resizeTimer;
 	window.addEventListener('resize', function () {
-		clearTimeout(resizeTimer);
-		resizeTimer = setTimeout(function () {
-			slider.refresh();
-			sliderNosotros.refresh();
-		}, 100);
+
 	});
+	
+	var t = setInterval(function(){
+		slider.goTo('next');
+	}, 1500);
 
 }
 
@@ -464,15 +465,6 @@ function portafolio_in_inicio(){
 				}
 			}
 		});
-	
-		var resizeTimer;
-		window.addEventListener('resize', function () {
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(function () {
-				slider.refresh();
-			}, 100);
-		});
-		
 	}
 	
 	
@@ -514,16 +506,6 @@ function servicios_in_inicio(){
 				}
 			}
 		});
-			
-	
-		var resizeTimer;
-		window.addEventListener('resize', function () {
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(function () {
-				slider.refresh();
-			}, 100);
-		});
-
 	}
 	
 	videoControl();

@@ -1033,6 +1033,10 @@ body#home #clientes main{
 			width: 100%;
 			transform: rotate(-90deg);
 		}
+		body#home #clientes .btnSlideBack, body#home #clientes .btnSlideNext,
+		body#home #clientes .btnSlideBack, body#home #clientes .btnSlideBack{
+			display: none;
+		}
 
 
 
@@ -1832,7 +1836,7 @@ body#vacantes #vacantes{
 	}
 		body#vacantes #vacantes .mboxC .linea .bl{
 			width: calc(50%);
-			height: calc(50vw);
+			height: auto;
 			float: left;
 			display: flex;
 		    align-items: center;
@@ -1843,6 +1847,7 @@ body#vacantes #vacantes{
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			height: 100%;
 		}
 		body#vacantes #vacantes .mboxC .linea .bl1:before{
 			content: '';
@@ -2629,6 +2634,7 @@ footer #certificaciones,  footer #premios{
 	    text-align: center;
 		margin-top: 10px;
 		border: 0px none transparent;
+		display: none !important;
 	}
 		body#home #clientes main .slideMain .mboxD_in > div{
 			display: inline-block !important;
